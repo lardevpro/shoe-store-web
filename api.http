@@ -1,0 +1,33 @@
+### recuperar todas las películas
+
+GET http://localhost:1234/movies
+
+### Recuperar una pelicual
+GET http://localhost:1234/movies/5605f2bb-5407-439a-a70f-7f404300d63c
+
+### Recuperar todas las películas por género
+GET http://localhost:1234/movies?genre=action
+
+### crear una película con POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "title": "La vida es bella",
+  "year": 1997,
+  "director": "Roberto Benigni",
+  "duration": 116,
+  "poster": "https://image.tmdb.org/t/p/original/aZ7MFlKPfB02Lr9NwZQ4vsYRgcy.jpg",
+  "rate": 5,
+  "genre": ["Drama", "Comedy"]
+}
+
+
+### modificar una película filtrando por id
+PATCH http://localhost:1234/movies/5605f2bb-5407-439a-a70f-7f404300d63c
+Content-Type: application/json"
+
+{
+  "title": "Nuevo título",
+  "rate": 8
+}
