@@ -8,7 +8,7 @@ Browse the product catalog, enjoy a responsive UI, and explore RESTful API integ
 <!-- Project image/logo -->
 
 <p align="center">
-  <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/shoes-1866791_1280.jpg" alt="Shoe Store Interior" width="300"/>
+  <img src="https://raw.githubusercontent.com/Ornella-Gigante/shoe-store-web/main/demo-image.png" alt="Shoe Store Demo" width="300"/>
 </p>
 
 
