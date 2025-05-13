@@ -1,0 +1,53 @@
+$lila: #a259cf;
+$lila-dark: #6d3995;
+$tierra: #b97a56;
+$tierra-dark: #8b5e3c;
+
+.catalog {
+  padding: 2.5rem 1rem 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, rgba($lila, 0.07) 60%, rgba($tierra, 0.06) 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba($lila, 0.07), 0 2px 8px rgba($tierra, 0.05);
+
+  h1 {
+    color: $tierra-dark;
+    font-size: 2.2rem;
+    margin-bottom: 2.2rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 8px rgba($lila, 0.08);
+    text-align: center;
+  }
+}
+
+.shoe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 2.2rem;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .catalog {
+    padding: 1.5rem 0.5rem;
+  }
+  .shoe-list {
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog {
+    padding: 1rem 0.2rem;
+    border-radius: 10px;
+  }
+  .shoe-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+}
