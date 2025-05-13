@@ -1,24 +1,9 @@
-import pkg from 'pg';
-import dotenv from 'dotenv';
 import { v4 as uuidv4 } from 'uuid'; // para generar UUIDs en Node.js
-
-dotenv.config();
-const { Pool } = pkg;
-
-const pool = new Pool({
-  host: process.env.PGHOST,
-  user: process.env.PGUSER,
-  password: process.env.PGPASSWORD,
-  database: process.env.PGDATABASE,
-  port: process.env.PGPORT,
-  ssl: {
-    rejectUnauthorized: false, // Requerido por Supabase
-  },
-});
+import connect from './dbConnection.mjs';
 
 export class ShoeModel {
   static async getAll({ brand }) {
-    const client = await pool.connect();
+    const client = await connect();
     try {
       const result = await client.query(
         'SELECT id, name, brand, price, size, image, category,stock FROM shoes;'
@@ -30,10 +15,10 @@ export class ShoeModel {
   }
 
   static async getById({ id }) {
-    const client = await pool.connect();
+    const client = await connect();
     try {
       const result = await client.query(
-        'SELECT id, name, brand, price, size, image, category, stock FROM movie WHERE id = $1;',
+        'SELECT id, name, brand, price, size, image, category, stock FROM shoes WHERE id = $1;',
         [id]
       );
       if (result.rows.length === 0) return null;
@@ -45,17 +30,17 @@ export class ShoeModel {
 
   static async create({ input }) {
     const { name, brand, price, size, image, category } = input;
-    const client = await pool.connect();
+    const client = await connect();
     const uuid = uuidv4(); // genera UUID con Node.js
     try {
       await client.query(
-        `INSERT INTO movie (id, name, brand, price, size, image, category) 
+        `INSERT INTO shoes (id, name, brand, price, size, image, category) 
          VALUES($1, $2, $3, $4, $5, $6, $7)`,
         [uuid, name, brand, price, size, image, category]
       );
 
       const result = await client.query(
-        'SELECT id, name, brand, price, size, image, category FROM movie WHERE id = $1;',
+        'SELECT id, name, brand, price, size, image, category FROM shoes WHERE id = $1;',
         [uuid]
       );
 
@@ -66,7 +51,7 @@ export class ShoeModel {
   }
 
   static async delete({ id }) {
-    const client = await pool.connect();
+    const client = await connect();
     try {
       // Verificar si la película existe antes de eliminarla
       const result = await client.query('SELECT id FROM shoes WHERE id = $1;', [id]);
@@ -75,7 +60,7 @@ export class ShoeModel {
       }
 
       await client.query('DELETE FROM shoes WHERE id = $1;', [id]);
-      return { message: `Zapato con id ${id} eliminada.` };
+      return { message: `Zapato con id ${id} eliminado.` };
     } finally {
       client.release();
     }
@@ -83,7 +68,7 @@ export class ShoeModel {
 
   static async update({ id, input }) {
     const { name, brand, price, size, image, category } = input;
-    const client = await pool.connect();
+    const client = await connect();
     try {
       // Verificar si la película existe antes de actualizarla
       const result = await client.query('SELECT id FROM shoes WHERE id = $1;', [id]);
@@ -92,7 +77,7 @@ export class ShoeModel {
       }
 
       await client.query(
-        `UPDATE movie SET 
+        `UPDATE shoes SET 
           name = $1,
           brand = $2,
           price = $3,
@@ -104,7 +89,7 @@ export class ShoeModel {
       );
 
       const updatedResult = await client.query(
-        'SELECT id, name, brand, price, size, image, category FROM movie WHERE id = $1;',
+        'SELECT id, name, brand, price, size, image, category FROM shoes WHERE id = $1;',
         [id]
       );
 

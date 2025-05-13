@@ -4,7 +4,7 @@ const ACEPTED_ORGINS = [
     'http://127.0.0.1:5500',
     'http://localhost:1234',
     'http://localhost:5500',
-    'http://movies.com',
+    'http://shoes.com',
     'http://localhost:4200'
   ]
 

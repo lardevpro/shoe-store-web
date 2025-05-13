@@ -1,33 +1,33 @@
 ### recuperar todas las películas
 
-GET http://localhost:1234/movies
+GET http://localhost:1234/shoes
 
 ### Recuperar una pelicual
-GET http://localhost:1234/movies/5605f2bb-5407-439a-a70f-7f404300d63c
+GET http://localhost:1234/shoes/5605f2bb-5407-439a-a70f-7f404300d63c
 
 ### Recuperar todas las películas por género
-GET http://localhost:1234/movies?genre=action
+GET http://localhost:1234/shoes?genre=action
 
 ### crear una película con POST
-POST http://localhost:1234/movies
+POST http://localhost:1234/shoes
 Content-Type: application/json
 
 {
-  "title": "La vida es bella",
-  "year": 1997,
-  "director": "Roberto Benigni",
-  "duration": 116,
-  "poster": "https://image.tmdb.org/t/p/original/aZ7MFlKPfB02Lr9NwZQ4vsYRgcy.jpg",
-  "rate": 5,
-  "genre": ["Drama", "Comedy"]
+  "name": "Jordan",
+  "brand": "Nike",
+  "price": 40.99,
+  "size": 34,
+  "image": "",
+  "category": ["female"] ,
+  "stock": 100
 }
 
 
 ### modificar una película filtrando por id
-PATCH http://localhost:1234/movies/5605f2bb-5407-439a-a70f-7f404300d63c
+PATCH http://localhost:1234/shoes/5605f2bb-5407-439a-a70f-7f404300d63c
 Content-Type: application/json"
 
 {
-  "title": "Nuevo título",
-  "rate": 8
+  "name": "Nuevo título",
+  "size": 8
 }

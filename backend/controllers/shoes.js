@@ -1,5 +1,4 @@
-//import { MovieModel } from '../models/postgres/movie.js'
-import { ShoeModel, ShoeModel } from '../models/postgres/shoe.js'
+import { ShoeModel } from '../models/mysql2/shoes.js'
 import { validatePartialShoe } from '../schemas/shoes.js'
 
 export class ShoeController  {
