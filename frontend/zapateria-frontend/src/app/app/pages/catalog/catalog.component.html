@@ -1,1 +1,7 @@
-<p>catalog works!</p>
+<div class="catalog">
+  <h1>Catálogo de Zapatos</h1>
+  <div class="shoe-list">
+    <app-shoe-card *ngFor="let shoe of shoes" [shoe]="shoe"></app-shoe-card>
+  </div>
+</div>
+
