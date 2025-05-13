@@ -1,16 +1,16 @@
 import { Router } from 'express'
-import { MovieController } from '../controllers/movies.js'
+import { ShoeController } from '../controllers/movies.js'
 
 
 export const moviesRouter = Router()
 
 // get all
-moviesRouter.get('/', MovieController.getAll)
+moviesRouter.get('/', ShoeController.getAll)
 // filter by id
-moviesRouter.get('/:id', MovieController.getById)
+moviesRouter.get('/:id', ShoeController.getById)
 // create
-moviesRouter.post('/', MovieController.createMovie)
+moviesRouter.post('/', ShoeController.createShoe)
 // delete
-moviesRouter.delete('/:id', MovieController.deleteMovie)
+moviesRouter.delete('/:id', ShoeController.deleteShoe)
 // update movie
-moviesRouter.patch('/:id',MovieController.updateMovie)
+moviesRouter.patch('/:id',ShoeController.updateShoe)

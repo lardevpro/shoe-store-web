@@ -16,12 +16,12 @@ const pool = new Pool({
   },
 });
 
-export class MovieModel {
-  static async getAll({ genre }) {
+export class ShoeModel {
+  static async getAll({ brand }) {
     const client = await pool.connect();
     try {
       const result = await client.query(
-        'SELECT id, title, year, director, duration, poster, rate FROM movie;'
+        'SELECT id, name, brand, price, size, image, category,stock FROM shoes;'
       );
       return result.rows;
     } finally {
@@ -33,7 +33,7 @@ export class MovieModel {
     const client = await pool.connect();
     try {
       const result = await client.query(
-        'SELECT id, title, year, director, duration, poster, rate FROM movie WHERE id = $1;',
+        'SELECT id, name, brand, price, size, image, category, stock FROM movie WHERE id = $1;',
         [id]
       );
       if (result.rows.length === 0) return null;
@@ -44,18 +44,18 @@ export class MovieModel {
   }
 
   static async create({ input }) {
-    const { title, year, director, duration, poster, rate } = input;
+    const { name, brand, price, size, image, category } = input;
     const client = await pool.connect();
     const uuid = uuidv4(); // genera UUID con Node.js
     try {
       await client.query(
-        `INSERT INTO movie (id, title, year, director, duration, poster, rate) 
+        `INSERT INTO movie (id, name, brand, price, size, image, category) 
          VALUES($1, $2, $3, $4, $5, $6, $7)`,
-        [uuid, title, year, director, duration, poster, rate]
+        [uuid, name, brand, price, size, image, category]
       );
 
       const result = await client.query(
-        'SELECT id, title, year, director, duration, poster, rate FROM movie WHERE id = $1;',
+        'SELECT id, name, brand, price, size, image, category FROM movie WHERE id = $1;',
         [uuid]
       );
 
@@ -69,42 +69,42 @@ export class MovieModel {
     const client = await pool.connect();
     try {
       // Verificar si la película existe antes de eliminarla
-      const result = await client.query('SELECT id FROM movie WHERE id = $1;', [id]);
+      const result = await client.query('SELECT id FROM shoes WHERE id = $1;', [id]);
       if (result.rows.length === 0) {
-        return { message: `Película con id ${id} no encontrada.` };
+        return { message: `Zapato con id ${id} no encontrado.` };
       }
 
-      await client.query('DELETE FROM movie WHERE id = $1;', [id]);
-      return { message: `Película con id ${id} eliminada.` };
+      await client.query('DELETE FROM shoes WHERE id = $1;', [id]);
+      return { message: `Zapato con id ${id} eliminada.` };
     } finally {
       client.release();
     }
   }
 
   static async update({ id, input }) {
-    const { title, year, director, duration, poster, rate } = input;
+    const { name, brand, price, size, image, category } = input;
     const client = await pool.connect();
     try {
       // Verificar si la película existe antes de actualizarla
-      const result = await client.query('SELECT id FROM movie WHERE id = $1;', [id]);
+      const result = await client.query('SELECT id FROM shoes WHERE id = $1;', [id]);
       if (result.rows.length === 0) {
-        return { message: `Película con id ${id} no encontrada.` };
+        return { message: `Zapato con id ${id} no encontrado.` };
       }
 
       await client.query(
         `UPDATE movie SET 
-          title = $1,
-          year = $2,
-          director = $3,
-          duration = $4,
-          poster = $5,
-          rate = $6
+          name = $1,
+          brand = $2,
+          price = $3,
+          size = $4,
+          image = $5,
+          category = $6
          WHERE id = $7`,
-        [title, year, director, duration, poster, rate, id]
+        [name, brand, price, size, image, category, id]
       );
 
       const updatedResult = await client.query(
-        'SELECT id, title, year, director, duration, poster, rate FROM movie WHERE id = $1;',
+        'SELECT id, name, brand, price, size, image, category FROM movie WHERE id = $1;',
         [id]
       );
 

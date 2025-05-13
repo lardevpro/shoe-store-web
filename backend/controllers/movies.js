@@ -1,52 +1,53 @@
-import { MovieModel } from '../models/postgres/movie.js'
-import { validatePartialMovie } from '../schemas/movies.js'
+//import { MovieModel } from '../models/postgres/movie.js'
+import { ShoeModel, ShoeModel } from '../models/postgres/shoe.js'
+import { validatePartialShoe } from '../schemas/shoe.js'
 
-export class MovieController  {
+export class ShoeController  {
 
   // get all
   static async getAll(req, res)  {
-      const { genre } = req.query
-      const movies = await MovieModel.getAll({ genre })
-      res.json(movies)
+      const { brand } = req.query
+      const shoe = await ShoeModel.getAll({ brand })
+      res.json(shoe)
   }
 
   // get by id
   static async getById(req, res) {
         const { id } = req.params
-        const movie = await MovieModel.getById({ id })
-        if(movie) return res.json(movie)
-        res.status(404).json({ message: 'Movie not found'})  
+        const shoe = await ShoeModel.getById({ id })
+        if(shoe) return res.json(shoe)
+        res.status(404).json({ message: 'Shoe not found'})  
   }
 
   // create
-  static async createMovie (req ,res) {
-     const result = validatePartialMovie(req.body)
+  static async createShoe (req ,res) {
+     const result = validatePartialShoe(req.body)
       
      if (!result.success){
          return res.status(400).json({ error: JSON.parse(result.error.message) })
      }
      
-      const newMovie = await MovieModel.create({ input: result.data })
+      const newShoe = await ShoeModel.create({ input: result.data })
   
-      res.status(201).json(newMovie) 
+      res.status(201).json(newShoe) 
   }
 
   // delete
-  static async deleteMovie (req, res)  {
+  static async deleteShoe (req, res)  {
       const { id } = req.params
   
-      const result = await MovieModel.delete({ id })
+      const result = await ShoeModel.delete({ id })
   
       if (result === false) {
-          return res.status(404).json({ message: 'Movie file found'})
+          return res.status(404).json({ message: 'shoe file found'})
       }
   
-      return res.json({ message: 'Movie deleted'})
+      return res.json({ message: 'shoe deleted'})
   }
 
   // update 
-  static async updateMovie  (req, res)  {
-    const result = validatePartialMovie(req.body)
+  static async updateShoe (req, res)  {
+    const result = validatePartialShoe(req.body)
    
     if (!result.success) {
         return res.status(400).json({ error: JSON.parse(result.error.message) })
@@ -54,8 +55,8 @@ export class MovieController  {
    
     const { id } = req.params
     
-    const updateMovie = await MovieModel.update({ id, input: result.data }) 
+    const updateShoe = await ShoeModel.update({ id, input: result.data }) 
 
-    return res.json(updateMovie)
+    return res.json(updateShoe)
   }
 }
