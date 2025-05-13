@@ -8,7 +8,7 @@ Browse the product catalog, enjoy a responsive UI, and explore RESTful API integ
 <!-- Project image/logo -->
 
 <p align="center">
-  <img src="INSERT IMAGE HERE" alt="Shoe Store Logo" width="300"/>
+  <img src="https://cdn.pixabay.com/photo/2017/09/29/15/06/ecommerce-2806197_1280.jpg" alt="Shoe Store Logo" width="300"/>
 </p>
 
 
