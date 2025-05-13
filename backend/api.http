@@ -1,33 +1,39 @@
-### recuperar todas las películas
-
+### recuperar todas los productos
 GET http://localhost:1234/shoes
 
-### Recuperar una pelicual
-GET http://localhost:1234/shoes/5605f2bb-5407-439a-a70f-7f404300d63c
+### Recuperar un producto por id
+GET http://localhost:1234/shoes/1808b5de-2cad-4321-9ddb-4fc2d3712449
 
-### Recuperar todas las películas por género
-GET http://localhost:1234/shoes?genre=action
+### Recuperar todas los producto por precio
+GET http://localhost:1234/shoes?brand=Nike
 
-### crear una película con POST
+### crear un producto con POST
 POST http://localhost:1234/shoes
 Content-Type: application/json
 
 {
-  "name": "Jordan",
+  "product_name": "Nike",
   "brand": "Nike",
   "price": 40.99,
   "size": 34,
-  "image": "",
-  "category": ["female"] ,
+  "image": null,
+  "category": ["female"],
   "stock": 100
 }
 
 
-### modificar una película filtrando por id
-PATCH http://localhost:1234/shoes/5605f2bb-5407-439a-a70f-7f404300d63c
+### modificar un producto filtrando por id
+PATCH http://localhost:1234/shoes/1808b5de-2cad-4321-9ddb-4fc2d3712449
 Content-Type: application/json"
 
 {
-  "name": "Nuevo título",
-  "size": 8
+  "id": "1",
+  "input": {
+    "product_name": "Nike Air Max",
+    "brand": "Nike",
+    "price": 120.99,
+    "size": 42,
+    "image": "nike-air-max.jpg",
+    "category": "running"
+  }
 }

@@ -2,9 +2,9 @@ import z from 'zod'
 
  //validacion con 'zod'
     const shoeSchema = z.object({ //objeto que se va a recibir
-        name: z.string({  
-            invalid_type_error: 'name must be a string',//mensajes de error opcionales
-            required_error:'name is required'
+        product_name: z.string({  
+            invalid_type_error: 'product_name must be a string',//mensajes de error opcionales
+            required_error:'product_name is required'
         }),
         brand: z.string({  
             invalid_type_error: 'brand must be a string',
@@ -20,7 +20,7 @@ import z from 'zod'
         }).min(30, 'size must be at least 30').max(50, 'size must be at most 50'),
         image: z.string().url({
             message: 'Image must be a valid URL'
-        }),
+        }).nullable(),
         category: z.array(
             z.enum(['male', 'female']),
             {
