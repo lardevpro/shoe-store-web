@@ -51,4 +51,32 @@ $tierra-dark: #8b5e3c;
     transform: translateY(-2px) scale(1.04);
     color: #fff;
   }
+
+
+  .carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.carousel-image {
+  max-width: 90vw;
+  max-height: 320px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(162, 89, 207, 0.09), 0 2px 8px rgba(185, 122, 86, 0.07);
+  object-fit: cover;
+}
+button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #a259cf;
+  transition: color 0.2s;
+}
+button:hover {
+  color: #b97a56;
+}
+
 }
