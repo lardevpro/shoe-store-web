@@ -2,6 +2,18 @@
   <div class="banner">
     <h1>¡Bienvenido a Calzados Carmen!</h1>
     <p>Encuentra los mejores zapatos al mejor precio, complementos, ¡y mucho más!</p>
+
+    <!-- Carrousel -->
+
+    <div class="carousel-container">
+      <button (click)="prev()" aria-label="Anterior">&#8592;</button>
+      <img [src]="images[current]" alt="Imagen de la tienda" class="carousel-image" />
+      <button (click)="next()" aria-label="Siguiente">&#8594;</button>
+    </div>
+
+
+    <!--End of carrousel-->
+
     <a routerLink="/catalog" class="btn">Ver Catálogo</a>
   </div>
 </div>

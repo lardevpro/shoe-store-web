@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ShoeService } from '../../services/shoe.service';
 import { Shoe } from '../../../models/shoe';
 import { ShoeCardComponent } from '../../components/shoe-card/shoe-card.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [ShoeCardComponent],
+  imports: [ShoeCardComponent, RouterLink],
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })
