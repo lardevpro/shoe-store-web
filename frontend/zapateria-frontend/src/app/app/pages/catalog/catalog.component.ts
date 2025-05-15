@@ -3,28 +3,29 @@ import { ShoeCardComponent } from '../../components/shoe-card/shoe-card.componen
 import { RouterLink } from '@angular/router';
 import { Product } from '../../../models/product';
 import { Connection } from '../../services/connection.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [ShoeCardComponent, RouterLink],
+  imports: [ShoeCardComponent, RouterLink, CommonModule],
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })
 
 export class CatalogComponent implements OnInit {
-  product: Product[] = [];
+  products: Product[] = [];
 
   constructor(private connection: Connection) { }
 
   ngOnInit(): void {
     this.connection.getAllShoes().subscribe({
       next: (data: Product[]) => {
-        this.product = data;
-        console.log(this.product);
+        this.products = data;
+        console.log(this.products); 
       },
       error: (error: any) => {
-        console.error('Error loading shoes:', error);
+        console.error('Error loading shoes:', error); 
       }
     });
   }

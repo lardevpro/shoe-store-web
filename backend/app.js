@@ -8,7 +8,7 @@ app.use(json())
 app.use(corsMiddleware())
 app.disable('x-powered-by')
 
-app.use('/shoes', shoesRouter)
+app.use('/products', shoesRouter)
 
 const PORT = process.env.PORT ?? 1234
 

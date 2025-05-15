@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observer } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
 
 @Injectable({
@@ -8,13 +8,11 @@ import { Product } from '../../models/product';
 })
 export class Connection {
 
-  constructor(private http:HttpClient) { 
-    const obs :Observer <Product[]> = {
-      next:p=> {},
-      error:e=> {},
-      complete:()=>{}
-  }
+  private apiUrl = 'http://localhost:1234/products'; 
 
-  this.http.get<Product[]>('localhost:1234').subscribe(obs);
+  constructor(private http: HttpClient) { }
+
+  getAllShoes(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl);
   }
 }
