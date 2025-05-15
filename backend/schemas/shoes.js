@@ -6,6 +6,17 @@ import z from 'zod'
             invalid_type_error: 'product_name must be a string',//mensajes de error opcionales
             required_error:'product_name is required'
         }),
+        sex:z.array(
+            z.enum(['male', 'female']), 
+            {
+                required_error: 'category is required',
+                invalid_type_error: 'category must be an array of enum genre'
+            }
+        ),
+        description: z.string({  
+            invalid_type_error: 'description must be a string',
+            required_error:'description is required'
+        }),
         brand: z.string({  
             invalid_type_error: 'brand must be a string',
             required_error:'brand is required'
@@ -22,7 +33,7 @@ import z from 'zod'
             message: 'Image must be a valid URL'
         }).nullable(),
         category: z.array(
-            z.enum(['male', 'female']),
+            z.enum(['bags', 'sohes','complements','accessories']), 
             {
                 required_error: 'category is required',
                 invalid_type_error: 'category must be an array of enum genre'

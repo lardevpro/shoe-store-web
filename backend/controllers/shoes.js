@@ -1,4 +1,4 @@
-import { ShoeModel } from '../models/mysql2/shoes.js'
+import { ShoeModel } from '../models/local-file-system-js/local-file-system.js'
 import { validatePartialShoe } from '../schemas/shoes.js'
 
 export class ShoeController  {
