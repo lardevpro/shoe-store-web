@@ -1,7 +1,7 @@
 
 import { Component, Input } from '@angular/core';
-import { Shoe } from '../../../models/product';
 import { CommonModule } from '@angular/common';
+import { Product } from '../../../models/product';
 
 @Component({
   selector: 'app-shoe-card',
@@ -10,5 +10,5 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class ShoeCardComponent {
-  @Input() shoe!: Shoe;
+  @Input() product!: Product;
 }

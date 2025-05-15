@@ -6,7 +6,7 @@ import { Product } from '../../models/product';
 @Injectable({
   providedIn: 'root'
 })
-export class ConexionMejoradaService {
+export class Connection {
 
   constructor(private http:HttpClient) { 
     const obs :Observer <Product[]> = {
