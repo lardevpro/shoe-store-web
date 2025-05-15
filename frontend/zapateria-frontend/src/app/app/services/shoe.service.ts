@@ -7,11 +7,12 @@ import { Shoe } from '../../models/shoe';
   providedIn: 'root'
 })
 export class ShoeService {
-  private apiUrl = 'http://localhost:1234/shoes'; // HAY QUE VERIFICAR LA URL !!!
+  private apiUrl = 'http://localhost:1234/shoes'; // PULSA CRTL + CLIC IZQUIERDO a mi me sale la lista de productos en formato JSON !!!
 
   constructor(private http: HttpClient) { }
 
   getAllShoes(): Observable<Shoe[]> {
     return this.http.get<Shoe[]>(this.apiUrl);
   }
+  
 }

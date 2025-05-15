@@ -6,7 +6,7 @@ import z from 'zod'
             invalid_type_error: 'product_name must be a string',//mensajes de error opcionales
             required_error:'product_name is required'
         }),
-        sex:z.array(
+        genre:z.array(
             z.enum(['male', 'female']), 
             {
                 required_error: 'category is required',

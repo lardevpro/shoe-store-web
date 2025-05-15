@@ -1,10 +1,12 @@
 export interface Shoe {
-    id?: string;
-    name: string;
+    id: string;
+    product_name: string;
+    gender:string;
+    description: string;
     brand: string;
     price: number;
-    size: number;
-    image: string;
+    sizes?: number[];
+    images: string[];
     category: string;
     stock: number;
   }

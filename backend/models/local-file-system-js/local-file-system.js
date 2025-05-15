@@ -1,5 +1,10 @@
 import { randomUUID } from 'node:crypto'
-import shoes from '../../shoes.json' assert { type: 'json' };
+import fs from 'fs';
+
+const data = fs.readFileSync('./shoes.json', 'utf-8');
+const shoes = JSON.parse(data);
+console.log('json file uploaded')
+//console.log(shoes);
 
 
 export class ShoeModel {

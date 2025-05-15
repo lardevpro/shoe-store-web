@@ -2,121 +2,151 @@
   {
     "id": "dcdd0fad-a94c-4810-8acc-5f108d3b18c3",
     "product_name": "Zapatillas Deportivas",
-    "sex": ["male", "female"],
+    "gender": "unisex",
     "description": "Zapatillas cómodas para correr.",
     "brand": "Nike",
     "price": 120.99,
-    "size": 42,
-    "image": "https://example.com/images/zapatillas-deportivas.jpg",
-    "category": ["zapatos"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "images": [
+      "https://example.com/images/zapatillas-deportivas-1.jpg",
+      "https://example.com/images/zapatillas-deportivas-2.jpg"
+    ],
+    "category": "zapatos",
     "stock": 50
   },
   {
     "id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
     "product_name": "Bolso de Mano",
-    "sex": ["female"],
+    "gender": "female",
     "description": "Bolso elegante para eventos formales.",
     "brand": "Gucci",
     "price": 250.00,
-    "size": 0,
-    "image": "https://example.com/images/bolso-de-mano.jpg",
-    "category": ["bolsos"],
+    "sizes": [],
+    "images": [
+      "https://example.com/images/bolso-de-mano-1.jpg",
+      "https://example.com/images/bolso-de-mano-2.jpg"
+    ],
+    "category": "bolsos",
     "stock": 20
   },
   {
     "id": "f1e2d3c4-b5a6-7890-cdef-0987654321ba",
     "product_name": "Pañuelo de Seda",
-    "sex": ["female"],
+    "gender": "female",
     "description": "Pañuelo de seda con diseño floral.",
     "brand": "Hermès",
     "price": 80.00,
-    "size": 0,
-    "image": "https://example.com/images/panuelo-de-seda.jpg",
-    "category": ["complementos"],
+    "sizes": [],
+    "images": [
+      "https://example.com/images/panuelo-de-seda-1.jpg",
+      "https://example.com/images/panuelo-de-seda-2.jpg"
+    ],
+    "category": "complementos",
     "stock": 100
   },
   {
     "id": "12345678-90ab-cdef-1234-567890abcdef",
     "product_name": "Cartera de Mano",
-    "sex": ["female"],
+    "gender": "female",
     "description": "Cartera de mano compacta y moderna.",
     "brand": "Prada",
     "price": 150.00,
-    "size": 0,
-    "image": "https://example.com/images/cartera-de-mano.jpg",
-    "category": ["complementos"],
+    "sizes": [],
+    "images": [
+      "https://example.com/images/cartera-de-mano-1.jpg",
+      "https://example.com/images/cartera-de-mano-2.jpg"
+    ],
+    "category": "complementos",
     "stock": 30
   },
   {
     "id": "abcdef12-3456-7890-abcd-ef1234567890",
     "product_name": "Zapatillas Urbanas",
-    "sex": ["male"],
+    "gender": "male",
     "description": "Zapatillas casuales para uso diario.",
     "brand": "Adidas",
     "price": 90.00,
-    "size": 44,
-    "image": "https://example.com/images/zapatillas-urbanas.jpg",
-    "category": ["zapatos"],
+    "sizes": [40, 41, 42, 43, 44],
+    "images": [
+      "https://example.com/images/zapatillas-urbanas-1.jpg",
+      "https://example.com/images/zapatillas-urbanas-2.jpg"
+    ],
+    "category": "zapatos",
     "stock": 40
   },
   {
     "id": "7890abcd-1234-5678-90ef-abcdef123456",
     "product_name": "Bolso Cruzado",
-    "sex": ["female"],
+    "gender": "female",
     "description": "Bolso cruzado práctico y ligero.",
     "brand": "Michael Kors",
     "price": 180.00,
-    "size": 0,
-    "image": "https://example.com/images/bolso-cruzado.jpg",
-    "category": ["bolsos"],
+    "sizes": [],
+    "images": [
+      "https://example.com/images/bolso-cruzado-1.jpg",
+      "https://example.com/images/bolso-cruzado-2.jpg"
+    ],
+    "category": "bolsos",
     "stock": 25
   },
   {
     "id": "4567890a-bcde-f123-4567-890abcdef123",
     "product_name": "Pañuelo de Algodón",
-    "sex": ["male", "female"],
+    "gender": "unisex",
     "description": "Pañuelo de algodón suave y cómodo.",
     "brand": "Zara",
     "price": 20.00,
-    "size": 0,
-    "image": "https://example.com/images/panuelo-de-algodon.jpg",
-    "category": ["complementos"],
+    "sizes": [],
+    "images": [
+      "https://example.com/images/panuelo-de-algodon-1.jpg",
+      "https://example.com/images/panuelo-de-algodon-2.jpg"
+    ],
+    "category": "complementos",
     "stock": 200
   },
   {
     "id": "abcdef98-7654-3210-fedc-ba9876543210",
     "product_name": "Zapatillas Running",
-    "sex": ["male"],
+    "gender": "male",
     "description": "Zapatillas ligeras para correr largas distancias.",
     "brand": "Asics",
     "price": 140.00,
-    "size": 43,
-    "image": "https://example.com/images/zapatillas-running.jpg",
-    "category": ["zapatos"],
+    "sizes": [40, 41, 42, 43, 44],
+    "images": [
+      "https://example.com/images/zapatillas-running-1.jpg",
+      "https://example.com/images/zapatillas-running-2.jpg"
+    ],
+    "category": "zapatos",
     "stock": 35
   },
   {
     "id": "fedcba98-7654-3210-abcdef-1234567890ab",
     "product_name": "Cartera Clásica",
-    "sex": ["male"],
+    "gender": "male",
     "description": "Cartera clásica de cuero genuino.",
     "brand": "Montblanc",
     "price": 120.00,
-    "size": 0,
-    "image": "https://example.com/images/cartera-clasica.jpg",
-    "category": ["complementos"],
+    "sizes": [],
+    "images": [
+      "https://example.com/images/cartera-clasica-1.jpg",
+      "https://example.com/images/cartera-clasica-2.jpg"
+    ],
+    "category": "complementos",
     "stock": 50
   },
   {
     "id": "1234abcd-5678-90ef-abcd-1234567890ef",
     "product_name": "Bolso Tote",
-    "sex": ["female"],
+    "gender": "female",
     "description": "Bolso tote espacioso y versátil.",
     "brand": "Coach",
     "price": 200.00,
-    "size": 0,
-    "image": "https://example.com/images/bolso-tote.jpg",
-    "category": ["bolsos"],
+    "sizes": [],
+    "images": [
+      "https://example.com/images/bolso-tote-1.jpg",
+      "https://example.com/images/bolso-tote-2.jpg"
+    ],
+    "category": "bolsos",
     "stock": 15
   }
 ]
