@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoeService } from '../../services/shoe.service';
-import { Shoe } from '../../../models/shoe';
 import { ShoeCardComponent } from '../../components/shoe-card/shoe-card.component';
 import { RouterLink } from '@angular/router';
+import { Product } from '../../../models/product';
 
 @Component({
   selector: 'app-catalog',
@@ -13,14 +13,15 @@ import { RouterLink } from '@angular/router';
 })
 
 export class CatalogComponent implements OnInit {
-  shoes: Shoe[] = [];
+  shoes: Product[] = [];
 
   constructor(private shoeService: ShoeService) { }
 
   ngOnInit(): void {
     this.shoeService.getAllShoes().subscribe({
-      next: (data: Shoe[]) => {
+      next: (data: Product[]) => {
         this.shoes = data;
+        console.log(data);
       },
       error: (error: any) => {
         console.error('Error loading shoes:', error);

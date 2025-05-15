@@ -1,8 +1,11 @@
 <div class="shoe-card">
-    <img [src]="shoe.image" [alt]="shoe.name" class="shoe-image">
-    <h3>{{ shoe.name }}</h3>
+    <ul>
+        <li *ngFor="let size of shoe.images">{{ size }}</li>
+    </ul>
+    <h3>{{ shoe.product_name }}</h3>
     <p>Marca: {{ shoe.brand }}</p>
     <p>Precio: {{ shoe.price }}€</p>
+    <p>Descripción: {{ shoe.description }}</p>
     <button>Ver Detalles</button>
   </div>
   

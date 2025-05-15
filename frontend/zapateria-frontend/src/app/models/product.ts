@@ -1,4 +1,4 @@
-export interface Shoe {
+export interface Product {
     id: string;
     product_name: string;
     gender:string;
