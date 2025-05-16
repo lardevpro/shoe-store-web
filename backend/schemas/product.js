@@ -1,7 +1,7 @@
 import z from 'zod'
 
  //validacion con 'zod'
-    const shoeSchema = z.object({ //objeto que se va a recibir
+    const productSchema = z.object({ //objeto Product que se va a recibir
         product_name: z.string({  
             invalid_type_error: 'product_name must be a string',//mensajes de error opcionales
             required_error:'product_name is required'
@@ -45,12 +45,12 @@ import z from 'zod'
         }).positive('stock must be a positive number')
     })
 
-    export function validateShoe(object){
-        return shoeSchema.safeParseAsync(object) //safeParse devuelve si la operación tuvo éxito
+    export function validateProduct(object){
+        return productSchema.safeParseAsync(object) //safeParse devuelve si la operación tuvo éxito
     }
 
-    export function validatePartialShoe (object) {
-        return shoeSchema.partial().safeParse(object) // partial si no está no le da importancia, si está me la valida
+    export function validatePartialProduct (object) {
+        return productSchema.partial().safeParse(object) // partial si no está no le da importancia, si está me la valida
     }
 
 

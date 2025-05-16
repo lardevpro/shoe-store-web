@@ -1,13 +1,13 @@
 import { randomUUID } from 'node:crypto'
 import fs from 'fs';
 
-const data = fs.readFileSync('./shoes.json', 'utf-8');
+const data = fs.readFileSync('./product.json', 'utf-8');
 const shoes = JSON.parse(data);
 console.log('json file uploaded')
 //console.log(shoes);
 
 
-export class ShoeModel {
+export class ProductModel {
     // list all
     static getAll = async ({ category }) => {
         if (category) {
