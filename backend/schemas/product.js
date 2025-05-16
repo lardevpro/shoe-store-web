@@ -6,12 +6,18 @@ import z from 'zod'
             invalid_type_error: 'product_name must be a string',//mensajes de error opcionales
             required_error:'product_name is required'
         }),
-        genre:z.array(
+        gender:z.array(
             z.enum(['male', 'female']), 
             {
                 required_error: 'category is required',
-                invalid_type_error: 'category must be an array of enum genre'
+                invalid_type_error: 'category must be an array of enum gender'
             }
+        )
+
+            // ⬇️ CAMBIO 1: GENERO OPCIONAL
+        .optional().refine(
+            (val) => !(val && val.length === 0),
+            { message: 'gender cannot be empty if provided' }
         ),
         description: z.string({  
             invalid_type_error: 'description must be a string',
@@ -33,10 +39,10 @@ import z from 'zod'
             message: 'Image must be a valid URL'
         }).nullable(),
         category: z.array(
-            z.enum(['bags', 'sohes','complements','accessories']), 
+            z.enum(['bags', 'shoes','complements','accessories']), 
             {
                 required_error: 'category is required',
-                invalid_type_error: 'category must be an array of enum genre'
+                invalid_type_error: 'category must be an array of enum gender'
             }
         ),
         stock: z.number({
@@ -44,6 +50,17 @@ import z from 'zod'
             required_error: 'stock is required'
         }).positive('stock must be a positive number')
     })
+
+    // ⬇️ CAMBIO 2: validacio cruzada para que el genero sea obligatorio si esta en categoria SHOES
+    .refine(
+        (data) => {
+            if (data.category.includes('shoes')) {
+                return data.gender && data.gender.length > 0;
+            }
+            return true;
+        },
+        { message: 'gender is required when category includes shoes' }
+    )
 
     export function validateProduct(object){
         return productSchema.safeParseAsync(object) //safeParse devuelve si la operación tuvo éxito

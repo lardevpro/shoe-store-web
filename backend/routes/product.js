@@ -4,29 +4,27 @@ import { ProductController } from '../controllers/product.js'
 
 export const productRouter = Router()
 
-// get all
-productRouter.get('/', ProductController.getAll)
-// filter by id
-productRouter.get('/:id', ProductController.getById)
-// create
-productRouter.post('/', ProductController.createShoe)
-// delete
-productRouter.delete('/:id', ProductController.deleteProduct)
-// update shoe
-productRouter.patch('/:id',ProductController.updateProduct)
 
-productRouter.post('/login',(req, res)=> {
-    res.json({ user : 'lardevpro'})
-})
+// Endpoint principal con filtrado
+productRouter.get('/', (req, res) => {
+  const { category, gender } = req.query;
+  
+  ProductController.getAll({ 
+    category: category?.toLowerCase(),
+    gender: gender?.toLowerCase()
+  })
+    .then(products => res.json(products))
+    .catch(error => res.status(500).json({ 
+      error: error.message || 'Internal server error' 
+    }));
+});
 
-productRouter.post('/register',(req, res)=> {
+// Resto de endpoints
+productRouter.get('/:id', ProductController.getById);
+productRouter.post('/', ProductController.createProduct); // ✅ Cambiado a createProduct!!! 
+productRouter.delete('/:id', ProductController.deleteProduct);
+productRouter.patch('/:id', ProductController.updateProduct);
+
     
-})
 
-productRouter.post('/logout',(req, res)=> {
-    
-})
 
-productRouter.post('/protected',(req, res)=> {
-    
-})
