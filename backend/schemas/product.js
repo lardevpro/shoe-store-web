@@ -6,18 +6,18 @@ import z from 'zod'
             invalid_type_error: 'product_name must be a string',//mensajes de error opcionales
             required_error:'product_name is required'
         }),
-        genre:z.array(
+        gender:z.array(
             z.enum(['male', 'female']), 
             {
                 required_error: 'category is required',
-                invalid_type_error: 'category must be an array of enum genre'
+                invalid_type_error: 'category must be an array of enum gender'
             }
         )
 
             // ⬇️ CAMBIO 1: GENERO OPCIONAL
         .optional().refine(
             (val) => !(val && val.length === 0),
-            { message: 'genre cannot be empty if provided' }
+            { message: 'gender cannot be empty if provided' }
         ),
         description: z.string({  
             invalid_type_error: 'description must be a string',
@@ -42,7 +42,7 @@ import z from 'zod'
             z.enum(['bags', 'shoes','complements','accessories']), 
             {
                 required_error: 'category is required',
-                invalid_type_error: 'category must be an array of enum genre'
+                invalid_type_error: 'category must be an array of enum gender'
             }
         ),
         stock: z.number({
@@ -55,11 +55,11 @@ import z from 'zod'
     .refine(
         (data) => {
             if (data.category.includes('shoes')) {
-                return data.genre && data.genre.length > 0;
+                return data.gender && data.gender.length > 0;
             }
             return true;
         },
-        { message: 'genre is required when category includes shoes' }
+        { message: 'gender is required when category includes shoes' }
     )
 
     export function validateProduct(object){
