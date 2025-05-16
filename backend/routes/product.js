@@ -14,3 +14,11 @@ productRouter.post('/', ProductController.createShoe)
 productRouter.delete('/:id', ProductController.deleteProduct)
 // update shoe
 productRouter.patch('/:id',ProductController.updateProduct)
+
+// routes/product.js
+router.get('/', (req, res) => {
+  const { category, gender } = req.query;
+  ProductController.getAll({ category, gender })
+    .then(products => res.json(products))
+    .catch(error => res.status(500).json({ error }));
+});
