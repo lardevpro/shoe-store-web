@@ -10,6 +10,19 @@ export class ProductController  {
       res.json(product)
   }
 
+  // ✅ AGREGADO!!!! nuevo método getAll con filtrado por category y gender
+  static async getFiltered(req, res) {
+    const { category, gender } = req.query;
+    
+   
+    let filteredProducts = await ProductModel.getAll({ 
+      category: category?.toLowerCase(),
+      gender: gender?.toLowerCase()
+    });
+
+    res.json(filteredProducts);
+  }
+
   // get by id
   static async getById(req, res) {
         const { id } = req.params

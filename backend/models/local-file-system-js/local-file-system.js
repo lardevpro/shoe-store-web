@@ -1,52 +1,59 @@
 import { randomUUID } from 'node:crypto'
-import fs from 'fs';
+import fs from 'fs'
 
 const data = fs.readFileSync('./product.json', 'utf-8');
-const shoes = JSON.parse(data);
-console.log('json file uploaded')
-//console.log(shoes);
-
+const products = JSON.parse(data);
+console.log('JSON file uploaded');
 
 export class ProductModel {
     // list all
-    static getAll = async ({ category }) => {
+    static async getAll({ category }) {
         if (category) {
-            return shoes.filter(
-                shoe => shoe.category.some(g => g.toLowerCase() == category.toLowerCase())
-            )
+            return products.filter(
+                product => product.category.some(
+                    c => c.toLowerCase() === category.toLowerCase()
+                )
+            );
         }
-        return shoes
+        return products;
     }
+
     // filter by id
-    static async  getById ({id}) {
-        const shoe = shoes.find(shoe => shoe.id == id)
-        return shoe
+    static async getById({ id }) {
+        const product = products.find(product => product.id === id);
+        return product;
     }
-    // create movie
-    static async create (input) {
-        const newShoe = {
-            id: randomUUID(), 
+
+    // create product
+    static async create(input) {
+        const newProduct = {
+            id: randomUUID(),
             ...input
-          } 
-          return newShoe
+        };
+        // Aquí deberías guardar de nuevo en el archivo si es necesario
+        products.push(newProduct);
+        return newProduct;
     }
 
-    static async delete ({ id }) {
-        const shoeIndex = shoes.findIndex(shoe => shoe.id == id)
-        if (shoeIndex == -1) return false
-    movies.splice(shoeIndex, 1)
-    return true
+    // delete product
+    static async delete({ id }) {
+        const productIndex = products.findIndex(product => product.id === id);
+        if (productIndex === -1) return false;
+
+        products.splice(productIndex, 1);
+        return true;
     }
 
-    static async update ({ id, input }){
-        const soheIndex = shoes.findIndex(shoe => shoe.id == id)
-        if(soheIndex == -1) return false
+    // update product
+    static async update({ id, input }) {
+        const productIndex = products.findIndex(product => product.id === id);
+        if (productIndex === -1) return false;
 
-        shoes [soheIndex] = {
-            ...shoes [soheIndex],
+        products[productIndex] = {
+            ...products[productIndex],
             ...input
-        }
-        
-        return shoes[soheIndex]
+        };
+
+        return products[productIndex];
     }
 }
