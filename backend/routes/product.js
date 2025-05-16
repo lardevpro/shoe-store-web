@@ -14,3 +14,19 @@ productRouter.post('/', ProductController.createShoe)
 productRouter.delete('/:id', ProductController.deleteProduct)
 // update shoe
 productRouter.patch('/:id',ProductController.updateProduct)
+
+productRouter.post('/login',(req, res)=> {
+    res.json({ user : 'lardevpro'})
+})
+
+productRouter.post('/register',(req, res)=> {
+    
+})
+
+productRouter.post('/logout',(req, res)=> {
+    
+})
+
+productRouter.post('/protected',(req, res)=> {
+    
+})
