@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'; // para generar UUIDs en Node.js
 import Database from './dbConnection.mjs';
 
-export class ShoeModel {
+export class ProductModel {
   static async getAll({ category }) {
     const client = await Database.getConnection();
     try {
