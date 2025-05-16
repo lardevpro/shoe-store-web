@@ -2,7 +2,7 @@
   {
     "id": "dcdd0fad-a94c-4810-8acc-5f108d3b18c3",
     "product_name": "Zapatillas Deportivas",
-    "gender": "unisex",
+    "gender": ["unisex"],
     "description": "Zapatillas cómodas para correr.",
     "brand": "Nike",
     "price": 120.99,
@@ -17,7 +17,7 @@
   {
     "id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
     "product_name": "Bolso de Mano",
-    "gender": "female",
+    "gender": ["female"],
     "description": "Bolso elegante para eventos formales.",
     "brand": "Gucci",
     "price": 250.00,
@@ -32,7 +32,7 @@
   {
     "id": "f1e2d3c4-b5a6-7890-cdef-0987654321ba",
     "product_name": "Pañuelo de Seda",
-    "gender": "female",
+    "gender": ["female"],
     "description": "Pañuelo de seda con diseño floral.",
     "brand": "Hermès",
     "price": 80.00,
@@ -47,7 +47,7 @@
   {
     "id": "12345678-90ab-cdef-1234-567890abcdef",
     "product_name": "Cartera de Mano",
-    "gender": "female",
+    "gender": ["female"],
     "description": "Cartera de mano compacta y moderna.",
     "brand": "Prada",
     "price": 150.00,
@@ -62,7 +62,7 @@
   {
     "id": "abcdef12-3456-7890-abcd-ef1234567890",
     "product_name": "Zapatillas Urbanas",
-    "gender": "male",
+    "gender": ["male"],
     "description": "Zapatillas casuales para uso diario.",
     "brand": "Adidas",
     "price": 90.00,
@@ -77,7 +77,7 @@
   {
     "id": "7890abcd-1234-5678-90ef-abcdef123456",
     "product_name": "Bolso Cruzado",
-    "gender": "female",
+    "gender": ["female"],
     "description": "Bolso cruzado práctico y ligero.",
     "brand": "Michael Kors",
     "price": 180.00,
@@ -92,7 +92,7 @@
   {
     "id": "4567890a-bcde-f123-4567-890abcdef123",
     "product_name": "Pañuelo de Algodón",
-    "gender": "unisex",
+    "gender": ["unisex"],
     "description": "Pañuelo de algodón suave y cómodo.",
     "brand": "Zara",
     "price": 20.00,
@@ -107,7 +107,7 @@
   {
     "id": "abcdef98-7654-3210-fedc-ba9876543210",
     "product_name": "Zapatillas Running",
-    "gender": "male",
+    "gender": ["male"],
     "description": "Zapatillas ligeras para correr largas distancias.",
     "brand": "Asics",
     "price": 140.00,
@@ -122,7 +122,7 @@
   {
     "id": "fedcba98-7654-3210-abcdef-1234567890ab",
     "product_name": "Cartera Clásica",
-    "gender": "male",
+    "gender": ["male"],
     "description": "Cartera clásica de cuero genuino.",
     "brand": "Montblanc",
     "price": 120.00,
@@ -137,7 +137,7 @@
   {
     "id": "1234abcd-5678-90ef-abcd-1234567890ef",
     "product_name": "Bolso Tote",
-    "gender": "female",
+    "gender": ["female"],
     "description": "Bolso tote espacioso y versátil.",
     "brand": "Coach",
     "price": 200.00,
