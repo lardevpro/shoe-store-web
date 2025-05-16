@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'; // para generar UUIDs en Node.js
 import Database from './dbConnection.mjs';
+import { ProductModel } from '../local-file-system-js/local-file-system';
 
 export class ProductModel {
   static async getAll({ category }) {
