@@ -1,10 +1,9 @@
 import { v4 as uuidv4 } from 'uuid'; // para generar UUIDs en Node.js
 import Database from './dbConnection.mjs';
-import { ProductModel } from '../local-file-system-js/local-file-system';
 
 export class ProductModel {
   
-  // ✅ MODIFICADO!!!!  reemplazado el método getAll con lógica de filtrado por category y gender!!! 
+  // ✅ MODIFICADO: reemplazado el método getAll con lógica de filtrado por category y gender
   static async getAll({ category, gender }) {
     const client = await Database.getConnection();
     try {
@@ -28,12 +27,12 @@ export class ProductModel {
       client.release();
     }
   }
+
   static async getById({ id }) {
     const client = await Database.getConnection();
-
     try {
       const [rows] = await client.execute(
-        'SELECT * FROM shoes WHERE id = ?;',[id]
+        'SELECT * FROM products WHERE id = ?;', [id]
       );
 
       if (rows.length === 0) return null;
@@ -47,15 +46,16 @@ export class ProductModel {
     const { product_name, brand, price, size, image, category } = input;
     const client = await Database.getConnection();
     const uuid = uuidv4(); // genera UUID con Node.js
+
     try {
       await client.execute(
-        `INSERT INTO shoes (id, product_name, brand, price, size, image, category) 
-         VALUES(?, ?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO products (id, product_name, brand, price, size, image, category) 
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [uuid, product_name, brand, price, size, image, category]
       );
 
       const [result] = await client.execute(
-        'SELECT * FROM shoes WHERE id = ?;',[uuid]
+        'SELECT * FROM products WHERE id = ?;', [uuid]
       );
 
       return result;
@@ -67,34 +67,34 @@ export class ProductModel {
   static async delete({ id }) {
     const client = await Database.getConnection();
     try {
-      // Verificar si la película existe antes de eliminarla
-      const [result] = await client.execute('SELECT id FROM shoes WHERE id = ?;', [id]);
+      // Verificar si el producto existe antes de eliminarlo
+      const [result] = await client.execute('SELECT id FROM products WHERE id = ?;', [id]);
       if (result.length === 0) {
-        return { message: `Zapato con id ${id} no encontrado.` };
+        return { message: `Producto con id ${id} no encontrado.` };
       }
 
-      await client.execute('DELETE FROM shoes WHERE id = ?;', [id]);
-      return { message: `Zapato con id ${id} eliminado.` };
+      await client.execute('DELETE FROM products WHERE id = ?;', [id]);
+      return { message: `Producto con id ${id} eliminado.` };
     } finally {
       client.release();
     }
   }
 
   static async update({ id, input }) {
-  const { product_name, brand, price, size, image, category } = input;
-  const client = await Database.getConnection();
+    const { product_name, brand, price, size, image, category } = input;
+    const client = await Database.getConnection();
 
     try {
-      // Verificar si el zapato existe
-      const [rows] = await client.execute('SELECT id FROM shoes WHERE id = ?', [id]);
+      // Verificar si el producto existe
+      const [rows] = await client.execute('SELECT id FROM products WHERE id = ?', [id]);
 
       if (rows.length === 0) {
-        return { message: `Zapato con id ${id} no encontrado.` };
+        return { message: `Producto con id ${id} no encontrado.` };
       }
 
       // Actualizar los campos
       await client.execute(
-        `UPDATE shoes SET 
+        `UPDATE products SET 
           product_name = ?, 
           brand = ?, 
           price = ?, 
@@ -105,8 +105,7 @@ export class ProductModel {
         [product_name, brand, price, size, image, category, id]
       );
 
-     
-      const [updated] = await client.execute('SELECT * FROM shoes WHERE id = ?', [id]);
+      const [updated] = await client.execute('SELECT * FROM products WHERE id = ?', [id]);
 
       return updated[0]; 
     } finally {
