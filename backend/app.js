@@ -12,7 +12,7 @@ app.disable('x-powered-by')
 
 app.use('/products', productRouter)
 
-app.post('/login',(req, res) => {
+app.get('/login',(req, res) => {
     res.json({ user:'lardevpro' })
 })
 
