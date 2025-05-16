@@ -3,16 +3,31 @@ import Database from './dbConnection.mjs';
 import { ProductModel } from '../local-file-system-js/local-file-system';
 
 export class ProductModel {
-  static async getAll({ category }) {
+  
+  // ✅ MODIFICADO!!!!  reemplazado el método getAll con lógica de filtrado por category y gender!!! 
+  static async getAll({ category, gender }) {
     const client = await Database.getConnection();
     try {
-      const [rows] = await client.execute('SELECT * FROM shoes');
+      let query = 'SELECT * FROM products';
+      const params = [];
+
+      if (category) {
+        query += ' WHERE JSON_CONTAINS(category, ?)';
+        params.push(`"${category}"`);
+      }
+
+      if (gender && category === 'shoes') {
+        query += params.length > 0 ? ' AND' : ' WHERE';
+        query += ' JSON_CONTAINS(gender, ?)';
+        params.push(`"${gender}"`);
+      }
+
+      const [rows] = await client.execute(query, params);
       return rows;
     } finally {
       client.release();
     }
   }
-
   static async getById({ id }) {
     const client = await Database.getConnection();
 
