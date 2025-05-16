@@ -12,6 +12,12 @@ import z from 'zod'
                 required_error: 'category is required',
                 invalid_type_error: 'category must be an array of enum genre'
             }
+        )
+
+            // ⬇️ CAMBIO 1: GENERO OPCIONAL
+        .optional().refine(
+            (val) => !(val && val.length === 0),
+            { message: 'genre cannot be empty if provided' }
         ),
         description: z.string({  
             invalid_type_error: 'description must be a string',
@@ -33,7 +39,7 @@ import z from 'zod'
             message: 'Image must be a valid URL'
         }).nullable(),
         category: z.array(
-            z.enum(['bags', 'sohes','complements','accessories']), 
+            z.enum(['bags', 'shoes','complements','accessories']), 
             {
                 required_error: 'category is required',
                 invalid_type_error: 'category must be an array of enum genre'
@@ -44,6 +50,17 @@ import z from 'zod'
             required_error: 'stock is required'
         }).positive('stock must be a positive number')
     })
+
+    // ⬇️ CAMBIO 2: validacio cruzada para que el genero sea obligatorio si esta en categoria SHOES
+    .refine(
+        (data) => {
+            if (data.category.includes('shoes')) {
+                return data.genre && data.genre.length > 0;
+            }
+            return true;
+        },
+        { message: 'genre is required when category includes shoes' }
+    )
 
     export function validateProduct(object){
         return productSchema.safeParseAsync(object) //safeParse devuelve si la operación tuvo éxito
