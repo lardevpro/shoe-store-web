@@ -5,11 +5,17 @@ import {PORT} from './config.js'
 
 
 const app = express()
+
 app.use(json())
 app.use(corsMiddleware())
 app.disable('x-powered-by')
 
 app.use('/products', productRouter)
+
+app.post('/login',(req, res) => {
+    res.json({ user:'lardevpro' })
+})
+
 
 
 app.listen(PORT, () => {
