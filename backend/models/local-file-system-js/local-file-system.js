@@ -7,11 +7,11 @@ console.log('JSON file uploaded');
 
 export class ProductModel {
     // list all
-    static async getAll({ category }) {
-        if (category) {
+    static async getAll({ gender }) {
+        if (gender) {
             return products.filter(
-                product => product.category.some(
-                    c => c.toLowerCase() === category.toLowerCase()
+                product => product.gender.some(
+                    c => c.toLowerCase() === gender.toLowerCase()
                 )
             );
         }
@@ -30,7 +30,7 @@ export class ProductModel {
             id: randomUUID(),
             ...input
         };
-        // Aquí deberías guardar de nuevo en el archivo si es necesario
+        // Aquí guarda de nuevo en el archivo si es necesario
         products.push(newProduct);
         return newProduct;
     }
