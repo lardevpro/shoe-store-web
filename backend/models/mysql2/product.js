@@ -11,14 +11,14 @@ export class ProductModel {
       const params = [];
 
       if (category) {
-        query += ' WHERE JSON_CONTAINS(category, ?)';
-        params.push(`"${category}"`);
+        query += ' WHERE category = ?';
+        params.push(category);
       }
 
-      if (gender && category === 'shoes') {
+      if (gender && category === 'zapatos') {
         query += params.length > 0 ? ' AND' : ' WHERE';
         query += ' JSON_CONTAINS(gender, ?)';
-        params.push(`"${gender}"`);
+        params.push(JSON.stringify([gender]));
       }
 
       const [rows] = await client.execute(query, params);
@@ -27,6 +27,7 @@ export class ProductModel {
       client.release();
     }
   }
+
 
   static async getById({ id }) {
     const client = await Database.getConnection();

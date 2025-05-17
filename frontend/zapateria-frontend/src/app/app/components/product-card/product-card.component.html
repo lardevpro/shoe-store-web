@@ -1,0 +1,11 @@
+<div class="shoe-card">
+  <div class="image-container">
+    <img class="shoe-image" [src]="product.images[0]" [alt]="product.product_name">
+    <span *ngIf="product.stock < 20" class="stock">¡Últimas unidades!</span>
+  </div>
+  <h3>{{ product.product_name }}</h3>
+  <div class="brand">{{ product.brand }}</div>
+  <div class="price">{{ product.price }}€</div>
+  <p class="description">{{ product.description }}</p>
+  <button class="btn-gradient">Ver Detalles</button>
+</div>

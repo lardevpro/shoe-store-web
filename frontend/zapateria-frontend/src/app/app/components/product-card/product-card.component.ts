@@ -5,8 +5,8 @@ import { Product } from '../../../models/product';
 
 @Component({
   selector: 'app-shoe-card',
-  templateUrl: './shoe-card.component.html',
-  styleUrls: ['./shoe-card.component.scss'],
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.scss'],
   imports: [CommonModule]
 })
 export class ShoeCardComponent {
