@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid' // para generar UUIDs en Node.js
 import Database from './dbConnection.mjs'
 
 export class ProductModel {
-  static async getAll ({ genre }) {
+  static async getAll ({ category, genre }) {
     const client = await Database.connect()
     try {
       const result = await client.query(

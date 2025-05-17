@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router'; 
 
@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  
   images = [
     'images/imagesStore/fachada1.jpeg',
     'images/imagesStore/fachada2.jpeg',

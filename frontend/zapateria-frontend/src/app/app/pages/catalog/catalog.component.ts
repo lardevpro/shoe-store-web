@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoeCardComponent } from '../../components/product-card/product-card.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Product } from '../../../models/product';
 import { Connection } from '../../services/product.service';
@@ -8,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [CommonModule, RouterModule, ShoeCardComponent, RouterLink],
+  imports: [CommonModule, RouterModule, RouterLink],
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })

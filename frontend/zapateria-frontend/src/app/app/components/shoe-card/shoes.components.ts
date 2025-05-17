@@ -15,7 +15,6 @@ export class ShoesComponent implements OnInit {
   genders = [
     { key: 'male', label: 'Hombre' },
     { key: 'female', label: 'Mujer' },
-    { key: 'unisex', label: 'Unisex' }
   ];
   selectedGender: string | null = null;
 

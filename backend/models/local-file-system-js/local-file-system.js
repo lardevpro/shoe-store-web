@@ -1,27 +1,28 @@
 import { randomUUID } from 'node:crypto'
 import fs from 'fs'
 
-const data = fs.readFileSync('./product.json', 'utf-8')
+const data = fs.readFileSync('./db/product.json', 'utf-8')
 const products = JSON.parse(data)
 console.log('JSON file uploaded')
 
 export class ProductModel {
   // list all
-
   static async getAll ({ category, gender }) {
-    let filteredProducts = products
+    let result = products
 
-    if (category) {
-      return products.filter(product => product.category === category)
+    if (category != null) {
+      result = result.filter(product => product.category === category)
     }
 
-    if (gender && category === 'zapatos') {
-      filteredProducts = filteredProducts.filter(product =>
-        product.gender?.some(g => g.toLowerCase() === gender.toLowerCase())
+    if (gender != null) {
+      result = result.filter(product =>
+        Array.isArray(product.gender)
+          ? product.gender.some(g => g.toLowerCase() === gender.toLowerCase())
+          : (product.gender?.toLowerCase() === gender.toLowerCase())
       )
     }
 
-    return filteredProducts
+    return result
   }
 
   // filter by id

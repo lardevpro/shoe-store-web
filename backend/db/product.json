@@ -1,60 +1,282 @@
 [
   {
-    "id": "dcdd0fad-a94c-4810-8acc-5f108d3b18c3",
-    "productName": "Zapatillas Deportivas",
-    "gender": ["unisex"],
-    "description": "Zapatillas cómodas para correr.",
-    "brand": "Nike",
-    "price": 120.99,
-    "sizes": [38, 39, 40, 41, 42, 43, 44],
-    "images": [
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80",
-      "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    ],
-    "category": "zapatos",
-    "stock": 50
-  },
-  {
-    "id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
-    "productName": "Bolso de Mano",
-    "description": "Bolso elegante para eventos formales.",
-    "brand": "Gucci",
-    "price": 250.00,
-    "sizes": [],
-    "images": [
-      "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?auto=format&fit=crop&w=500&q=80"
-    ],
-    "category": "bolsos",
-    "stock": 20
-  },
-  {
-    "id": "f1e2d3c4-b5a6-7890-cdef-0987654321ba",
-    "productName": "Pañuelo de Seda",
-    "description": "Pañuelo de seda con diseño floral.",
-    "brand": "Hermès",
-    "price": 80.00,
-    "sizes": [],
-    "images": [
-      "https://images.unsplash.com/photo-1616012484413-ef4e9d0a6f54?auto=format&fit=crop&w=500&q=80",
-      "https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    ],
-    "category": "complementos",
-    "stock": 100
-  },
-  {
-    "id": "abcdef12-3456-7890-abcd-ef1234567890",
-    "productName": "Zapatillas Urbanas",
+    "id": "1",
+    "productName": "Zapatillas Running Hombre",
     "gender": ["male"],
-    "description": "Zapatillas casuales para uso diario.",
-    "brand": "Adidas",
-    "price": 90.00,
+    "description": "Zapatillas ligeras para correr largas distancias.",
+    "brand": "Nike",
+    "price": 110.00,
     "sizes": [40, 41, 42, 43, 44],
     "images": [
-      "https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4da?auto=format&fit=crop&w=500&q=80"
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 30
+  },
+  {
+    "id": "2",
+    "productName": "Botines Mujer Elegantes",
+    "gender": ["female"],
+    "description": "Botines de cuero para ocasiones especiales.",
+    "brand": "Zara",
+    "price": 85.50,
+    "sizes": [36, 37, 38, 39, 40],
+    "images": [
+      "https://images.unsplash.com/photo-1528701800484-905d3b6e8a08?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 25
+  },
+  {
+    "id": "3",
+    "productName": "Sandalias Mujer Verano",
+    "gender": ["female"],
+    "description": "Sandalias cómodas y frescas para el verano.",
+    "brand": "Havaianas",
+    "price": 35.00,
+    "sizes": [36, 37, 38, 39, 40, 41],
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80"
     ],
     "category": "zapatos",
     "stock": 40
+  },
+  {
+    "id": "4",
+    "productName": "Zapatos Oxford Hombre",
+    "gender": ["male"],
+    "description": "Zapatos clásicos Oxford de piel.",
+    "brand": "Clarks",
+    "price": 120.00,
+    "sizes": [41, 42, 43, 44, 45],
+    "images": [
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 18
+  },
+  {
+    "id": "5",
+    "productName": "Botas Mujer Invierno",
+    "gender": ["female"],
+    "description": "Botas altas y cálidas para el invierno.",
+    "brand": "Ugg",
+    "price": 150.00,
+    "sizes": [36, 37, 38, 39, 40, 41],
+    "images": [
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 22
+  },
+  {
+    "id": "6",
+    "productName": "Mocasines Hombre Casual",
+    "gender": ["male"],
+    "description": "Mocasines cómodos para uso diario.",
+    "brand": "Geox",
+    "price": 75.00,
+    "sizes": [40, 41, 42, 43, 44],
+    "images": [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 35
+  },
+  {
+    "id": "7",
+    "productName": "Tacones Mujer Fiesta",
+    "gender": ["female"],
+    "description": "Tacones altos para eventos y fiestas.",
+    "brand": "Steve Madden",
+    "price": 99.99,
+    "sizes": [36, 37, 38, 39, 40],
+    "images": [
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 15
+  },
+  {
+    "id": "8",
+    "productName": "Deportivas Hombre Urbanas",
+    "gender": ["male"],
+    "description": "Zapatillas deportivas para uso urbano.",
+    "brand": "Adidas",
+    "price": 89.90,
+    "sizes": [41, 42, 43, 44, 45],
+    "images": [
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 28
+  },
+  {
+    "id": "9",
+    "productName": "Bailarinas Mujer Cómodas",
+    "gender": ["female"],
+    "description": "Bailarinas planas y cómodas para el día a día.",
+    "brand": "Pretty Ballerinas",
+    "price": 60.00,
+    "sizes": [36, 37, 38, 39, 40, 41],
+    "images": [
+      "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 32
+  },
+  {
+    "id": "10",
+    "productName": "Zapatos Náuticos Hombre",
+    "gender": ["male"],
+    "description": "Zapatos náuticos resistentes al agua.",
+    "brand": "Sperry",
+    "price": 95.00,
+    "sizes": [40, 41, 42, 43, 44],
+    "images": [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 20
+  },
+  {
+    "id": "11",
+    "productName": "Sandalias Mujer Plataforma",
+    "gender": ["female"],
+    "description": "Sandalias con plataforma para mayor altura y comodidad.",
+    "brand": "Gioseppo",
+    "price": 55.00,
+    "sizes": [36, 37, 38, 39, 40],
+    "images": [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 27
+  },
+  {
+    "id": "12",
+    "productName": "Botines Hombre Piel",
+    "gender": ["male"],
+    "description": "Botines de piel para un look elegante.",
+    "brand": "Timberland",
+    "price": 130.00,
+    "sizes": [41, 42, 43, 44, 45],
+    "images": [
+      "https://images.unsplash.com/photo-1465101178521-c1a9136a3c5c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 17
+  },
+  {
+    "id": "13",
+    "productName": "Zapatillas Mujer Running",
+    "gender": ["female"],
+    "description": "Zapatillas ligeras y transpirables para correr.",
+    "brand": "Asics",
+    "price": 105.00,
+    "sizes": [36, 37, 38, 39, 40, 41],
+    "images": [
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 24
+  },
+  {
+    "id": "14",
+    "productName": "Zapatos Derby Hombre",
+    "gender": ["male"],
+    "description": "Zapatos Derby clásicos para ocasiones formales.",
+    "brand": "Lottusse",
+    "price": 140.00,
+    "sizes": [41, 42, 43, 44, 45],
+    "images": [
+      "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 12
+  },
+  {
+    "id": "15",
+    "productName": "Botas Mujer Montaña",
+    "gender": ["female"],
+    "description": "Botas resistentes para senderismo y montaña.",
+    "brand": "Salomon",
+    "price": 160.00,
+    "sizes": [36, 37, 38, 39, 40, 41],
+    "images": [
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 14
+  },
+  {
+    "id": "16",
+    "productName": "Sneakers Hombre Modernos",
+    "gender": ["male"],
+    "description": "Sneakers modernos y cómodos para uso diario.",
+    "brand": "New Balance",
+    "price": 99.00,
+    "sizes": [40, 41, 42, 43, 44],
+    "images": [
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 26
+  },
+  {
+    "id": "17",
+    "productName": "Zapatos Mujer Oficina",
+    "gender": ["female"],
+    "description": "Zapatos elegantes y cómodos para la oficina.",
+    "brand": "Massimo Dutti",
+    "price": 89.99,
+    "sizes": [36, 37, 38, 39, 40, 41],
+    "images": [
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 19
+  },
+  {
+    "id": "18",
+    "productName": "Zapatos Hombre Vestir",
+    "gender": ["male"],
+    "description": "Zapatos de vestir para eventos formales.",
+    "brand": "Lloyd",
+    "price": 135.00,
+    "sizes": [41, 42, 43, 44, 45],
+    "images": [
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 13
+  },
+  {
+    "id": "19",
+    "productName": "Sandalias Mujer Fiesta",
+    "gender": ["female"],
+    "description": "Sandalias elegantes para fiestas y eventos.",
+    "brand": "Guess",
+    "price": 70.00,
+    "sizes": [36, 37, 38, 39, 40],
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 21
+  },
+  {
+    "id": "20",
+    "productName": "Zapatillas Hombre Skate",
+    "gender": ["male"],
+    "description": "Zapatillas resistentes para skate y uso urbano.",
+    "brand": "Vans",
+    "price": 79.99,
+    "sizes": [40, 41, 42, 43, 44],
+    "images": [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "zapatos",
+    "stock": 23
   }
 ]
