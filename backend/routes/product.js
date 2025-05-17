@@ -1,19 +1,12 @@
+// esta clase es solo para definir las rutas del recurso (en este caso el recurso es products)
 import { Router } from 'express'
 import { ProductController } from '../controllers/product.js'
 
-
 export const productRouter = Router()
 
-
-// Endpoint principal con filtrado
-productRouter.get('/', ProductController.getAll);
-
-// Resto de endpoints
-productRouter.get('/:id', ProductController.getById);
-productRouter.post('/', ProductController.createProduct); // ✅ Cambiado a createProduct!!! 
-productRouter.delete('/:id', ProductController.deleteProduct);
-productRouter.patch('/:id', ProductController.updateProduct);
-
-    
-
-
+// rutas
+productRouter.get('/', ProductController.getAll)
+productRouter.get('/:id', ProductController.getById)
+productRouter.post('/', ProductController.createProduct)
+productRouter.delete('/:id', ProductController.deleteProduct)
+productRouter.patch('/:id', ProductController.updateProduct)

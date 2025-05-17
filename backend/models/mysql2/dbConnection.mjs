@@ -1,38 +1,37 @@
 // Database.js
-import mysql from 'mysql2/promise';
+import mysql from 'mysql2/promise'
 
 class Database {
-  constructor() {
+  constructor () {
     this.pool = mysql.createPool({
       host: 'localhost',
       user: 'root',
       password: 'root',
-      database: 'shoestore',
-    });
-    this.isFirstConnection = true; // Variable de control para la primera conexión
+      database: 'shoestore'
+    })
+    this.isFirstConnection = true
   }
 
-  async getConnection() {
+  async getConnection () {
     try {
-      const connection = await this.pool.getConnection();
-      
+      const connection = await this.pool.getConnection()
+
       // Solo hacer el log la primera vez que se conecta
       if (this.isFirstConnection) {
-        console.log('Conexión exitosa a la base de datos');
-        this.isFirstConnection = false;  // Cambiar a false para evitar futuros logs
+        console.log('Conexión exitosa a la base de datos')
+        this.isFirstConnection = false // Cambia a false para evitar futuros logs
       }
-      
-      return connection;
+
+      return connection
     } catch (err) {
-      console.error('Error al conectar a la base de datos:', err);
-      throw err;
+      console.error('Error al conectar a la base de datos:', err)
+      throw err
     }
   }
 
-  // Método para liberar el pool
-  closePool() {
-    this.pool.end();
+  closePool () {
+    this.pool.end()
   }
 }
 
-export default new Database();
+export default new Database()

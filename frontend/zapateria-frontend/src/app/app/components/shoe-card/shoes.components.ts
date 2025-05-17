@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { Product } from "../../../models/product";
-import { Connection } from "../../services/connection.service";
+import { Connection } from "../../services/product.service";
 
 @Component({
   selector: 'app-shoes',

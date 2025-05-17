@@ -1,4 +1,4 @@
 // config.js
-export const  {
-    PORT =  1234
+export const {
+  PORT = 1234
 } = process.env

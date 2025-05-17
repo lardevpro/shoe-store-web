@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShoeCardComponent } from '../../components/product-card/product-card.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Product } from '../../../models/product';
-import { Connection } from '../../services/connection.service';
+import { Connection } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

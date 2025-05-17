@@ -1,7 +1,7 @@
 [
   {
     "id": "dcdd0fad-a94c-4810-8acc-5f108d3b18c3",
-    "product_name": "Zapatillas Deportivas",
+    "productName": "Zapatillas Deportivas",
     "gender": ["unisex"],
     "description": "Zapatillas cómodas para correr.",
     "brand": "Nike",
@@ -16,7 +16,7 @@
   },
   {
     "id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
-    "product_name": "Bolso de Mano",
+    "productName": "Bolso de Mano",
     "description": "Bolso elegante para eventos formales.",
     "brand": "Gucci",
     "price": 250.00,
@@ -30,7 +30,7 @@
   },
   {
     "id": "f1e2d3c4-b5a6-7890-cdef-0987654321ba",
-    "product_name": "Pañuelo de Seda",
+    "productName": "Pañuelo de Seda",
     "description": "Pañuelo de seda con diseño floral.",
     "brand": "Hermès",
     "price": 80.00,
@@ -44,7 +44,7 @@
   },
   {
     "id": "abcdef12-3456-7890-abcd-ef1234567890",
-    "product_name": "Zapatillas Urbanas",
+    "productName": "Zapatillas Urbanas",
     "gender": ["male"],
     "description": "Zapatillas casuales para uso diario.",
     "brand": "Adidas",

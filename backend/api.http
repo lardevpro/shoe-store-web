@@ -12,7 +12,7 @@ POST http://localhost:1234/shoes
 Content-Type: application/json
 
 {
-  "product_name": "Nike",
+  "productName": "Nike",
   "brand": "Nike",
   "price": 40.99,
   "size": 34,
@@ -29,7 +29,7 @@ Content-Type: application/json"
 {
   "id": "1",
   "input": {
-    "product_name": "Nike Air Max",
+    "productName": "Nike Air Max",
     "brand": "Nike",
     "price": 120.99,
     "size": 42,

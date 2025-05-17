@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Connection} from './connection.service';
+import { Connection} from './product.service';
 
 describe('ConnectionService', () => {
   let service: Connection;

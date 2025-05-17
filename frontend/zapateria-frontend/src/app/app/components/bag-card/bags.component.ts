@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../models/product';
-import { Connection } from '../../services/connection.service';
+import { Connection } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
