@@ -1,11 +1,10 @@
 .accessories-page {
-  @extend .shoes-page; // Hereda estilos base
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 
   h2 {
-    color: #8b5e3c; // Color tierra-dark para títulos
+    color: #b97a56; // tierra
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
@@ -13,25 +12,69 @@
     letter-spacing: 2px;
   }
 
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
   .product-card {
-    border: 2px solid rgba(#b97a56, 0.1); // Borde sutil en tierra
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    border: 2px solid #b97a5622; // tierra suave
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(#b97a56, 0.15);
+      box-shadow: 0 4px 16px #b97a5622;
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: #f8f8f8;
+    }
+
+    h3 {
+      color: #333;
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      min-height: 2.5rem;
     }
 
     .price {
-      color: #6d3995; // Color lila-dark para precios
+      color: #6d3995; // lila oscuro
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .details-btn {
+      background: #b97a56;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 1rem;
+      background: 0.3s;
+
+      &:hover {
+        background: #8b5e3c;
+      }
     }
   }
 
-  @media (max-width: 600px) {
-    .product-card {
-      img {
-        height: 180px; // Altura ligeramente menor para accesorios
-      }
-    }
+  .no-results {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    margin-top: 2rem;
   }
 }
