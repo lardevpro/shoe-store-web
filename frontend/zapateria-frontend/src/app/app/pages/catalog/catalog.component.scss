@@ -54,6 +54,41 @@ $tierra-dark: #8b5e3c;
   }
 }
 
+.category-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.category-image {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(162, 89, 207, 0.10), 0 2px 8px rgba(185, 122, 86, 0.10);
+  object-fit: cover;
+  transition: transform 0.3s;
+  margin-top: 0.5rem;
+}
+
+.store-banner-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.store-banner {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(162, 89, 207, 0.10), 0 2px 8px rgba(185, 122, 86, 0.10);
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+
+
 .shoe-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
