@@ -1,13 +1,12 @@
 import { ProductModel } from '../models/local-file-system-js/local-file-system.js'
 import { validatePartialProduct } from '../schemas/product.js'
 
-export class ProductController  {
-
-  // get all
-  static async getAll(req, res)  {
-      const { gender } = req.query
-      const product = await ProductModel.getAll({ gender })
-      res.json(product)
+export class ProductController {
+// get all
+  static async getAll(req, res) {
+    const { gender } = req.query
+    const product = await ProductModel.getAll({ gender })
+    res.json(product)
   }
   
 
