@@ -278,5 +278,187 @@
     ],
     "category": "zapatos",
     "stock": 23
+  },
+  {
+  "id": "21",
+  "productName": "Bolso Tote Mujer",
+  "gender": ["female"],
+  "description": "Bolso tote espacioso y elegante para uso diario.",
+  "brand": "Tous",
+  "price": 120.00,
+  "sizes": [],
+  "images": [
+    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=500&q=80"
+  ],
+  "category": "bolsos",
+  "stock": 15
+  },
+  {
+    "id": "22",
+    "productName": "Bolso Bandolera Hombre",
+    "gender": ["male"],
+    "description": "Bolso bandolera práctico para llevar lo esencial.",
+    "brand": "Eastpak",
+    "price": 65.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1526178613658-3f1622045557?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "bolsos",
+    "stock": 20
+  },
+  {
+    "id": "23",
+    "productName": "Bolso Clutch Mujer Fiesta",
+    "gender": ["female"],
+    "description": "Bolso clutch pequeño y elegante para eventos especiales.",
+    "brand": "Michael Kors",
+    "price": 95.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "bolsos",
+    "stock": 10
+  },
+  {
+    "id": "24",
+    "productName": "Bolso Mochila Hombre",
+    "gender": ["male"],
+    "description": "Bolso mochila resistente y cómodo para el día a día.",
+    "brand": "Nike",
+    "price": 80.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "bolsos",
+    "stock": 18
+  },
+  {
+    "id": "25",
+    "productName": "Bolso Shopper Mujer",
+    "gender": ["female"],
+    "description": "Bolso shopper grande para compras y viajes.",
+    "brand": "Zara",
+    "price": 70.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "bolsos",
+    "stock": 22
+  },
+  {
+    "id": "26",
+    "productName": "Bolso Messenger Hombre",
+    "gender": ["male"],
+    "description": "Bolso messenger moderno y funcional para trabajo o estudio.",
+    "brand": "Samsonite",
+    "price": 110.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "bolsos",
+    "stock": 12
+  },
+  {
+  "id": "27",
+  "productName": "Cinturón de Cuero Hombre",
+  "gender": ["male"],
+  "description": "Cinturón de cuero genuino con hebilla metálica.",
+  "brand": "Levi's",
+  "price": 35.00,
+  "sizes": ["M", "L", "XL"],
+  "images": [
+    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=500&q=80"
+  ],
+  "category": "complementos",
+  "stock": 25
+  },
+  {
+    "id": "28",
+    "productName": "Bufanda de Lana Mujer",
+    "gender": ["female"],
+    "description": "Bufanda suave y cálida para el invierno.",
+    "brand": "Mango",
+    "price": 28.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "complementos",
+    "stock": 30
+  },
+  {
+    "id": "29",
+    "productName": "Gorra Deportiva Hombre",
+    "gender": ["male"],
+    "description": "Gorra ligera y transpirable para actividades deportivas.",
+    "brand": "Adidas",
+    "price": 22.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "complementos",
+    "stock": 40
+  },
+  {
+    "id": "30",
+    "productName": "Pañuelo Estampado Mujer",
+    "gender": ["female"],
+    "description": "Pañuelo de seda con estampado floral.",
+    "brand": "Desigual",
+    "price": 18.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "complementos",
+    "stock": 35
+  },
+  {
+    "id": "31",
+    "productName": "Reloj Deportivo Hombre",
+    "gender": ["male"],
+    "description": "Reloj resistente al agua con cronómetro.",
+    "brand": "Casio",
+    "price": 55.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "complementos",
+    "stock": 12
+  },
+  {
+    "id": "32",
+    "productName": "Pendientes de Plata Mujer",
+    "gender": ["female"],
+    "description": "Pendientes elegantes de plata con circonitas.",
+    "brand": "Tous",
+    "price": 48.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1528701800484-905d3b6e8a08?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "complementos",
+    "stock": 20
+  },
+  {
+    "id": "33",
+    "productName": "Cartera de Piel Hombre",
+    "gender": ["male"],
+    "description": "Cartera compacta de piel con varios compartimentos.",
+    "brand": "Montblanc",
+    "price": 60.00,
+    "sizes": [],
+    "images": [
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80"
+    ],
+    "category": "complementos",
+    "stock": 18
   }
 ]

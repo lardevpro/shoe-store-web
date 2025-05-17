@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Product } from '../../../models/product';
-import { Connection } from '../../services/product.service';
+import { Product } from '../../models/product.model';
+import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 
 
@@ -14,14 +14,14 @@ import { CommonModule } from '@angular/common';
 export class AccessoriesComponent {
   products: Product[] = [];
 
-  constructor(private connection: Connection) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.loadProducts();
   }
 
   private loadProducts() {
-    this.connection.getProductsByCategory('complementos')
+    this.productService.getProductsByCategory('complementos')
       .subscribe({
         next: (products) => this.products = products,
         error: (error) => console.error('Error:', error)

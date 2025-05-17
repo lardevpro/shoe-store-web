@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
-import { Product } from '../../../models/product';
-import { Connection } from '../../services/product.service';
+import { Product } from '../../models/product.model';
+import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -19,7 +19,7 @@ export class CatalogComponent implements OnInit {
     { key: 'accessories', label: 'Accesorios' }
   ];
 
-  constructor(private connection: Connection) { }
+  constructor(private connection: ProductService) { }
   ngOnInit(): void {
     this.connection.getProductsByCategory('shoes').subscribe({
       next: (data: Product[]) => {
@@ -31,5 +31,4 @@ export class CatalogComponent implements OnInit {
       }
     });
   }
-
 }

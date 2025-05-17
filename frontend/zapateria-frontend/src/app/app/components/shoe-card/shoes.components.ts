@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import { Product } from "../../../models/product";
-import { Connection } from "../../services/product.service";
+import { Product } from "../../models/product.model";
+import { ProductService } from "../../services/product.service";
 
 @Component({
   selector: 'app-shoes',
@@ -18,7 +18,7 @@ export class ShoesComponent implements OnInit {
   ];
   selectedGender: string | null = null;
 
-  constructor(private connection: Connection) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.loadProducts();
@@ -31,13 +31,13 @@ export class ShoesComponent implements OnInit {
 
   private loadProducts() {
     if (this.selectedGender) {
-      this.connection.getProductsByGender('zapatos', this.selectedGender)
+      this.productService.getProductsByGender('zapatos', this.selectedGender)
         .subscribe({
           next: (products) => this.products = products,
           error: (error) => console.error('Error:', error)
         });
     } else {
-      this.connection.getProductsByCategory('zapatos')
+      this.productService.getProductsByCategory('zapatos')
         .subscribe({
           next: (products) => this.products = products,
           error: (error) => console.error('Error:', error)

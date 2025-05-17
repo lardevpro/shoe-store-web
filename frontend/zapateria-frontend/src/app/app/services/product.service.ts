@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../../models/product';
+import { Product } from '../models/product.model';
 
 @Injectable({ providedIn: 'root' })
-export class Connection {
+export class ProductService {
   private apiUrl = 'http://localhost:1234/products';
 
   constructor(private http: HttpClient) {}
