@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CatalogComponent } from './catalog.component';
-import { ShoeService } from '../../services/shoe.service';
+import { Connection } from '../../services/connection.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CatalogComponent', () => {
@@ -10,7 +10,7 @@ describe('CatalogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CatalogComponent, HttpClientTestingModule],
-      providers: [ShoeService]
+      providers: [Connection]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CatalogComponent);

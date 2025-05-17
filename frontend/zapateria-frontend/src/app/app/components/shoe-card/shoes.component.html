@@ -1,0 +1,33 @@
+<div class="shoes-page">
+  <h2>Zapatos</h2>
+  
+  <!-- Filtro de género -->
+  <div class="gender-filter">
+    <button 
+      *ngFor="let gender of genders"
+      [class.active]="selectedGender === gender.key"
+      (click)="onGenderSelected(gender.key)">
+      {{ gender.label }}
+    </button>
+  </div>
+
+  <!-- Listado de productos -->
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.images[0]" [alt]="product.product_name">
+      <h3>{{ product.product_name }}</h3>
+      <p class="price">{{ product.price | currency:'EUR' }}</p>
+      <div class="gender-tags">
+        <span *ngFor="let g of product.gender" class="gender-tag">
+          {{ g | titlecase }}
+        </span>
+      </div>
+      <button class="details-btn">Ver Detalles</button>
+    </div>
+  </div>
+
+  <!-- Mensaje sin resultados -->
+  <div *ngIf="products.length === 0" class="no-results">
+    No se encontraron productos en esta categoría
+  </div>
+</div>

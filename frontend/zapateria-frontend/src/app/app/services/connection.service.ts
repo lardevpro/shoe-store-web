@@ -3,16 +3,19 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class Connection {
+  private apiUrl = 'http://localhost:1234/products';
 
-  private apiUrl = 'http://localhost:1234/products'; 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  getProductsByCategory(category: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl}?category=${category}`);
+  }
 
-  getAllShoes(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+  getProductsByGender(category: string, gender: string): Observable<Product[]> {
+    return this.http.get<Product[]>(
+      `${this.apiUrl}?category=${category}&gender=${gender}`
+    );
   }
 }
