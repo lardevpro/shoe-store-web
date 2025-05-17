@@ -7,16 +7,25 @@ console.log('JSON file uploaded');
 
 export class ProductModel {
     // list all
-    static async getAll({ gender }) {
-        if (gender) {
-            return products.filter(
-                product => product.gender.some(
-                    c => c.toLowerCase() === gender.toLowerCase()
-                )
-            );
-        }
-        return products;
+   
+    static async getAll({ category, gender }) {
+    let filteredProducts = products;
+
+    // 1. Filtrar por categoría si existe
+    if (category) {
+        filteredProducts = products.filter(product => product.category === category);
     }
+
+    // 2. Filtrar por género SOLO si es categoría 'zapatos'
+    if (gender && category === 'zapatos') {
+        filteredProducts = filteredProducts.filter(product => 
+            product.gender?.some(g => g.toLowerCase() === gender.toLowerCase())
+        );
+    }
+
+    return filteredProducts;
+}
+
 
     // filter by id
     static async getById({ id }) {

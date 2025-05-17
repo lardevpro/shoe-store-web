@@ -20,7 +20,7 @@ export class BagsComponent {
   }
 
   private loadProducts() {
-    this.connection.getProductsByCategory('bags')
+    this.connection.getProductsByCategory('bolsos')
       .subscribe({
         next: (products) => this.products = products,
         error: (error) => console.error('Error:', error)
