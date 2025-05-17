@@ -1,7 +1,14 @@
 <div class="catalog">
-  <h1>Catálogo de Zapatos</h1>
-  <div class="catalog">
-    <app-shoe-card *ngFor="let product of products" [product]="product"></app-shoe-card>
-  </div>
-</div>
+  <h1>Catálogo de Productos</h1>
+  
+  <nav class="category-menu">
+    <a 
+      *ngFor="let category of mainCategories"
+      [routerLink]="['/catalog', category.key]"
+      routerLinkActive="active">
+      {{ category.label }}
+    </a>
+  </nav>
 
+  <router-outlet></router-outlet>
+</div>
