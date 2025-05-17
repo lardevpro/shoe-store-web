@@ -21,6 +21,39 @@ $tierra-dark: #8b5e3c;
   }
 }
 
+.category-menu {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+
+  .btn-category {
+    display: inline-block;
+    padding: 0.7em 2.1em;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, $lila 0%, $tierra 100%);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba($lila, 0.13);
+    cursor: pointer;
+    text-decoration: none;
+    background:0.3s, transform 0.2s, box-shadow 0.2s;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background: linear-gradient(90deg, $lila-dark 0%, $tierra-dark 100%);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 6px 24px rgba($lila, 0.18);
+      outline: none;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
 .shoe-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
