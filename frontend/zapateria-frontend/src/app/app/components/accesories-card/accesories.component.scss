@@ -1,0 +1,37 @@
+.accessories-page {
+  @extend .shoes-page; // Hereda estilos base
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    color: #8b5e3c; // Color tierra-dark para títulos
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .product-card {
+    border: 2px solid rgba(#b97a56, 0.1); // Borde sutil en tierra
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(#b97a56, 0.15);
+    }
+
+    .price {
+      color: #6d3995; // Color lila-dark para precios
+    }
+  }
+
+  @media (max-width: 600px) {
+    .product-card {
+      img {
+        height: 180px; // Altura ligeramente menor para accesorios
+      }
+    }
+  }
+}
