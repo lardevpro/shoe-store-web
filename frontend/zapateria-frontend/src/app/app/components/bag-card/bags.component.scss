@@ -56,7 +56,7 @@
     }
 
     .details-btn {
-      background: #a259cf;
+      background: linear-gradient(90deg, #a259cf 0%, #b97a56 100%);
       color: #fff;
       border: none;
       padding: 0.8rem 1.5rem;
@@ -64,9 +64,13 @@
       cursor: pointer;
       margin-top: 1rem;
       background: 0.3s;
+      font-weight: 600;
+      letter-spacing: 1px;
 
       &:hover {
-        background: #6d3995;
+        background: linear-gradient(90deg, #6d3995 0%, #8b5e3c 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(#a259cf, 0.15);
       }
     }
   }

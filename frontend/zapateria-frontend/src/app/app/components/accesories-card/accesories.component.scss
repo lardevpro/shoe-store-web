@@ -56,17 +56,21 @@
     }
 
     .details-btn {
-      background: #b97a56;
+      background: linear-gradient(90deg, #b97a56 0%, #a259cf 100%);
       color: #fff;
       border: none;
       padding: 0.8rem 1.5rem;
       border-radius: 25px;
       cursor: pointer;
       margin-top: 1rem;
-      background: 0.3s;
+      background :0.3s;
+      font-weight: 600;
+      letter-spacing: 1px;
 
       &:hover {
-        background: #8b5e3c;
+        background: linear-gradient(90deg, #8b5e3c 0%, #6d3995 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(#b97a56, 0.15);
       }
     }
   }
