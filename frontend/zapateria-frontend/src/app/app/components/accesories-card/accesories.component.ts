@@ -21,7 +21,7 @@ export class AccessoriesComponent {
   }
 
   private loadProducts() {
-    this.connection.getProductsByCategory('accessories')
+    this.connection.getProductsByCategory('complementos')
       .subscribe({
         next: (products) => this.products = products,
         error: (error) => console.error('Error:', error)

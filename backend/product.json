@@ -8,8 +8,8 @@
     "price": 120.99,
     "sizes": [38, 39, 40, 41, 42, 43, 44],
     "images": [
-      "https://example.com/images/zapatillas-deportivas-1.jpg",
-      "https://example.com/images/zapatillas-deportivas-2.jpg"
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80",
+      "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ],
     "category": "zapatos",
     "stock": 50
@@ -17,14 +17,13 @@
   {
     "id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
     "product_name": "Bolso de Mano",
-    "gender": ["female"],
     "description": "Bolso elegante para eventos formales.",
     "brand": "Gucci",
     "price": 250.00,
     "sizes": [],
     "images": [
-      "https://example.com/images/bolso-de-mano-1.jpg",
-      "https://example.com/images/bolso-de-mano-2.jpg"
+      "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?auto=format&fit=crop&w=500&q=80"
     ],
     "category": "bolsos",
     "stock": 20
@@ -32,32 +31,16 @@
   {
     "id": "f1e2d3c4-b5a6-7890-cdef-0987654321ba",
     "product_name": "Pañuelo de Seda",
-    "gender": ["female"],
     "description": "Pañuelo de seda con diseño floral.",
     "brand": "Hermès",
     "price": 80.00,
     "sizes": [],
     "images": [
-      "https://example.com/images/panuelo-de-seda-1.jpg",
-      "https://example.com/images/panuelo-de-seda-2.jpg"
+      "https://images.unsplash.com/photo-1616012484413-ef4e9d0a6f54?auto=format&fit=crop&w=500&q=80",
+      "https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ],
     "category": "complementos",
     "stock": 100
-  },
-  {
-    "id": "12345678-90ab-cdef-1234-567890abcdef",
-    "product_name": "Cartera de Mano",
-    "gender": ["female"],
-    "description": "Cartera de mano compacta y moderna.",
-    "brand": "Prada",
-    "price": 150.00,
-    "sizes": [],
-    "images": [
-      "https://example.com/images/cartera-de-mano-1.jpg",
-      "https://example.com/images/cartera-de-mano-2.jpg"
-    ],
-    "category": "complementos",
-    "stock": 30
   },
   {
     "id": "abcdef12-3456-7890-abcd-ef1234567890",
@@ -68,85 +51,10 @@
     "price": 90.00,
     "sizes": [40, 41, 42, 43, 44],
     "images": [
-      "https://example.com/images/zapatillas-urbanas-1.jpg",
-      "https://example.com/images/zapatillas-urbanas-2.jpg"
+      "https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4da?auto=format&fit=crop&w=500&q=80"
     ],
     "category": "zapatos",
     "stock": 40
-  },
-  {
-    "id": "7890abcd-1234-5678-90ef-abcdef123456",
-    "product_name": "Bolso Cruzado",
-    "gender": ["female"],
-    "description": "Bolso cruzado práctico y ligero.",
-    "brand": "Michael Kors",
-    "price": 180.00,
-    "sizes": [],
-    "images": [
-      "https://example.com/images/bolso-cruzado-1.jpg",
-      "https://example.com/images/bolso-cruzado-2.jpg"
-    ],
-    "category": "bolsos",
-    "stock": 25
-  },
-  {
-    "id": "4567890a-bcde-f123-4567-890abcdef123",
-    "product_name": "Pañuelo de Algodón",
-    "gender": ["unisex"],
-    "description": "Pañuelo de algodón suave y cómodo.",
-    "brand": "Zara",
-    "price": 20.00,
-    "sizes": [],
-    "images": [
-      "https://example.com/images/panuelo-de-algodon-1.jpg",
-      "https://example.com/images/panuelo-de-algodon-2.jpg"
-    ],
-    "category": "complementos",
-    "stock": 200
-  },
-  {
-    "id": "abcdef98-7654-3210-fedc-ba9876543210",
-    "product_name": "Zapatillas Running",
-    "gender": ["male"],
-    "description": "Zapatillas ligeras para correr largas distancias.",
-    "brand": "Asics",
-    "price": 140.00,
-    "sizes": [40, 41, 42, 43, 44],
-    "images": [
-      "https://example.com/images/zapatillas-running-1.jpg",
-      "https://example.com/images/zapatillas-running-2.jpg"
-    ],
-    "category": "zapatos",
-    "stock": 35
-  },
-  {
-    "id": "fedcba98-7654-3210-abcdef-1234567890ab",
-    "product_name": "Cartera Clásica",
-    "gender": ["male"],
-    "description": "Cartera clásica de cuero genuino.",
-    "brand": "Montblanc",
-    "price": 120.00,
-    "sizes": [],
-    "images": [
-      "https://example.com/images/cartera-clasica-1.jpg",
-      "https://example.com/images/cartera-clasica-2.jpg"
-    ],
-    "category": "complementos",
-    "stock": 50
-  },
-  {
-    "id": "1234abcd-5678-90ef-abcd-1234567890ef",
-    "product_name": "Bolso Tote",
-    "gender": ["female"],
-    "description": "Bolso tote espacioso y versátil.",
-    "brand": "Coach",
-    "price": 200.00,
-    "sizes": [],
-    "images": [
-      "https://example.com/images/bolso-tote-1.jpg",
-      "https://example.com/images/bolso-tote-2.jpg"
-    ],
-    "category": "bolsos",
-    "stock": 15
   }
 ]
