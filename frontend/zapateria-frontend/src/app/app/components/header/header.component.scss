@@ -9,14 +9,16 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(90deg, $lila 60%, $tierra 100%);
+  //background: linear-gradient(90deg, $lila 60%, $tierra 100%);
+  background-image: url('/images/fondo_prueba.jpg');
+  opacity: 0.8;
   box-shadow: 0 2px 8px rgba(162, 89, 207, 0.08), 0 1.5px 6px rgba(185, 122, 86, 0.07);
   border-radius: 10px;
 }
 
  h1{
 
-     color: #8b5e3c; 
+    color: #a9917f; 
     font-size: 1.7rem;
     font-weight: bold;
     margin-left: 1rem;

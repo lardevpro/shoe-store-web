@@ -9,7 +9,8 @@ $tierra-dark: #8b5e3c;
 }
 
 .banner {
-  background: linear-gradient(90deg, $lila 60%, $tierra 100%);
+  //background: linear-gradient(90deg, $lila 60%, $tierra 100%);
+  background-image: url('/images/fondo_prueba.jpg');
   color: #c4712d;
   padding: 3rem 1rem;
   margin-bottom: 2rem;
@@ -65,16 +66,16 @@ $tierra-dark: #8b5e3c;
   gap: 1rem;
   margin: 2rem auto;
   max-width: 700px;      
-  width: 100%;  
+  width: 100%;
   border-radius: 18px;
   box-shadow: 0 4px 20px rgba($lila, 0.09), 0 2px 8px rgba($tierra, 0.07);
   overflow: hidden;
-  background: linear-gradient(90deg, #e2b296 10%, #f5e6c8 90%);
-
+  //background: linear-gradient(90deg, #e2b296 10%, #f5e6c8 90%);
+  background-image: url('/images/fondo_caramelo_prueba.jpg');
 }
 
 .carousel-image {
-  max-width: 90%;
+  max-width: 90%;  
   max-height: 350px;     
   width: auto;
   height: auto;

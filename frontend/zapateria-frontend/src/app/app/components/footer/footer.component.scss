@@ -8,7 +8,9 @@ footer {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(90deg, $lila 60%, $tierra 100%);
+  //background: linear-gradient(90deg, $lila 60%, $tierra 100%);
+  background-image: url('/images/fondo_prueba.jpg');
+  opacity: 0.8;
   color: white;
   margin-top: auto;
   box-shadow: 0 -2px 8px rgba(162, 89, 207, 0.08), 
