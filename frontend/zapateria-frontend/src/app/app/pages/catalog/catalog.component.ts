@@ -4,6 +4,7 @@ import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-catalog',
   standalone: true,

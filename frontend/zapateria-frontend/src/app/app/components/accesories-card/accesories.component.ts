@@ -4,6 +4,7 @@ import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-accessories',
   standalone: true,
