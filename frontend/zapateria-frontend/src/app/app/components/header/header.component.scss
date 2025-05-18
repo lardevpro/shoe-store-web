@@ -4,12 +4,14 @@ $tierra: #b97a56;    // Tierra/caramelo
 $tierra-dark: #8b5e3c;
 
 header {
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background: linear-gradient(90deg, $lila 60%, $tierra 100%);
   box-shadow: 0 2px 8px rgba(162, 89, 207, 0.08), 0 1.5px 6px rgba(185, 122, 86, 0.07);
+  border-radius: 10px;
 }
 
  h1{
@@ -27,8 +29,11 @@ header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-radius: 12px;
+  
+  .logo-img{
+    border-radius: 12px;
 
+  }
   .brand-title {
     margin-left: 1rem;
     font-size: 1.7rem;
