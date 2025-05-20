@@ -52,15 +52,22 @@ import { forkJoin, from, Observable } from 'rxjs';
     
   `]
 })
-export class CarouselComponent implements AfterViewInit {
-   images = ['images/imagesStore/fachada1.webp', 'images/imagesStore/fachada2.webp', 'images/imagesStore/fachada3.webp'];
+export class CarouselComponent implements AfterViewInit { // ❗❗ hay que dar unas dimensiones adecuadas a las imagenes o dará WARNIG en el navegador
+   images = ['images/imagesStore/fachada1.webp',          // ❗❗ debe andar más o menos 400px (ancho) x 200px (alto) 
+             'images/imagesStore/fachada2.webp',
+             'images/imagesStore/fachada3.webp'];
   loaded = false;
 
   ngAfterViewInit(): void {
+  if (typeof window !== 'undefined') {
     this.preloadImages(this.images).subscribe(() => {
       this.loaded = true;
     });
+  } else {
+    // Si estás en SSR, opcionalmente marca como cargado directamente
+    this.loaded = true;
   }
+}
 
   preloadImages(urls: string[]): Observable<void[]> {
     const imageLoaders = urls.map(url => from(new Promise<void>(res => {
