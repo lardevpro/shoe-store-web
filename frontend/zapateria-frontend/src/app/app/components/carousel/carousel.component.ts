@@ -7,9 +7,10 @@ import { CommonModule } from '@angular/common';
   selector: 'app-carousel',
   standalone: true,
   imports: [CommonModule, NzCarouselModule],
+  
   template: `
     <ng-container *ngIf="loaded; else loading">
-      <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="5000" [nzTransitionSpeed]="1000">
+      <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="8000" [nzTransitionSpeed]="2000">
         <div nz-carousel-content *ngFor="let img of images; trackBy: trackByIndex">
           <div class="image-wrapper"><img class="image" [src]="img" /></div>
         </div>
@@ -19,37 +20,40 @@ import { CommonModule } from '@angular/common';
       <div>Cargando imágenes...</div>
     </ng-template>
   `,
+  
   styles: [`
-    [nz-carousel-content] {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(223, 175, 248);
-      height: 260px;
-      overflow: hidden;
-      border-radius: 13px;
-    }
+   [nz-carousel-content] {
+        text-align: center;
+        height: 220px;
+        line-height: 160px;
+        background:rgb(218, 193, 248);
+        color: #fff;
+        overflow: hidden;
+      
+      }
+
     .image-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
       height: 100%;
       width: 100%;
     }
     .image-wrapper img {
       max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
-      display: block;
-      padding: 30px;
-    }
-    .image {
-      border-radius: 13px;
+      border-radius: 10px;
     }
   `]
 })
 export class CarouselComponent implements AfterViewInit {
-  images = ['images/imagesStore/fachada1.webp', 'images/imagesStore/fachada2.webp', 'images/imagesStore/fachada3.webp'];
+  images = ['images/imagesStore/fachada1.webp',
+            'images/imagesStore/fachada2.webp',
+            'images/imagesStore/fachada3.webp',
+            'images/imagesStore/fachada4.webp',
+            'images/imagesStore/fachada9.webp',
+            'images/imagesStore/fachada10.webp',
+            'images/imagesStore/fachada11.webp',];
   loaded = false;
 
   constructor(private cdr: ChangeDetectorRef) {}

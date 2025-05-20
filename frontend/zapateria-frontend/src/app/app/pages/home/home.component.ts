@@ -6,8 +6,22 @@ import { CarouselComponent } from "../../components/carousel/carousel.component"
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, CarouselComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  template: `           
+              <app-carousel class="centered-carousel"></app-carousel>           
+            `,
+  styles: `
+  .centered-carousel {
+      width: 80%;
+      max-width: 1200px;
+      margin: 20px auto; 
+      padding: 20px 0;
+      display: block; 
+      text-align: center; 
+    }
+    app-carousel {
+      display: inline-block; 
+    }
+  `
 })
 export class HomeComponent {
   

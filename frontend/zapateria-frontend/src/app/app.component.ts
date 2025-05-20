@@ -61,7 +61,7 @@ import { RouterOutlet } from '@angular/router';
       color: black;
       text-align: center;
       padding: 24px 50px;
-      height: 116px;
+      height: 180px;
       line-height: 1.5;
       display: flex;
       flex-direction: column;

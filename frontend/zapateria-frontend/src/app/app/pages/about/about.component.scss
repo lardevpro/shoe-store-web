@@ -4,9 +4,10 @@ $tierra: #b97a56;
 $tierra-dark: #8b5e3c;
 
 .about {
+  height: 500px;
   padding: 2.5rem 1rem 2rem 1rem;
   max-width: 800px;
-  margin: 2rem auto 0 auto;
+  margin: 0.2rem auto 0 auto;
   text-align: center;
   background: linear-gradient(90deg, rgba($lila, 0.08) 60%, rgba($tierra, 0.07) 100%);
   border-radius: 16px;
@@ -14,7 +15,7 @@ $tierra-dark: #8b5e3c;
 
   h1, h2 {
     color: $tierra-dark;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     letter-spacing: 1.2px;
     text-shadow: 0 2px 8px rgba($lila, 0.10);
   }
@@ -33,7 +34,10 @@ $tierra-dark: #8b5e3c;
     font-size: 1.1rem;
   }
 }
-
+img {
+  border-radius: 10px;
+  height: 320px;
+}
 /* Responsive */
 @media (max-width: 600px) {
   .about {
