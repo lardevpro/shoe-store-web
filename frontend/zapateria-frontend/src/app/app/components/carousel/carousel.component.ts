@@ -1,31 +1,23 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { CommonModule } from '@angular/common';
+import { forkJoin, from, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
   imports: [CommonModule, NzCarouselModule],
   template: `
-    @if (allImagesLoaded) {
-      <nz-carousel
-        [nzAutoPlay]="true"
-        [nzAutoPlaySpeed]="5000"
-        [nzTransitionSpeed]="1000"
-        (nzAfterChange)="onSlideChange($event)"
-      >
+    @if (loaded) {
+      <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="5000" [nzTransitionSpeed]="1000">
         @for (img of images; track $index) {
           <div nz-carousel-content>
-
-            <div class="image-wrapper">
-              <img class="image" [src]="img" alt="Imagen carrusel"/>
-            </div>
-            
+            <div class="image-wrapper"><img class="image" [src]="img" /></div>
           </div>
         }
       </nz-carousel>
     } @else {
-      <div class="loading-spinner">Cargando imágenes...</div>
+      <div>Cargando imágenes...</div>
     }
   `,
   styles: [`
@@ -61,33 +53,21 @@ import { CommonModule } from '@angular/common';
   `]
 })
 export class CarouselComponent implements AfterViewInit {
-  images = [
-    'images/imagesStore/fachada1.webp',
-    'images/imagesStore/fachada2.webp',
-    'images/imagesStore/fachada2.webp'
-  ];
+   images = ['images/imagesStore/fachada1.webp', 'images/imagesStore/fachada2.webp', 'images/imagesStore/fachada3.webp'];
+  loaded = false;
 
-  allImagesLoaded = false;
-
-  ngAfterViewInit() {
-    if (typeof window !== 'undefined') {
-      this.preloadImages(this.images).then(() => {
-        this.allImagesLoaded = true;
-      });
-    }
+  ngAfterViewInit(): void {
+    this.preloadImages(this.images).subscribe(() => {
+      this.loaded = true;
+    });
   }
 
-  preloadImages(urls: string[]): Promise<void[]> {
-    const promises = urls.map(url => new Promise<void>((resolve) => {
+  preloadImages(urls: string[]): Observable<void[]> {
+    const imageLoaders = urls.map(url => from(new Promise<void>(res => {
       const img = new Image();
+      img.onload = img.onerror = () => res();
       img.src = url;
-      img.onload = () => resolve();
-      img.onerror = () => resolve();
-    }));
-    return Promise.all(promises);
-  }
-
-  onSlideChange(index: number): void {
-    // Opcional
+    })));
+    return forkJoin(imageLoaders);
   }
 }
