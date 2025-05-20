@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
@@ -6,11 +7,12 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
   imports: [NzButtonModule],
   template: `
            <header style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px; ">
-              <img src="images/logo.png" alt="Zapatería Logo" />
+              <img src="images/logo.png" alt="Zapatería Logo" (click)="navigateTo('/')" />
                 <nav style="flex: 1; display: flex; justify-content: center; gap: 20px;">
-                  <button nz-button nzType="text" >Catálogo</button>
-                  <button nz-button nzType="text" >Sobre Nosotros</button>
-                  <a nz-button nzType="link" href="#" >Contacto</a>
+                  <button nz-button nzType="text" (click)="navigateTo('/')">Inicio</button>
+                  <button nz-button nzType="text" (click)="navigateTo('catalog')">Catálogo</button>
+                  <button nz-button nzType="text" (click)="navigateTo('about')">Sobre Nosotros</button>
+                  <button nz-button nzType="text" (click)="navigateTo('contact')">Contacto</button>
                 </nav>
           </header>
             `,
@@ -38,4 +40,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 
 export class NavbarComponent {
 
+  constructor(private router: Router) {}
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
 }

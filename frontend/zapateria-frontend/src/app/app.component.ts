@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { FooterComponent } from "./app/components/footer/footer.component";
-import { HomeComponent } from "./app/pages/home/home.component";
 import { NavbarComponent } from "./app/components/navbar/navbar.component";
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [NzLayoutModule, FooterComponent, HomeComponent, NavbarComponent],
+  imports: [NzLayoutModule, FooterComponent, NavbarComponent, RouterOutlet],
   template: `
     <nz-layout>
       <!-- navbar -->
@@ -15,7 +15,7 @@ import { NavbarComponent } from "./app/components/navbar/navbar.component";
 
        <!-- carousel -->
       <nz-content>
-          <app-home></app-home>
+          <router-outlet></router-outlet>
       </nz-content>
       
       <!-- footer -->

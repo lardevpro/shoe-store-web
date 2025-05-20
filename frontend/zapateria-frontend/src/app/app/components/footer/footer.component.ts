@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
       <a href="#" style="color: white; margin: 0 12px;">Contacto</a>
     </div>
     <div class="social-icons">
-      <a href="https://www.instagram.com/tu_perfil_de_instagram" target="_blank" rel="noopener noreferrer" class="social-icon">
+      <a href="https://www.instagram.com/p/DGz9VwptIIi/" target="_blank" rel="noopener noreferrer" class="social-icon">
         <img src="icons/instagram_icon.svg" alt="Instagram" class="icon">
       </a>
       <a href="mailto:example@example.com" class="social-icon">
