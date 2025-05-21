@@ -27,7 +27,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     }
     img {
       width: 200px;
-      margin-right: 1150px;
+      margin-right: 1000px;
       padding: 5px;
       cursor: pointer;
       border-radius: 13px;
@@ -37,13 +37,41 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     .navbar-nav {
       display: flex;
       gap: 20px;
-      margin-left: auto; /* Esto empuja el nav al extremo derecho */
+      margin-left: auto; 
       align-items: center;
     }
     button {
       border-radius: 13px;
       background-color: rgb(246, 115, 246);
     }
+
+    button {
+    border-radius: 14px;
+    background-color: rgb(246, 115, 246);
+    font-size: 18px;     /* tamaño del texto */
+    padding: 10px 15px;  /* alto y ancho interno del botón */
+    margin-top: 2px;
+    margin-bottom: 2px
+  }
+
+  button {
+  display: flex;
+  align-items: center;      
+  justify-content: center;  
+  border-radius: 14px;
+  background-color: rgb(246, 115, 246);
+  font-size: 17px;          
+  padding: 12px 28px;      
+  margin: 4px 0;            
+  min-width: 100px;         
+  min-height: 44px;        
+  border: none;             
+  box-sizing: border-box;   
+  cursor: pointer;          
+  transition: background 0.2s;
+}
+
+
   `]
 })
 export class NavbarComponent {
