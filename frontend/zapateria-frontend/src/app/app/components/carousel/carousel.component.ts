@@ -8,31 +8,47 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, NzCarouselModule],
   template: `
     <ng-container *ngIf="loaded; else loading">
-      <div class="carousel-container">
-        <button class="arrow left" (click)="prev()">&lt;</button>
-        <nz-carousel #carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="8000" [nzTransitionSpeed]="2000">
-          <div nz-carousel-content *ngFor="let img of images; trackBy: trackByIndex">
-            <div class="image-wrapper"><img class="image" [src]="img" /></div>
+      <nz-carousel #carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="8000" [nzTransitionSpeed]="2000">
+        <div nz-carousel-content *ngFor="let img of images; let i = index; trackBy: trackByIndex">
+          <div class="image-wrapper">
+            <button class="arrow left" (click)="prev($event)">&lt;</button>
+            <img class="image" [src]="img" />
+            <button class="arrow right" (click)="next($event)">&gt;</button>
           </div>
-        </nz-carousel>
-        <button class="arrow right" (click)="next()">&gt;</button>
-      </div>
+        </div>
+      </nz-carousel>
     </ng-container>
     <ng-template #loading>
       <div>Cargando imágenes...</div>
     </ng-template>
   `,
   styles: [`
-    .carousel-container {
+    [nz-carousel-content] {
+      text-align: center;
+      height: 220px;
+      line-height: 160px;
+      background: rgb(218, 193, 248);
+      color: #fff;
+      overflow: hidden;
+    }
+    .image-wrapper {
       position: relative;
       display: flex;
+      justify-content: center;
       align-items: center;
+      padding: 20px;
+      height: 100%;
       width: 100%;
     }
-    nz-carousel {
-      flex: 1 1 auto;
+    .image-wrapper img {
+      max-height: 100%;
+      border-radius: 10px;
+      z-index: 1;
     }
     .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       background: rgba(0,0,0,0.3);
       color: #fff;
       border: none;
@@ -46,33 +62,17 @@ import { CommonModule } from '@angular/common';
       align-items: center;
       justify-content: center;
       transition: background 0.2s;
-      margin: 0 8px;
+      opacity: 0.85;
     }
     .arrow:hover {
       background: rgba(0,0,0,0.6);
+      opacity: 1;
     }
-    .left { order: 0; }
-    .right { order: 2; }
-    nz-carousel { order: 1; }
-    [nz-carousel-content] {
-      text-align: center;
-      height: 220px;
-      line-height: 160px;
-      background: rgb(218, 193, 248);
-      color: #fff;
-      overflow: hidden;
+    .arrow.left {
+      left: 250px;
     }
-    .image-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      height: 100%;
-      width: 100%;
-    }
-    .image-wrapper img {
-      max-height: 100%;
-      border-radius: 10px;
+    .arrow.right {
+      right: 250px;
     }
   `]
 })
@@ -123,10 +123,12 @@ export class CarouselComponent implements AfterViewInit {
     return index;
   }
 
-  prev() {
+  prev(event: Event) {
+    event.stopPropagation(); // Previene que el click en la flecha dispare otros eventos
     this.carousel.pre();
   }
-  next() {
+  next(event: Event) {
+    event.stopPropagation();
     this.carousel.next();
   }
 }
