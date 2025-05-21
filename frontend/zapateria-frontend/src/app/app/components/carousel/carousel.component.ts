@@ -83,16 +83,18 @@ import { CommonModule } from '@angular/common';
       justify-content: center;
       transition: background 0.2s;
       opacity: 0.85;
+
     }
+
     .arrow:hover {
       background: rgba(0,0,0,0.6);
       opacity: 1;
     }
     .arrow.left {
-      left: 40px;
+      left: 250px;
     }
     .arrow.right {
-      right: 40px;
+      right: 250px;
     }
 
   `]
