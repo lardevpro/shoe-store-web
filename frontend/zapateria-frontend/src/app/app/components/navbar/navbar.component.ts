@@ -26,8 +26,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
       padding: 0 20px;
     }
     img {
-      width: 150px;
-      margin-right: 1200px;
+      width: 200px;
+      margin-right: 1150px;
       padding: 5px;
       cursor: pointer;
       border-radius: 13px;
