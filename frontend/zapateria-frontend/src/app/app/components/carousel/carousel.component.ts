@@ -48,6 +48,7 @@ import { CommonModule } from '@angular/common';
       width: 100%;
       overflow: visible; /* Permite que la imagen sobresalga */
       z-index: 1;
+      border-radius: 18px
     }
     .image-wrapper img {
       max-height: 100%;
