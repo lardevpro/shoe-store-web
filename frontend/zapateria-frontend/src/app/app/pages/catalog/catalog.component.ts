@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NzImageModule } from 'ng-zorro-antd/image';
 
-
 @Component({
   selector: 'app-catalog',
   standalone: true,
@@ -23,7 +22,11 @@ import { NzImageModule } from 'ng-zorro-antd/image';
       NzGridModule
   ],
   template: `
-    <nz-card class="catalog-card">
+    <nz-card 
+      class="catalog-card" 
+      nzBordered="false"
+      [nzBodyStyle]="{ background: '#dac1f8', padding: '2rem 2rem 2rem 2rem' }"
+    >
       <h1 nz-typography nzTitle>Catálogo de Productos</h1>
       
       <img
@@ -54,9 +57,10 @@ import { NzImageModule } from 'ng-zorro-antd/image';
       padding: 2.5rem 1rem 2rem 1rem;
       max-width: 1200px;
       margin: 0 auto;
-      background: linear-gradient(90deg, rgba(162, 89, 207, 0.07) 60%, rgba(185, 122, 86, 0.06) 100%);
+      background: #dac1f8 !important;
       border-radius: 18px;
       box-shadow: 0 4px 20px rgba(162, 89, 207, 0.07), 0 2px 8px rgba(185, 122, 86, 0.05);
+      border: none;
       
       h1[nzTitle] {
         color: #8b5e3c;
@@ -73,12 +77,11 @@ import { NzImageModule } from 'ng-zorro-antd/image';
       width: 100%;
       height: auto;
       border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(162, 89, 207, 0.10), 0 2px 8px rgba(185, 122, 86, 0.10);
       margin: 0 auto 2.5rem;
       display: block;
-      box-shadow: none !important; /* elimina sombra */
-      border: none !important;     /* elimina borde */
-    
+      box-shadow: none !important;
+      border: none !important;
+      background-color: #dac1f8 !important;
     }
 
     .category-menu {
@@ -91,6 +94,9 @@ import { NzImageModule } from 'ng-zorro-antd/image';
         background: linear-gradient(90deg, #a259cf 0%, #b97a56 100%);
         border: none;
         border-radius: 30px;
+        padding: 8px 24px;
+        font-size: 1.1rem;
+        min-height: 40px;
         box-shadow: 0 2px 8px rgba(162, 89, 207, 0.13);
         transition: all 0.3s;
 
@@ -113,11 +119,15 @@ import { NzImageModule } from 'ng-zorro-antd/image';
       .catalog-card {
         padding: 1rem 0.2rem;
         border-radius: 10px;
-    
         
         .category-menu {
           flex-direction: column;
           align-items: center;
+        }
+        
+        .btn-category {
+          width: 100%;
+          max-width: 250px;
         }
       }
     }
