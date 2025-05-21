@@ -12,7 +12,12 @@ import { CommonModule } from '@angular/common';
         <div nz-carousel-content *ngFor="let img of images; let i = index; trackBy: trackByIndex">
           <div class="image-wrapper">
             <button class="arrow left" (click)="prev($event)">&lt;</button>
-            <img class="image" [src]="img" />
+            <img 
+              class="image" 
+              [src]="img" 
+              [class.enlarged]="enlargedIndex === i"
+              (click)="enlarge(i, $event)"
+            />
             <button class="arrow right" (click)="next($event)">&gt;</button>
           </div>
         </div>
@@ -23,13 +28,15 @@ import { CommonModule } from '@angular/common';
     </ng-template>
   `,
   styles: [`
-    [nz-carousel-content] {
+
+      [nz-carousel-content] {
       text-align: center;
       height: 220px;
       line-height: 160px;
       background: rgb(218, 193, 248);
       color: #fff;
-      overflow: hidden;
+      position: relative;
+      overflow: visible; /* Permite que la imagen sobresalga suavemente */
     }
     .image-wrapper {
       position: relative;
@@ -39,11 +46,23 @@ import { CommonModule } from '@angular/common';
       padding: 20px;
       height: 100%;
       width: 100%;
+      overflow: visible; /* Permite que la imagen sobresalga */
+      z-index: 1;
     }
     .image-wrapper img {
       max-height: 100%;
       border-radius: 10px;
       z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .image-wrapper img.enlarged {
+      transform: scale(1.05);
+      margin: -5px; /* Margen negativo para sobresalir suavemente */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 10;
     }
     .arrow {
       position: absolute;
@@ -57,7 +76,7 @@ import { CommonModule } from '@angular/common';
       height: 36px;
       font-size: 22px;
       cursor: pointer;
-      z-index: 2;
+      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -69,11 +88,12 @@ import { CommonModule } from '@angular/common';
       opacity: 1;
     }
     .arrow.left {
-      left: 250px;
+      left: 40px;
     }
     .arrow.right {
-      right: 250px;
+      right: 40px;
     }
+
   `]
 })
 export class CarouselComponent implements AfterViewInit {
@@ -89,6 +109,7 @@ export class CarouselComponent implements AfterViewInit {
     'images/imagesStore/fachada11.webp',
   ];
   loaded = false;
+  enlargedIndex: number | null = null;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -124,11 +145,16 @@ export class CarouselComponent implements AfterViewInit {
   }
 
   prev(event: Event) {
-    event.stopPropagation(); // Previene que el click en la flecha dispare otros eventos
+    event.stopPropagation();
     this.carousel.pre();
   }
   next(event: Event) {
     event.stopPropagation();
     this.carousel.next();
+  }
+
+  enlarge(index: number, event: Event) {
+    event.stopPropagation();
+    this.enlargedIndex = this.enlargedIndex === index ? null : index;
   }
 }
