@@ -1,7 +1,16 @@
 <div class="catalog">
   <h1>Catálogo de Productos</h1>
   
-  <nav class="category-menu">
+ 
+
+  <!-- Imagen fija de la tienda (banner) -->
+  <div class="store-banner-container">
+    <img src="images/imagesStore/fachada1.webp" alt="Tienda" class="store-banner">
+  </div>
+
+  <!--submenu del genero de items-->
+
+   <nav class="category-menu">
     <a 
       *ngFor="let category of mainCategories"
       class="btn-category"
@@ -12,14 +21,6 @@
       {{ category.label }}
     </a>
   </nav>
-
- 
-  <!-- Imagen fija de la tienda (banner) -->
-  <div class="store-banner-container">
-    <img src="images/imagesStore/fachada1.jpeg" alt="Tienda" class="store-banner">
-  </div>
-
-  <!--submenu del genero de items-->
 
   <router-outlet></router-outlet>
 </div>
