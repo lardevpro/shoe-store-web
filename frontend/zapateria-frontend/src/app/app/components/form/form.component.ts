@@ -121,10 +121,10 @@ export class FormComponent implements OnDestroy {
       };
 
       emailjs.send(
-        'YOUR_SERVICE_ID',      // <-- Tu Service ID de EmailJS
-        'YOUR_TEMPLATE_ID',     // <-- Tu Template ID de EmailJS
+        'service_aej8e0w',      // <-- Tu Service ID de EmailJS
+        'template_pihez0l',     // <-- Tu Template ID de EmailJS
         templateParams,
-        { publicKey: 'YOUR_PUBLIC_KEY' } // <-- Tu Public Key de EmailJS
+        { publicKey: 'RE1tQnzj9vtRXZIF1' } // <-- Tu Public Key de EmailJS
       ).then(
         () => {
           alert('¡Mensaje enviado correctamente!');
