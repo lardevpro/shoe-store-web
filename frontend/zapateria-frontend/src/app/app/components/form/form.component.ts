@@ -28,7 +28,12 @@ import { CommonModule } from '@angular/common';
   template: `
     <nz-card class="form-card" [nzBodyStyle]="{ padding: '2rem' }">
       <h1 nz-typography nzTitle class="form-title">Formulario de Contacto</h1>
-      <form nz-form [formGroup]="validateForm" #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)">
+      <form
+        nz-form
+        [formGroup]="validateForm"
+        #formEl
+        (ngSubmit)="sendEmail(formEl)"
+      >
         <nz-form-item>
           <nz-form-label [nzSpan]="7" nzRequired>Nombre</nz-form-label>
           <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="userErrorTpl">
@@ -108,12 +113,11 @@ export class FormComponent implements OnDestroy {
 
   sendEmail(form: HTMLFormElement): void {
     if (this.validateForm.valid) {
-      // Creamos un objeto con los campos requeridos por EmailJS
       const templateParams = {
         user_name: this.validateForm.value.userName,
         user_email: this.validateForm.value.email,
         message: this.validateForm.value.comment,
-        to_email: 'carmenmariacalzadoscomplemento@gmail.com' // <-- Email fijo de destino
+        to_email: 'carmenmariacalzadoscomplemento@gmail.com'
       };
 
       emailjs.send(
