@@ -1,9 +1,7 @@
 import { Component, inject, OnDestroy } from '@angular/core';
 import {
-  AbstractControl,
   NonNullableFormBuilder,
   ReactiveFormsModule,
-  ValidationErrors,
   Validators
 } from '@angular/forms';
 import { Subject } from 'rxjs';
@@ -61,16 +59,9 @@ import emailjs from '@emailjs/browser';
         </nz-form-item>
 
         <nz-form-item>
-          <nz-form-label [nzSpan]="7">Enviar a</nz-form-label>
-          <nz-form-control [nzSpan]="12">
-            <input nz-input name="to_email" [(ngModel)]="recipientEmail" placeholder="Destinatario" required />
-          </nz-form-control>
-        </nz-form-item>
-
-        <nz-form-item>
           <nz-form-control [nzOffset]="7" [nzSpan]="12">
             <div class="button-group">
-              <button nz-button nzType="primary" [disabled]="!validateForm.valid || !recipientEmail">Enviar</button>
+              <button nz-button nzType="primary" [disabled]="!validateForm.valid">Enviar</button>
               <button nz-button type="button" (click)="resetForm($event)">Limpiar</button>
             </div>
           </nz-form-control>
@@ -107,8 +98,6 @@ export class FormComponent implements OnDestroy {
   private fb = inject(NonNullableFormBuilder);
   private destroy$ = new Subject<void>();
 
-  recipientEmail = ''; // <-- Aquí puedes cambiar el email destinatario
-
   validateForm = this.fb.group({
     userName: this.fb.control('', [Validators.required]),
     email: this.fb.control('', [Validators.email, Validators.required]),
@@ -116,17 +105,24 @@ export class FormComponent implements OnDestroy {
   });
 
   sendEmail(form: HTMLFormElement): void {
-    if (this.validateForm.valid && this.recipientEmail) {
-      emailjs.sendForm(
+    if (this.validateForm.valid) {
+      // Creamos un objeto con los campos requeridos por EmailJS
+      const templateParams = {
+        user_name: this.validateForm.value.userName,
+        user_email: this.validateForm.value.email,
+        message: this.validateForm.value.comment,
+        to_email: 'carmenmariacalzadoscomplemento@gmail.com' // <-- Email fijo de destino
+      };
+
+      emailjs.send(
         'YOUR_SERVICE_ID',      // <-- Tu Service ID de EmailJS
         'YOUR_TEMPLATE_ID',     // <-- Tu Template ID de EmailJS
-        form,
+        templateParams,
         { publicKey: 'YOUR_PUBLIC_KEY' } // <-- Tu Public Key de EmailJS
       ).then(
         () => {
           alert('¡Mensaje enviado correctamente!');
           this.validateForm.reset();
-          this.recipientEmail = '';
         },
         (error) => {
           alert('Error enviando el mensaje');
@@ -139,7 +135,6 @@ export class FormComponent implements OnDestroy {
   resetForm(e: MouseEvent): void {
     e.preventDefault();
     this.validateForm.reset();
-    this.recipientEmail = '';
   }
 
   ngOnDestroy(): void {
