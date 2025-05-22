@@ -11,6 +11,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import emailjs from '@emailjs/browser';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form',
@@ -21,7 +22,8 @@ import emailjs from '@emailjs/browser';
     NzFormModule,
     NzInputModule,
     NzCardModule,
-    NzTypographyModule
+    NzTypographyModule,
+    CommonModule
   ],
   template: `
     <nz-card class="form-card" [nzBodyStyle]="{ padding: '2rem' }">
