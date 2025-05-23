@@ -1,0 +1,27 @@
+{
+  "name": "shoe-store-web",
+  "version": "1.0.0",
+  "description": "A modern and stylish full-stack 👟 Shoe Store application built with **Node.js**, **Express**, **PostgreSQL** (backend) and **Angular** (frontend).   Browse the product catalog, enjoy a responsive UI, and explore RESTful API integration! 🚀",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ornella-Gigante/shoe-store-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ornella-Gigante/shoe-store-web/issues"
+  },
+  "homepage": "https://github.com/Ornella-Gigante/shoe-store-web#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.3"
+  }
+}
