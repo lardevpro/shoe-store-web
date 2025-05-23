@@ -9,13 +9,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  getProductsByCategory(category: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}?category=${category}`);
-  }
-
-  getProductsByGender(category: string, gender: string): Observable<Product[]> {
-    return this.http.get<Product[]>(
-      `${this.apiUrl}?category=${category}&gender=${gender}`
-    );
+  getProducts(params: { category?: string, gender?: string }): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl, { params });
   }
 }
