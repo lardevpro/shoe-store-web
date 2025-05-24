@@ -10,9 +10,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
               <img src="images/logo.png" alt="Zapatería Logo" (click)="navigateTo('/')" />
                 <nav style="flex: 1; display: flex; justify-content: center; gap: 20px;">
                   <button nz-button nzType="text" (click)="navigateTo('/')">Inicio</button>
-                  <button nz-button nzType="text" (click)="navigateTo('Zapatos')">Zapatos</button>
-                  <button nz-button nzType="text" (click)="navigateTo('Bolsos')">Bolsos</button>
-                  <button nz-button nzType="text" (click)="navigateTo('Accesorios')">Accesorios</button>
+                  <button nz-button nzType="text" (click)="navigateTo('shoes')">Zapatos</button>
+                  <button nz-button nzType="text" (click)="navigateTo('bags')">Bolsos</button>
+                  <button nz-button nzType="text" (click)="navigateTo('accessories')">Accesorios</button>
                 </nav>
           </header>
             `,
