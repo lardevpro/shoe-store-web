@@ -10,12 +10,12 @@
 
   <!-- Listado de productos -->
   <div class="products-grid">
-    <div class="product-card" *ngFor="let product of products">
-      <img [src]="product.images[0]" [alt]="product.productName">
-      <h3>{{ product.productName }}</h3>
-      <p class="price">{{ product.price | currency:'EUR' }}</p>
+    <div class="product-card" *ngFor="let shoe of shoes">
+      <img [src]="shoe.images[0]" [alt]="shoe.productName">
+      <h3>{{ shoe.productName }}</h3>
+      <p class="price">{{ shoe.price | currency:'EUR' }}</p>
       <div class="gender-tags">
-        <span *ngFor="let g of product.gender" class="gender-tag">
+        <span *ngFor="let g of shoe.gender" class="gender-tag">
           {{ g | titlecase }}
         </span>
       </div>
@@ -24,7 +24,7 @@
   </div>
 
   <!-- Mensaje sin resultados -->
-  <div *ngIf="products.length === 0" class="no-results">
+  <div *ngIf="shoes.length === 0" class="no-results">
     No se encontraron productos en esta categoría
   </div>
 </div>
