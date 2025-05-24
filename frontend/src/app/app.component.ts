@@ -12,7 +12,7 @@ import { HeaderComponent } from "./app/components/header/header.component";
       <!-- navbar -->
       <nz-header>
         <app-header></app-header>
-          <!-- <app-navbar></app-navbar> -->
+        <app-navbar></app-navbar>
       </nz-header>
 
        <!-- carousel -->
