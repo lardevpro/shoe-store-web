@@ -70,7 +70,13 @@ import { HeaderComponent } from "./app/components/header/header.component";
       justify-content: center;
       gap: 8px;
     }
-
+    app-header {
+      position: fixed;
+      top: 0;
+    }
+     nz-header {
+      margin-top: 0;
+    }
     `
   ]
 })
