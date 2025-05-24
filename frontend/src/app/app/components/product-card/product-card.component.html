@@ -1,6 +1,6 @@
 <div class="shoe-card">
   <div class="image-container">
-    <img class="shoe-image" [src]="product.images[0]" [alt]="product.productName">
+    <img class="product-image" [src]="product.images[0]" [alt]="product.productName">
     <span *ngIf="product.stock < 20" class="stock">¡Últimas unidades!</span>
   </div>
   <h3>{{ product.productName }}</h3>

@@ -2,7 +2,7 @@
   <h2>Accesorios</h2>
   
   <div class="products-grid">
-    <div class="product-card" *ngFor="let product of products">
+    <div class="product-card" *ngFor="let product of accesories">
       <img [src]="product.images[0]" [alt]="product.productName">
       <h3>{{ product.productName }}</h3>
       <p class="price">{{ product.price | currency:'EUR' }}</p>
