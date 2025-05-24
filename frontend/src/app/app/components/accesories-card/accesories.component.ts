@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../models/shoe';
+import { Accessories } from '../../models/accessories';
 
 
 
@@ -12,7 +12,7 @@ import { Product } from '../../models/shoe';
   styleUrls: ['./accesories.component.scss']
 })
 export class AccessoriesComponent {
-  accesories : Product[] = [];
+  accessories : Accessories[] = [];
 
   constructor() {}
 }

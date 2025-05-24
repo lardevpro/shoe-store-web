@@ -2,7 +2,7 @@
   <h2>Accesorios</h2>
   
   <div class="products-grid">
-    <div class="product-card" *ngFor="let product of accesories">
+    <div class="product-card" *ngFor="let product of accessories">
       <img [src]="product.images[0]" [alt]="product.productName">
       <h3>{{ product.productName }}</h3>
       <p class="price">{{ product.price | currency:'EUR' }}</p>
@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div *ngIf="products.length === 0" class="no-results">
+  <div *ngIf="accessories.length === 0" class="no-results">
     No se encontraron productos en esta categoría
   </div>
 </div>
