@@ -3,14 +3,16 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { FooterComponent } from "./app/components/footer/footer.component";
 import { NavbarComponent } from "./app/components/navbar/navbar.component";
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "./app/components/header/header.component";
 @Component({
   selector: 'app-root',
-  imports: [NzLayoutModule, FooterComponent, NavbarComponent, RouterOutlet],
+  imports: [NzLayoutModule, FooterComponent, NavbarComponent, RouterOutlet, HeaderComponent],
   template: `
     <nz-layout>
       <!-- navbar -->
       <nz-header>
-          <app-navbar></app-navbar>
+        <app-header></app-header>
+          <!-- <app-navbar></app-navbar> -->
       </nz-header>
 
        <!-- carousel -->
@@ -39,7 +41,7 @@ import { RouterOutlet } from '@angular/router';
     }
 
     nz-header {
-      height: 120px; 
+      height: 300px; 
       display: flex; 
       align-items: center; 
       padding: 0 24px;
