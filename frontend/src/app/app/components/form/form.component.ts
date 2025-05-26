@@ -66,7 +66,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 
       button {
         margin-left: 8px;
-        border-radius: 13px;
+        border-radius: var(--border-radius);
         background-color: rgb(246, 115, 246);
       }
     `

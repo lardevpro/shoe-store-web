@@ -41,19 +41,19 @@ import { HeaderComponent } from "./app/components/header/header.component";
     }
 
     nz-header {
-      height: 300px; 
+      height: 200px; 
       display: flex; 
-      align-items: center; 
-      padding: 0 24px;
-      background: rgb(238, 206, 254);
-      gap: 24px;
+      justify-content: start;
+      align-items: center;  
+      background: var(--secondary-color);
+      gap: 400px;
     }
 
    
     nz-content {
       flex: 1; 
       padding: 24px;
-      background: rgb(237, 194, 243);
+      background: var(--secundary-color);
       color: #333;
       min-height: 120px;
     }
@@ -70,12 +70,20 @@ import { HeaderComponent } from "./app/components/header/header.component";
       justify-content: center;
       gap: 8px;
     }
-    app-header {
-      position: fixed;
-      top: 0;
+    
+
+    @media (max-width: 768px) {
+      nz-header {
+        height: 130px;
+        gap: 60px;
+      }
     }
-     nz-header {
-      margin-top: 0;
+
+    @media (max-width: 480px) {
+      nz-header {
+        height: 120px;
+        gap: 70px;
+      }
     }
     `
   ]

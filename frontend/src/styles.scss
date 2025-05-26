@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color:rgb(237, 194, 243); //header
+  --secondary-color: rgb(238, 206, 254); //body
+  --tertiary-color: rgb(218, 193, 248); // components and buttons backgraund
+  --fourth-color: rgb(190, 201, 252); // footer
+  --font-color: rgb(114, 77, 13);
+  --font-family: 'Montserrat', Arial, sans-serif;
+  --font-size: 16px;
+  --border-radius: 13px; 
+}
+
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  font-size: var(--font-size);
 }
 
 h1, h2, h3 {

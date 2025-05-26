@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
         text-align: center;
         height: 220px;
         line-height: 160px;
-        background:rgb(218, 193, 248);
+        background:var(--tertiary-color);
         color: #fff;
         overflow: hidden;
       
@@ -42,7 +42,7 @@ import { CommonModule } from '@angular/common';
     }
     .image-wrapper img {
       max-height: 100%;
-      border-radius: 10px;
+      border-radius: var(--border-radius);
     }
   `]
 })
@@ -62,12 +62,11 @@ export class CarouselComponent implements AfterViewInit {
     if (typeof window !== 'undefined') {
       this.preloadImages(this.images, () => {
         this.loaded = true;
-        this.cdr.detectChanges(); // Forzar la detección de cambios
+        this.cdr.detectChanges(); 
       });
     } else {
-      // Si estás en SSR, opcionalmente marca como cargado directamente
       this.loaded = true;
-      this.cdr.detectChanges(); // Forzar la detección de cambios
+      this.cdr.detectChanges(); 
     }
   }
 

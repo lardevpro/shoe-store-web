@@ -49,14 +49,14 @@ import { Component } from '@angular/core';
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background-color: rgb(234, 216, 234);
+      background-color: var(--tertiary-color);
       color: white;
       text-decoration: none;
       transition: background-color 0.3s, transform 0.3s;
     }
 
     .social-icon:hover {
-      background-color: rgb(171, 187, 255);
+      background-color: var(--fourth-color);
       transform: scale(1.1);
     }
 

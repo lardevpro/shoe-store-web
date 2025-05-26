@@ -8,7 +8,7 @@ $tierra-dark: #8b5e3c;
   max-width: 600px;
   margin: 2rem auto 0 auto;
   background: linear-gradient(90deg, rgba($lila, 0.08) 60%, rgba($tierra, 0.07) 100%);
-  border-radius: 16px;
+  border-radius: var(--border-radius);
   box-shadow: 0 4px 20px rgba($lila, 0.09), 0 2px 8px rgba($tierra, 0.07);
 }
 
@@ -29,7 +29,7 @@ textarea {
   width: 100%;
   padding: 0.7rem 1rem;
   border: 1.5px solid $lila;
-  border-radius: 8px;
+  border-radius:var(--border-radius);
   font-size: 1rem;
   transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
@@ -52,7 +52,7 @@ button {
   border: none;
   padding: 0.75rem 2rem;
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: var(--border-radius);
   font-weight: bold;
   font-size: 1.1rem;
   letter-spacing: 1px;
@@ -71,6 +71,6 @@ button {
 @media (max-width: 600px) {
   .contact {
     padding: 1.2rem 0.3rem;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
   }
 }
