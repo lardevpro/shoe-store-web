@@ -12,13 +12,13 @@ import { FormComponent } from "../../components/form/form.component";
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: calc(100vh - 116px); /* Ajusta esto según la altura de tu navbar y footer */
+      min-height: calc(100vh - 116px);
       padding: 20px;
     }
 
     app-form {
       width: 100%;
-      max-width: 600px; /* Ajusta este valor según el ancho deseado para tu formulario */
+      max-width: 600px; 
     }
   
   `

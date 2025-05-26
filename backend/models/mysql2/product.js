@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid' // para generar UUIDs en Node.js
+import { v4 as uuidv4 } from 'uuid' 
 import Database from './dbConnection.mjs'
 
 export class ProductModel {
@@ -31,7 +31,7 @@ export class ProductModel {
   static async create ({ input }) {
     const { productName, brand, price, size, image, category } = input
     const client = await Database.getConnection()
-    const uuid = uuidv4() // genera UUID con Node.js
+    const uuid = uuidv4() 
 
     try {
       await client.execute(
@@ -53,7 +53,7 @@ export class ProductModel {
   static async delete ({ id }) {
     const client = await Database.getConnection()
     try {
-      // Verificar si el producto existe antes de eliminarlo
+      
       const [result] = await client.execute('SELECT id FROM products WHERE id = ?;', [id])
       if (result.length === 0) {
         return { message: `Producto con id ${id} no encontrado.` }
@@ -71,14 +71,12 @@ export class ProductModel {
     const client = await Database.getConnection()
 
     try {
-      // Verificar si el producto existe
       const [rows] = await client.execute('SELECT id FROM products WHERE id = ?', [id])
 
       if (rows.length === 0) {
         return { message: `Producto con id ${id} no encontrado.` }
       }
 
-      // Actualizar los campos
       await client.execute(
         `UPDATE products SET 
           productName = ?, 
@@ -99,3 +97,4 @@ export class ProductModel {
     }
   }
 }
+   

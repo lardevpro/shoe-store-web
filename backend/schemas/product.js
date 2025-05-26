@@ -6,7 +6,7 @@ const productSchema = z.object({
     required_error: 'productName is required'
   }),
   gender: z.array(
-    z.enum(['male', 'female', 'unisex']), // ✅ Añadido 'unisex'!!!!
+    z.enum(['male', 'female']), 
     {
       required_error: 'gender is required',
       invalid_type_error: 'gender must be an array of enum values'
@@ -37,8 +37,7 @@ const productSchema = z.object({
     message: 'Image must be a valid URL'
   }).nullable(),
   category: z.array(
-    z.enum(['zapatos', 'bolsos', 'complementos']), // ✅ Categorías actualizadas
-    {
+    z.enum(['zapatos', 'bolsos', 'complementos']),    {
       required_error: 'category is required',
       invalid_type_error: 'category must be an array of enum values'
     }
@@ -50,7 +49,7 @@ const productSchema = z.object({
 })
   .refine(
     (data) => {
-      if (data.category.includes('zapatos')) { // ✅ Cambiado 'shoes' por 'zapatos'
+      if (data.category.includes('zapatos')) {
         return data.gender && data.gender.length > 0
       }
       return true

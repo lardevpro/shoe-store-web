@@ -1,14 +1,14 @@
 <div class="shoes-page">
   <h2>Zapatos</h2>
   
-  <!-- Filtro de género -->
+  
   <div class="gender-filter">
     <button >
      
     </button>
   </div>
 
-  <!-- Listado de productos -->
+  
   <div class="products-grid">
     <div class="product-card" *ngFor="let shoe of shoes">
       <img [src]="shoe.images[0]" [alt]="shoe.productName">
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <!-- Mensaje sin resultados -->
+  
   <div *ngIf="shoes.length === 0" class="no-results">
     No se encontraron productos en esta categoría
   </div>

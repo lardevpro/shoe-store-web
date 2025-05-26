@@ -27,7 +27,7 @@ $tierra-dark: #8b5e3c;
     line-height: 1.7;
   }
 
-  /* Opcional: detalles decorativos */
+  
   .about-highlight {
     color: $tierra;
     font-weight: bold;
@@ -38,7 +38,7 @@ img {
   border-radius: var(--border-radius);
   height: 320px;
 }
-/* Responsive */
+
 @media (max-width: 600px) {
   .about {
     padding: 1.2rem 0.3rem;
