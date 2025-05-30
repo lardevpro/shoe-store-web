@@ -10,7 +10,7 @@ export class ContactController {
         return res.status(400).json({ error: 'All fields are required.' });
       }
 
-      // Configura la API Key
+      // Configura la API Key (mejor usar la API key que el SMTP)
       const client = SibApiV3Sdk.ApiClient.instance;
       client.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
 
@@ -22,7 +22,7 @@ export class ContactController {
       };
 
       const receivers = [
-        { email: process.env.EMAIL_FROM, name: 'Zapatería' } // Aquí recibes tú el mensaje
+        { email: process.env.EMAIL_FROM, name: 'Zapatería' }
       ];
 
       const subject = 'Nuevo mensaje de contacto';
