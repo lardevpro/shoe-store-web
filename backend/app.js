@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express, { json } from 'express'
 import { productRouter } from './routes/product.js'
 import { corsMiddleware } from './middlewares/cors.js'
@@ -8,6 +9,7 @@ import { contactRouter } from './routes/contact.routes.js';
 import { corsMiddleware } from './middlewares/cors.js';
 
 
+dotenv.config();
 app.use(express.json());
 app.use(corsMiddleware());
 
