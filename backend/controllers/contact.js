@@ -1,35 +1,51 @@
-import nodemailer from 'nodemailer';
+import SibApiV3Sdk from 'sib-api-v3-sdk';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export class ContactController {
   static async sendContactMessage(req, res) {
-    const { userName, email, comment } = req.body;
-
-    if (!userName || !email || !comment) {
-      return res.status(400).json({ error: 'All fields are required.' });
-    }
-
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.CONTACT_EMAIL,
-        pass: process.env.CONTACT_EMAIL_PASSWORD
-      }
-    });
-
-    const mailOptions = {
-      from: `"Contacto Web" <${process.env.CONTACT_EMAIL}>`,
-      to: 'carmenmariacalzadoscomplemento@gmail.com',
-      subject: 'Nuevo mensaje de contacto',
-      text: `Nombre: ${userName}\nEmail: ${email}\nMensaje: ${comment}`,
-      replyTo: email
-    };
-
     try {
-      await transporter.sendMail(mailOptions);
-      res.json({ success: true, message: 'Message sent successfully.' });
+      const { userName, email, comment } = req.body;
+      if (!userName || !email || !comment) {
+        return res.status(400).json({ error: 'All fields are required.' });
+      }
+
+      // Configura la API Key
+      const client = SibApiV3Sdk.ApiClient.instance;
+      client.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
+
+      const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+
+      const sender = {
+        email: process.env.EMAIL_FROM,
+        name: 'Zapatería'
+      };
+
+      const receivers = [
+        { email: process.env.EMAIL_FROM, name: 'Zapatería' } // Aquí recibes tú el mensaje
+      ];
+
+      const subject = 'Nuevo mensaje de contacto';
+      const textContent = `Nombre: ${userName}\nEmail: ${email}\nMensaje: ${comment}`;
+      const htmlContent = `<h3>Nuevo mensaje de contacto</h3>
+        <p><strong>Nombre:</strong> ${userName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Mensaje:</strong> ${comment}</p>`;
+
+      await apiInstance.sendTransacEmail({
+        sender,
+        to: receivers,
+        subject,
+        textContent,
+        htmlContent,
+        replyTo: { email }
+      });
+
+      return res.json({ success: true, message: 'Message sent successfully.' });
+
     } catch (error) {
-      console.error('Error enviando email:', error);
-      res.status(500).json({ error: 'Error sending message.' });
+      console.error('Error en el controlador:', error);
+      return res.status(500).json({ error: error.message, details: error.response?.body || error });
     }
   }
 }
