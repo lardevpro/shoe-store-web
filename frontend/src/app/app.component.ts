@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { FooterComponent } from "./app/components/footer/footer.component";
-import { NavbarComponent } from "./app/components/navbar/navbar.component";
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./app/components/header/header.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { FooterComponent } from "./components/footer/footer.component";
+
 @Component({
   selector: 'app-root',
-  imports: [NzLayoutModule, FooterComponent, NavbarComponent, RouterOutlet, HeaderComponent],
+  imports: [NzLayoutModule, RouterOutlet, HeaderComponent, NavbarComponent, FooterComponent],
   template: `
     <nz-layout>
       <!-- navbar -->

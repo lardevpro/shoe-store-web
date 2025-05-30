@@ -3,7 +3,7 @@ import fs from 'fs'
 
 const data = fs.readFileSync('./db/product.json', 'utf-8')
 const products = JSON.parse(data)
-console.log('JSON file uploaded')
+console.log('JSON file  db uploaded')
 
 export class ProductModel {
   // list all
