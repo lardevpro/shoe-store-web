@@ -3,9 +3,11 @@
     "cors": "^2.8.5",
     "db-local": "^3.1.0",
     "dotenv": "^16.5.0",
-    "express": "5.1.0",
+    "express": "^5.1.0",
     "mysql2": "^3.14.1",
+    "nodemailer": "^7.0.3",
     "pg": "^8.14.1",
+    "sib-api-v3-sdk": "^8.5.0",
     "uuid": "^11.1.0",
     "zod": "3.24.2"
   },
@@ -14,7 +16,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-     "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint . --fix",
     "dev": "node --watch app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,7 +27,5 @@
   "devDependencies": {
     "standard": "17.1.2"
   },
-  "eslintConfig": {
-    
-  }
+  "eslintConfig": {}
 }
