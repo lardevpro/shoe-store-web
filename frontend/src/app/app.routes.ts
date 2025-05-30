@@ -4,14 +4,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
+import { CatalogComponent } from './pages/catalog/catalog.component';
 
 
 
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactFormComponent }, 
+  { path: 'about', component: AboutComponent }, 
+  { path: 'catalog', component: CatalogComponent }, 
 ];
 
 @NgModule({

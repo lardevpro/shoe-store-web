@@ -2,7 +2,7 @@
   {
     "id": "1",
     "productName": "Zapatillas Running Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Zapatillas ligeras para correr largas distancias.",
     "brand": "Nike",
     "price": 110.00,
@@ -16,7 +16,7 @@
   {
     "id": "2",
     "productName": "Botines Mujer Elegantes",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Botines de cuero para ocasiones especiales.",
     "brand": "Zara",
     "price": 85.50,
@@ -30,7 +30,7 @@
   {
     "id": "3",
     "productName": "Sandalias Mujer Verano",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Sandalias cómodas y frescas para el verano.",
     "brand": "Havaianas",
     "price": 35.00,
@@ -44,7 +44,7 @@
   {
     "id": "4",
     "productName": "Zapatos Oxford Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Zapatos clásicos Oxford de piel.",
     "brand": "Clarks",
     "price": 120.00,
@@ -58,7 +58,7 @@
   {
     "id": "5",
     "productName": "Botas Mujer Invierno",
-    "gender": ["female"],
+    "gender": ["hombre"],
     "description": "Botas altas y cálidas para el invierno.",
     "brand": "Ugg",
     "price": 150.00,
@@ -72,7 +72,7 @@
   {
     "id": "6",
     "productName": "Mocasines Hombre Casual",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Mocasines cómodos para uso diario.",
     "brand": "Geox",
     "price": 75.00,
@@ -86,7 +86,7 @@
   {
     "id": "7",
     "productName": "Tacones Mujer Fiesta",
-    "gender": ["female"],
+    "gender": ["hombre"],
     "description": "Tacones altos para eventos y fiestas.",
     "brand": "Steve Madden",
     "price": 99.99,
@@ -100,7 +100,7 @@
   {
     "id": "8",
     "productName": "Deportivas Hombre Urbanas",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Zapatillas deportivas para uso urbano.",
     "brand": "Adidas",
     "price": 89.90,
@@ -114,7 +114,7 @@
   {
     "id": "9",
     "productName": "Bailarinas Mujer Cómodas",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Bailarinas planas y cómodas para el día a día.",
     "brand": "Pretty Ballerinas",
     "price": 60.00,
@@ -128,7 +128,7 @@
   {
     "id": "10",
     "productName": "Zapatos Náuticos Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Zapatos náuticos resistentes al agua.",
     "brand": "Sperry",
     "price": 95.00,
@@ -142,7 +142,7 @@
   {
     "id": "11",
     "productName": "Sandalias Mujer Plataforma",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Sandalias con plataforma para mayor altura y comodidad.",
     "brand": "Gioseppo",
     "price": 55.00,
@@ -156,7 +156,7 @@
   {
     "id": "12",
     "productName": "Botines Hombre Piel",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Botines de piel para un look elegante.",
     "brand": "Timberland",
     "price": 130.00,
@@ -170,7 +170,7 @@
   {
     "id": "13",
     "productName": "Zapatillas Mujer Running",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Zapatillas ligeras y transpirables para correr.",
     "brand": "Asics",
     "price": 105.00,
@@ -184,7 +184,7 @@
   {
     "id": "14",
     "productName": "Zapatos Derby Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Zapatos Derby clásicos para ocasiones formales.",
     "brand": "Lottusse",
     "price": 140.00,
@@ -198,7 +198,7 @@
   {
     "id": "15",
     "productName": "Botas Mujer Montaña",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Botas resistentes para senderismo y montaña.",
     "brand": "Salomon",
     "price": 160.00,
@@ -212,7 +212,7 @@
   {
     "id": "16",
     "productName": "Sneakers Hombre Modernos",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Sneakers modernos y cómodos para uso diario.",
     "brand": "New Balance",
     "price": 99.00,
@@ -226,7 +226,7 @@
   {
     "id": "17",
     "productName": "Zapatos Mujer Oficina",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Zapatos elegantes y cómodos para la oficina.",
     "brand": "Massimo Dutti",
     "price": 89.99,
@@ -240,7 +240,7 @@
   {
     "id": "18",
     "productName": "Zapatos Hombre Vestir",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Zapatos de vestir para eventos formales.",
     "brand": "Lloyd",
     "price": 135.00,
@@ -254,7 +254,7 @@
   {
     "id": "19",
     "productName": "Sandalias Mujer Fiesta",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Sandalias elegantes para fiestas y eventos.",
     "brand": "Guess",
     "price": 70.00,
@@ -268,7 +268,7 @@
   {
     "id": "20",
     "productName": "Zapatillas Hombre Skate",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Zapatillas resistentes para skate y uso urbano.",
     "brand": "Vans",
     "price": 79.99,
@@ -282,7 +282,7 @@
   {
   "id": "21",
   "productName": "Bolso Tote Mujer",
-  "gender": ["female"],
+  "gender": ["mujer"],
   "description": "Bolso tote espacioso y elegante para uso diario.",
   "brand": "Tous",
   "price": 120.00,
@@ -296,7 +296,7 @@
   {
     "id": "22",
     "productName": "Bolso Bandolera Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Bolso bandolera práctico para llevar lo esencial.",
     "brand": "Eastpak",
     "price": 65.00,
@@ -310,7 +310,7 @@
   {
     "id": "23",
     "productName": "Bolso Clutch Mujer Fiesta",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Bolso clutch pequeño y elegante para eventos especiales.",
     "brand": "Michael Kors",
     "price": 95.00,
@@ -324,7 +324,7 @@
   {
     "id": "24",
     "productName": "Bolso Mochila Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Bolso mochila resistente y cómodo para el día a día.",
     "brand": "Nike",
     "price": 80.00,
@@ -338,7 +338,7 @@
   {
     "id": "25",
     "productName": "Bolso Shopper Mujer",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Bolso shopper grande para compras y viajes.",
     "brand": "Zara",
     "price": 70.00,
@@ -352,7 +352,7 @@
   {
     "id": "26",
     "productName": "Bolso Messenger Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Bolso messenger moderno y funcional para trabajo o estudio.",
     "brand": "Samsonite",
     "price": 110.00,
@@ -366,7 +366,7 @@
   {
   "id": "27",
   "productName": "Cinturón de Cuero Hombre",
-  "gender": ["male"],
+  "gender": ["hombre"],
   "description": "Cinturón de cuero genuino con hebilla metálica.",
   "brand": "Levi's",
   "price": 35.00,
@@ -380,7 +380,7 @@
   {
     "id": "28",
     "productName": "Bufanda de Lana Mujer",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Bufanda suave y cálida para el invierno.",
     "brand": "Mango",
     "price": 28.00,
@@ -394,7 +394,7 @@
   {
     "id": "29",
     "productName": "Gorra Deportiva Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Gorra ligera y transpirable para actividades deportivas.",
     "brand": "Adidas",
     "price": 22.00,
@@ -408,7 +408,7 @@
   {
     "id": "30",
     "productName": "Pañuelo Estampado Mujer",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Pañuelo de seda con estampado floral.",
     "brand": "Desigual",
     "price": 18.00,
@@ -422,7 +422,7 @@
   {
     "id": "31",
     "productName": "Reloj Deportivo Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Reloj resistente al agua con cronómetro.",
     "brand": "Casio",
     "price": 55.00,
@@ -436,7 +436,7 @@
   {
     "id": "32",
     "productName": "Pendientes de Plata Mujer",
-    "gender": ["female"],
+    "gender": ["mujer"],
     "description": "Pendientes elegantes de plata con circonitas.",
     "brand": "Tous",
     "price": 48.00,
@@ -450,7 +450,7 @@
   {
     "id": "33",
     "productName": "Cartera de Piel Hombre",
-    "gender": ["male"],
+    "gender": ["hombre"],
     "description": "Cartera compacta de piel con varios compartimentos.",
     "brand": "Montblanc",
     "price": 60.00,
