@@ -1,0 +1,14 @@
+{
+  "sender": {
+    "email": "example@example.com",
+    "name": "Zapatería"
+  },
+  "receivers": [
+    {
+      "email": "example@example.com",
+      "name": "Zapatería"
+    }
+  ],
+  "subject": "Nuevo mensaje de contacto",
+  "htmlContent": "<h3>Nuevo mensaje de contacto</h3>\n<p><strong>Nombre:</strong> {{userName}}</p>\n<p><strong>Email:</strong> {{email}}</p>\n<p><strong>Mensaje:</strong> {{comment}}</p>"
+}

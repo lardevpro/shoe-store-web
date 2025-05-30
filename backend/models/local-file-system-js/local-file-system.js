@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import fs from 'fs'
 
-const data = fs.readFileSync('./db/product.json', 'utf-8')
+const data = fs.readFileSync('./db/product-db.json', 'utf-8')
 const products = JSON.parse(data)
 console.log('JSON file  db uploaded')
 

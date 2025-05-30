@@ -16,10 +16,9 @@ class Database {
     try {
       const connection = await this.pool.getConnection()
 
-      // Solo hacer el log la primera vez que se conecta
       if (this.isFirstConnection) {
         console.log('Conexión exitosa a la base de datos')
-        this.isFirstConnection = false // Cambia a false para evitar futuros logs
+        this.isFirstConnection = false
       }
 
       return connection
