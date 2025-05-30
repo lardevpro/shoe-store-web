@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
         <a href="https://www.instagram.com/p/DGz9VwptIIi/" target="_blank" rel="noopener noreferrer" class="social-icon">
           <img src="icons/instagram_icon.svg" alt="Instagram" class="icon">
         </a>
-        <a href="mailto:example@example.com" class="social-icon">
+        <a href="mailto:carmenmariacalzadoscomplemento@gmail.com" class="social-icon">
           <img src="icons/mail_icon.svg" alt="Email" class="icon">
         </a>
         <a href="https://wa.me/tu_numero_de_whatsapp" target="_blank" rel="noopener noreferrer" class="social-icon">
