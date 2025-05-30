@@ -3,13 +3,20 @@ import { productRouter } from './routes/product.js'
 import { corsMiddleware } from './middlewares/cors.js'
 import { PORT } from './config.js'
 import { UserRepository } from './user-repository-auth.js'
+import express from 'express';
+import { contactRouter } from './routes/contact.routes.js';
+import { corsMiddleware } from './middlewares/cors.js';
+
+
+app.use(express.json());
+app.use(corsMiddleware());
 
 const app = express()
 
 app.use(json())
 app.use(corsMiddleware())
 app.disable('x-powered-by')
-
+app.use('/api', contactRouter);
 app.use('/products', productRouter)
 
 app.get('/login', (req, res) => {
