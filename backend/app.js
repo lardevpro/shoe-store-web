@@ -4,7 +4,7 @@ import { productRouter } from './routes/product.js';
 import { corsMiddleware } from './middlewares/cors.js';
 import { PORT } from './config.js';
 import { UserRepository } from './user-repository-auth.js';
-import { contactRouter } from './routes/contact.routes.js';
+import { contactRouter } from './routes/contact.js';
 
 // 1. Configura variables de entorno PRIMERO
 dotenv.config();

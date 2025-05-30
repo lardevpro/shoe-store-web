@@ -30,13 +30,6 @@ export class ContactController {
       replyTo: email
     };
 
-    try {
-      await transporter.sendMail(mailOptions);
-      res.json({ success: true, message: 'Message sent successfully.' });
-    } catch (error) {
-  console.error('Error sending mail:', error);
-  res.status(500).json({ error: error.message, stack: error.stack });
-}
 
   }
 }
