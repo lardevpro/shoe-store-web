@@ -13,21 +13,24 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
   template: ` 
     <div class="navbar-container">
       <ul nz-menu nzMode="horizontal" class="navbar-menu">
-        <li nz-menu-item nzSelected (click)="navigateTo('/')">
+        <li nz-menu-item routerLink="/">
           <span nz-icon nzType="home"></span>
           <span class="nav-text">Página Principal</span>
         </li>
         <li nz-submenu nzTitle="Zapatos" nzIcon="appstore">
           <ul>
-            <li nz-menu-item (click)="navigateTo('shoes')">Hombre</li>
+            <li nz-menu-item routerLink="/shoes">Hombre</li>
             <li nz-menu-item>Mujer</li>
           </ul>
         </li>
-        <li nz-menu-item (click)="navigateTo('bags')">
+        <li nz-menu-item routerLink="/bags">
           <span class="nav-text">Bolsos</span>
         </li>
-        <li nz-menu-item (click)="navigateTo('accessories')">
+        <li nz-menu-item routerLink="/accessories">
           <span class="nav-text">Complementos</span>
+        </li>       
+        <li nz-menu-item routerLink="/about">
+          <span class="nav-text">Sobre Nosotros</span>
         </li>       
       </ul>
       <div class="dropdow">
@@ -36,15 +39,15 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
         </a>
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu>
-              <li nz-menu-item (click)="navigateTo('/')">Inicio</li>
+              <li nz-menu-item routerLink="/">Inicio</li>
               <li nz-submenu nzTitle="Zapatos">
                 <ul>
-                  <li nz-menu-item  (click)="navigateTo('shoes')">Hombre</li>
-                  <li nz-menu-item>Mujer</li>
+                  <li nz-menu-item routerLink="/shoes">Hombre</li> <!-- componente padre zapatos hombre -->
+                  <li nz-menu-item routerLink="/shoes">Mujer</li>  <!-- componente padre zapatos mujer -->
                 </ul>
               </li>  
-              <li nz-menu-item (click)="navigateTo('bags')">Bolsos</li>
-              <li nz-menu-item (click)="navigateTo('accessories')">Accesorios</li>        
+              <li nz-menu-item routerLink="/shoes" routerLinkActive="router-link-active" >Bolsos</li>
+              <li nz-menu-item routerLink="/accessories">Accesorios</li>        
             </ul>
           </nz-dropdown-menu>
         </div>
@@ -94,9 +97,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 })
 export class NavbarComponent {
 
-  constructor(private router: Router) {}
+  constructor() {}
 
-  navigateTo(route: string) {
-    this.router.navigate([route]);
-  }
+  
 }
