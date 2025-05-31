@@ -1,11 +1,35 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzMarks, NzSliderModule } from 'ng-zorro-antd/slider';
 
 @Component({
   selector: 'app-catalog',
-  imports: [],
-  templateUrl: './catalog.component.html',
-  styleUrl: './catalog.component.scss'
+  imports: [FormsModule, NzGridModule, NzSliderModule],
+  template: `
+    <div class="image-container">
+      @for (index of images; track $index) {
+        <img src="images/store/fachada1.webp" alt="">
+      }
+    </div>
+  `,
+  styles: [
+    `
+      .image-container {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+        gap: 32px;
+      }
+
+      .image-container img {
+        border-radius: var(--border-radius);
+        width: 200px;
+        height: 200px;
+        box-shadow: 0px 0px 30px #000000;
+      }
+    `
+  ]
 })
 export class CatalogComponent {
-
+  images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 }

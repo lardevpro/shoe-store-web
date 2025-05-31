@@ -47,13 +47,13 @@ import { CommonModule } from '@angular/common';
   `]
 })
 export class CarouselComponent implements AfterViewInit {
-  images = ['images/imagesStore/fachada1.webp',
-            'images/imagesStore/fachada2.webp',
-            'images/imagesStore/fachada3.webp',
-            'images/imagesStore/fachada4.webp',
-            'images/imagesStore/fachada9.webp',
-            'images/imagesStore/fachada10.webp',
-            'images/imagesStore/fachada11.webp',];
+  images = ['images/store/fachada1.webp',
+            'images/store/fachada2.webp',
+            'images/store/fachada3.webp',
+            'images/store/fachada4.webp',
+            'images/store/fachada9.webp',
+            'images/store/fachada10.webp',
+            'images/store/fachada11.webp',];
   loaded = false;
 
   constructor(private cdr: ChangeDetectorRef) {}
