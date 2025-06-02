@@ -1,1 +1,56 @@
-<p>form works!</p>
+    @if (successMessage) {
+        <nz-alert
+        nzType="success"
+        nzMessage="Consulta Eviada Correctamente"
+        nzDescription="Nos pondremos en contacto con usted lo antes posible."
+        nzShowIcon
+      ></nz-alert>
+    }
+    @if (errorMessage) {
+     <nz-alert
+      nzType="error"
+      nzMessage="Error"
+      nzDescription="Por favor, verifique los campos e inténtelo de nuevo."
+      nzShowIcon
+    ></nz-alert>
+    }
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Nombre</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="userErrorTpl">
+          <input nz-input formControlName="userName" placeholder="Escriba aquí su nombre" />
+          <ng-template #userErrorTpl let-control>
+            @if (control.errors?.['required']) {
+              ¡Por favor, escriba su nombre!
+            }
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Email de contacto</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+          <input nz-input formControlName="email" placeholder="Escriba aquí su email para que podamos responderle" type="email" />
+          <ng-template #emailErrorTpl let-control>
+            @if (control.errors?.['email']) {
+              El email no es válido.
+            }
+            @if (control.errors?.['required']) {
+              ¡Por favor, escriba su email!
+            }
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Consulta</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Debe escribir su consulta.">
+          <nz-textarea-count [nzMaxCharacterCount]="2000">
+            <textarea formControlName="comment" nz-input rows="2" placeholder="Escriba aquí su consulta"></textarea>
+          </nz-textarea-count>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzOffset]="offset" [nzSpan]="12">
+          <button nz-button nzType="primary" [disabled]="!validateForm.valid || loading">Enviar</button>
+          <button nz-button (click)="resetForm($event)">Limpiar</button>
+        </nz-form-control>
+      </nz-form-item>
