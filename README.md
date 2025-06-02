@@ -32,7 +32,7 @@ Node.js
 
 Express.js
 
-PostgreSQL
+MySQL
 
 CORS
 
