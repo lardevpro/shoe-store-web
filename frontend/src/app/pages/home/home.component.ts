@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from "../../components/carousel/carousel.component"; 
+import { CarouselService } from '../../services/carousel.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, CarouselComponent],
   template: `           
-              <app-carousel class="centered-carousel"></app-carousel>           
+              <app-carousel [images]="images" class="centered-carousel"></app-carousel>           
             `,
   styles: `
   .centered-carousel {
@@ -24,5 +25,11 @@ import { CarouselComponent } from "../../components/carousel/carousel.component"
   `
 })
 export class HomeComponent {
+  images: string[] = []; 
   
+  constructor(private carouselService: CarouselService) {
+    this.carouselService.getCarouselImages$().subscribe((images: string[]) => {
+      this.images = images;
+    });
+  }
 }

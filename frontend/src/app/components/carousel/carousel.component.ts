@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, ChangeDetectorRef, Input } from '@angular/core';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { CommonModule } from '@angular/common';
 
@@ -9,51 +9,25 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, NzCarouselModule],
   
   template: `
-    <ng-container *ngIf="loaded; else loading">
+    @if (images.length > 0) {
       <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="8000" [nzTransitionSpeed]="2000">
-        <div nz-carousel-content *ngFor="let img of images; trackBy: trackByIndex">
-          <div class="image-wrapper"><img class="image" [src]="img" /></div>
-        </div>
+        @for (img of images; track img) {
+          <div nz-carousel-content>
+            <div class="image-wrapper">
+              <img class="image" [src]="img" />
+            </div>
+          </div>
+        }
       </nz-carousel>
-    </ng-container>
-    <ng-template #loading>
+    } @else {
       <div>Cargando imágenes...</div>
-    </ng-template>
+    }
   `,
   
-  styles: [`
-   [nz-carousel-content] {
-        text-align: center;
-        height: 220px;
-        line-height: 160px;
-        background:var(--tertiary-color);
-        color: #fff;
-        overflow: hidden;
-      
-      }
-
-    .image-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      height: 100%;
-      width: 100%;
-    }
-    .image-wrapper img {
-      max-height: 100%;
-      border-radius: var(--border-radius);
-    }
-  `]
+  styleUrl: './carousel.component.scss'
 })
 export class CarouselComponent implements AfterViewInit {
-  images = ['images/store/fachada1.webp',
-            'images/store/fachada2.webp',
-            'images/store/fachada3.webp',
-            'images/store/fachada4.webp',
-            'images/store/fachada9.webp',
-            'images/store/fachada10.webp',
-            'images/store/fachada11.webp',];
+  @Input() images: string[] = [];
   loaded = false;
 
   constructor(private cdr: ChangeDetectorRef) {}

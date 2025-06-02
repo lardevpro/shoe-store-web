@@ -5,12 +5,10 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
   imports: [NzLayoutModule],
   template: `
   <nz-sider class="content"> 
-    <img src="images/logo.png" alt="Zapatería Logo"/>
+    <img src="images/market/logo.png" alt="Zapatería Logo"/>
   </nz-sider>
   `,
   styles: `
-     
-
         img {
 
           width: 100%;
