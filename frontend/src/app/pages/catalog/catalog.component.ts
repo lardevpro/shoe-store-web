@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzMarks, NzSliderModule } from 'ng-zorro-antd/slider';
+import { ProductCardComponent } from "../../components/product-card/product-card.component";
 
 @Component({
   selector: 'app-catalog',
-  imports: [FormsModule, NzGridModule, NzSliderModule],
+  imports: [FormsModule, NzGridModule, NzSliderModule, ProductCardComponent],
   template: `
     <div class="image-container">
       @for (index of images; track $index) {
-        <img src="images/store/fachada1.webp" alt="">
+        <app-product-card></app-product-card>
       }
     </div>
   `,
@@ -17,7 +18,7 @@ import { NzMarks, NzSliderModule } from 'ng-zorro-antd/slider';
     `
       .image-container {
         display: flex;
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+        flex-wrap: wrap; 
         gap: 32px;
       }
 
