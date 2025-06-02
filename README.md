@@ -1,6 +1,6 @@
 # 👟 Shoe Store Web App!! 
 
-A modern and stylish full-stack 👟 Shoe Store application built with **Node.js**, **Express**, **PostgreSQL** (backend) and **Angular** (frontend).  
+A modern and stylish full-stack 👟 Shoe Store application built with **Node.js**, **Express**, **PostgreSQL** (back-end) and **Angular** (front-end).  
 Browse the product catalog, enjoy a responsive UI, and explore RESTful API integration! 🚀
 
 --- 
@@ -23,13 +23,37 @@ Browse the product catalog, enjoy a responsive UI, and explore RESTful API integ
 
 ---
 
-## ✨ Technologies Used
+✨ Technologies Used
+**Back-end:**
 
-- **Backend:** Node.js, Express, PostgreSQL
-- **Frontend:** Angular
-- **API:** RESTful endpoints
+Node.js
 
----
+Express.js
+
+PostgreSQL
+
+CORS
+
+Dotenv for environment management
+
+**Front-end:**
+
+Angular 19
+
+NG-Zorro (UI components)
+
+RxJS (reactive programming)
+
+Angular Forms (template-driven and reactive)
+
+Angular Router (SPA navigation)
+
+HttpClient (REST API integration)
+
+API:
+
+RESTful endpoints with full CRUD support
+
 
 ## 📂 Project Structure
 
