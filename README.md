@@ -23,7 +23,7 @@ Browse the product catalog, enjoy a responsive UI, and explore RESTful API integ
 
 ---
 
-✨ Technologies Used:
+## ✨ Technologies Used:
 
 
 **Back-end:**
