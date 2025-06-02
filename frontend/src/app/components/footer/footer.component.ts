@@ -9,14 +9,11 @@ import { Component } from '@angular/core';
       <div style="margin-bottom: 8px;">
         <a href="#" style="color: white; margin: 0 12px;">Política de privacidad</a> |
         <a href="#" style="color: white; margin: 0 12px;">Términos de uso</a> |
-        <a href="#" style="color: white; margin: 0 12px;">Contacto</a>
+        <a href="/contact" style="color: white; margin: 0 12px;">Contacto</a>
       </div>
       <div class="social-icons">
         <a href="https://www.instagram.com/p/DGz9VwptIIi/" target="_blank" rel="noopener noreferrer" class="social-icon">
           <img src="icons/instagram_icon.svg" alt="Instagram" class="icon">
-        </a>
-        <a href="mailto:example@example.com" class="social-icon">
-          <img src="icons/mail_icon.svg" alt="Email" class="icon">
         </a>
         <a href="https://wa.me/tu_numero_de_whatsapp" target="_blank" rel="noopener noreferrer" class="social-icon">
           <img src="icons/whatsapp_icon.svg" alt="WhatsApp" class="icon">
