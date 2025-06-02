@@ -9,7 +9,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-   getProducts<T>(params: { category?: string, gender?: string }): Observable<T[]> {
+   getProducts$<T>(params: { category?: string, gender?: string }): Observable<T[]> {
     return this.http.get<T[]>(this.apiUrl, { params });
   }
 }
