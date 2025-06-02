@@ -18,21 +18,23 @@ export class ContactFormModel {
         return { status: 400, json: { error: 'All fields are required.' } }
       }
 
-      // Configura la API Key (mejor usar la API key que el SMTP)¿esto para qué?
       const client = SibApiV3Sdk.ApiClient.instance
       client.authentications['api-key'].apiKey = process.env.BREVO_API_KEY
 
       const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi()
-      const contactFormInfo = await ContactFormModel.loadContactFormInfo()
-
-      const sender = contactFormInfo.sender
-      const receivers = contactFormInfo.receivers
-      const subject = contactFormInfo.subject
+    const sender = {
+        email: process.env.EMAIL_FROM, 
+        name: 'Zapateria'
+      }
+      const receivers = [
+        { email: process.env.EMAIL_FROM, name: 'Zapateria' }
+      ]
+      const subject = 'Nuevo mensaje de contacto'
       const textContent = `Nombre: ${userName}\nEmail: ${email}\nMensaje: ${comment}`
-      let htmlContent = contactFormInfo.htmlContent
-      htmlContent = htmlContent.replace('{{userName}}', userName)
-      htmlContent = htmlContent.replace('{{email}}', email)
-      htmlContent = htmlContent.replace('{{comment}}', comment)
+      const htmlContent = `<h3>Nuevo mensaje de contacto</h3>
+        <p><strong>Nombre:</strong> ${userName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Mensaje:</strong> ${comment}</p>`
 
       await apiInstance.sendTransacEmail({
         sender,

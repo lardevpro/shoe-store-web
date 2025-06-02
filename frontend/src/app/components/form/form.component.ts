@@ -13,42 +13,39 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { ContactFormData, ContactFormService } from '../../services/contact.form.service';
 import { takeUntil } from 'rxjs/operators';
 
-
-
 @Component({
   selector: 'app-form',
   imports: [ReactiveFormsModule, NzButtonModule, NzFormModule, NzInputModule],
   template: `
     <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
       <nz-form-item>
-        <nz-form-label [nzSpan]="7" nzRequired>Escriba aquí su nombre</nz-form-label>
-        <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
-          <input nz-input formControlName="userName" placeholder="Nombre" />
+        <nz-form-label [nzSpan]="7" nzRequired>Nombre</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="userErrorTpl">
+          <input nz-input formControlName="userName" placeholder="Escriba aquí su nombre" />
           <ng-template #userErrorTpl let-control>
             @if (control.errors?.['required']) {
-              Please input your username!
+              ¡Por favor, escriba su nombre!
             }
           </ng-template>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-label [nzSpan]="7" nzRequired>Correo Electrónico</nz-form-label>
+        <nz-form-label [nzSpan]="7" nzRequired>Email de contacto</nz-form-label>
         <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
-          <input nz-input formControlName="email" placeholder="email" type="email" />
+          <input nz-input formControlName="email" placeholder="Escriba aquí su email para que podamos responderle" type="email" />
           <ng-template #emailErrorTpl let-control>
             @if (control.errors?.['email']) {
-              The input is not valid E-mail!
+              El email no es válido.
             }
             @if (control.errors?.['required']) {
-              Please input your E-mail!
+              ¡Por favor, escriba su email!
             }
           </ng-template>
         </nz-form-control>
       </nz-form-item>
-       
       <nz-form-item>
         <nz-form-label [nzSpan]="7" nzRequired>Consulta</nz-form-label>
-        <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Please write something here!">
+        <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Por favor, escriba su consulta.">
           <nz-textarea-count [nzMaxCharacterCount]="2000">
             <textarea formControlName="comment" nz-input rows="2" placeholder="Escriba aquí su consulta"></textarea>
           </nz-textarea-count>
@@ -56,10 +53,12 @@ import { takeUntil } from 'rxjs/operators';
       </nz-form-item>
       <nz-form-item>
         <nz-form-control [nzOffset]="7" [nzSpan]="12">
-          <button nz-button nzType="primary" [disabled]="!validateForm.valid">Enviar Consulta</button>
+          <button nz-button nzType="primary" [disabled]="!validateForm.valid || loading">Enviar Consulta</button>
           <button nz-button (click)="resetForm($event)">Limpiar campos</button>
         </nz-form-control>
       </nz-form-item>
+      <div *ngIf="successMessage" style="color: green; margin-top: 16px;">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" style="color: red; margin-top: 16px;">{{ errorMessage }}</div>
     </form>
   `,
   styles: [
@@ -67,7 +66,6 @@ import { takeUntil } from 'rxjs/operators';
       [nz-form] {
         max-width: 600px;
       }
-
       button {
         margin-left: 8px;
         border-radius: var(--border-radius);
@@ -76,11 +74,11 @@ import { takeUntil } from 'rxjs/operators';
     `
   ]
 })
-
-export class FormComponent implements  OnDestroy {
+export class FormComponent implements OnDestroy {
   private fb = inject(NonNullableFormBuilder);
   private contactFormService = inject(ContactFormService);
   private destroy$ = new Subject<void>();
+
   validateForm = this.fb.group({
     userName: this.fb.control('', [Validators.required]),
     email: this.fb.control('', [Validators.email, Validators.required]),
@@ -90,8 +88,8 @@ export class FormComponent implements  OnDestroy {
   loading = false;
   successMessage = '';
   errorMessage = '';
-  
- submitForm(): void {
+
+  submitForm(): void {
     if (this.validateForm.invalid) return;
     this.successMessage = '';
     this.errorMessage = '';
@@ -104,9 +102,8 @@ export class FormComponent implements  OnDestroy {
       comment: rawValue.comment ?? ''
     };
 
-
     this.contactFormService.sendContactForm(formValue)
-      .pipe(takeUntil(this.destroy$)) 
+      .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
           this.successMessage = '¡Consulta enviada correctamente!';
@@ -120,29 +117,15 @@ export class FormComponent implements  OnDestroy {
       });
   }
 
-  
-   resetForm(e: MouseEvent): void {
+  resetForm(e: MouseEvent): void {
     e.preventDefault();
     this.validateForm.reset();
     this.successMessage = '';
     this.errorMessage = '';
   }
 
-   ngOnDestroy(): void {
+  ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
-
- 
-   confirmValidator(control: AbstractControl): ValidationErrors | null {
-    if (!control.value) {
-      return { error: true, required: true };
-    } 
-    return {};
-  }
 }
-
-
-
-
-
