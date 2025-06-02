@@ -5,7 +5,7 @@ import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { ProductCardComponent } from "../../components/product-card/product-card.component";
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../../models/product';
+import { ProductModel  } from '../../models/product';
 
 @Component({
   selector: 'app-catalog',
@@ -31,7 +31,7 @@ import { Product } from '../../models/product';
   ]
 })
 export class CatalogComponent implements OnInit {
-  products: Product[] = [];
+  products: ProductModel [] = [];
   genre?: string;
   category?: string;
 
@@ -52,8 +52,8 @@ export class CatalogComponent implements OnInit {
         ...(params['category'] && { category: params['category'] })
       };
 
-      this.productService.getProducts$<Product>(queryParams)
-        .subscribe((products: Product[]) => {
+      this.productService.getProducts$<ProductModel >(queryParams)
+        .subscribe((products: ProductModel []) => {
           this.products = products;
           console.log(products);
         });

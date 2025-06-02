@@ -1,4 +1,4 @@
-export class Product {
+export class ProductModel  {
     id!: string;
     productName!: string;
     gender!:string;

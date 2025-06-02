@@ -1,7 +1,7 @@
 
 import { Component, Input } from '@angular/core';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { Product } from '../../models/product';
+import { ProductModel  } from '../../models/product';
 @Component({
   selector: 'app-product-card',
   imports: [NzCardModule],
@@ -22,7 +22,7 @@ import { Product } from '../../models/product';
   `
 })
 export class ProductCardComponent {
-  @Input() product!: Product;
+  @Input() product!: ProductModel ;
 }
 
 

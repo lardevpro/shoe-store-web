@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ContactFormModel } from '../models/contact-form';
 
-export interface ContactFormData {
-  userName: string;
-  email: string;
-  comment: string;
-}
+
 
 @Injectable({ providedIn: 'root' })
 export class ContactFormService {
@@ -14,7 +11,7 @@ export class ContactFormService {
 
   constructor(private http: HttpClient) {}
 
-  sendContactForm(data: ContactFormData): Observable<any> {
+  sendContactForm(data: ContactFormModel): Observable<any> {
     return this.http.post<any>(this.apiUrl, data);
   }
 }

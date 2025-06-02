@@ -1,22 +1,42 @@
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, HostListener, inject, OnDestroy } from '@angular/core';
 import {
-  AbstractControl,
   NonNullableFormBuilder,
   ReactiveFormsModule,
-  ValidationErrors,
   Validators
 } from '@angular/forms';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { Subject } from 'rxjs';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { ContactFormData, ContactFormService } from '../../services/contact.form.service';
 import { takeUntil } from 'rxjs/operators';
+import { ContactFormService } from '../../services/contact-form.service.spec';
+import { ContactFormModel } from '../../models/contact-form';
 
 @Component({
   selector: 'app-form',
-  imports: [ReactiveFormsModule, NzButtonModule, NzFormModule, NzInputModule],
+  imports: [ReactiveFormsModule,
+           NzButtonModule, 
+           NzFormModule, 
+           NzInputModule,
+           NzAlertModule],
   template: `
+     @if (successMessage) {
+        <nz-alert
+        nzType="success"
+        nzMessage="Consulta Eviada Correctamente"
+        nzDescription="Nos pondremos en contacto con usted lo antes posible."
+        nzShowIcon
+      ></nz-alert>
+      }
+    @if (errorMessage) {
+     <nz-alert
+      nzType="error"
+      nzMessage="Error"
+      nzDescription="Por favor, verifique los campos e inténtelo de nuevo."
+      nzShowIcon
+    ></nz-alert>
+    }
     <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
       <nz-form-item>
         <nz-form-label [nzSpan]="7" nzRequired>Nombre</nz-form-label>
@@ -45,7 +65,7 @@ import { takeUntil } from 'rxjs/operators';
       </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="7" nzRequired>Consulta</nz-form-label>
-        <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Por favor, escriba su consulta.">
+        <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Debe escribir su consulta.">
           <nz-textarea-count [nzMaxCharacterCount]="2000">
             <textarea formControlName="comment" nz-input rows="2" placeholder="Escriba aquí su consulta"></textarea>
           </nz-textarea-count>
@@ -57,19 +77,18 @@ import { takeUntil } from 'rxjs/operators';
           <button nz-button (click)="resetForm($event)">Limpiar campos</button>
         </nz-form-control>
       </nz-form-item>
-      <div *ngIf="successMessage" style="color: green; margin-top: 16px;">{{ successMessage }}</div>
-      <div *ngIf="errorMessage" style="color: red; margin-top: 16px;">{{ errorMessage }}</div>
-    </form>
   `,
   styles: [
     `
       [nz-form] {
         max-width: 600px;
       }
-      button {
-        margin-left: 8px;
-        border-radius: var(--border-radius);
-        background-color: rgb(246, 115, 246);
+    
+      nz-form-control{
+        
+      }
+        nz-alert {
+        margin-bottom: 16px;
       }
     `
   ]
@@ -96,7 +115,7 @@ export class FormComponent implements OnDestroy {
     this.loading = true;
 
     const rawValue = this.validateForm.value;
-    const formValue: ContactFormData = {
+    const formValue: ContactFormModel = {
       userName: rawValue.userName ?? '',
       email: rawValue.email ?? '',
       comment: rawValue.comment ?? ''
@@ -122,6 +141,15 @@ export class FormComponent implements OnDestroy {
     this.validateForm.reset();
     this.successMessage = '';
     this.errorMessage = '';
+  }
+
+   @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    if (!target.closest('nz-alert')) {
+      this.successMessage = '';
+      this.errorMessage = '';
+    }
   }
 
   ngOnDestroy(): void {
