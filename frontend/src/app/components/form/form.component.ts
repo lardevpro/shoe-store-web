@@ -10,6 +10,10 @@ import { Subject } from 'rxjs';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { ContactFormData, ContactFormService } from '../../services/contact.form.service';
+import { takeUntil } from 'rxjs/operators';
+
+
 
 @Component({
   selector: 'app-form',
@@ -75,6 +79,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 
 export class FormComponent implements  OnDestroy {
   private fb = inject(NonNullableFormBuilder);
+  private contactFormService = inject(ContactFormService);
   private destroy$ = new Subject<void>();
   validateForm = this.fb.group({
     userName: this.fb.control('', [Validators.required]),
@@ -82,15 +87,45 @@ export class FormComponent implements  OnDestroy {
     comment: this.fb.control('', [Validators.required])
   });
 
+  loading = false;
+  successMessage = '';
+  errorMessage = '';
   
+ submitForm(): void {
+    if (this.validateForm.invalid) return;
+    this.successMessage = '';
+    this.errorMessage = '';
+    this.loading = true;
 
-  submitForm(): void {
-    console.log('submit', this.validateForm.value);
+    const rawValue = this.validateForm.value;
+    const formValue: ContactFormData = {
+      userName: rawValue.userName ?? '',
+      email: rawValue.email ?? '',
+      comment: rawValue.comment ?? ''
+    };
+
+
+    this.contactFormService.sendContactForm(formValue)
+      .pipe(takeUntil(this.destroy$)) 
+      .subscribe({
+        next: (res) => {
+          this.successMessage = '¡Consulta enviada correctamente!';
+          this.loading = false;
+          this.validateForm.reset();
+        },
+        error: (err) => {
+          this.errorMessage = err?.error?.error || 'Error al enviar la consulta. Inténtalo de nuevo.';
+          this.loading = false;
+        }
+      });
   }
 
-  resetForm(e: MouseEvent): void {
+  
+   resetForm(e: MouseEvent): void {
     e.preventDefault();
     this.validateForm.reset();
+    this.successMessage = '';
+    this.errorMessage = '';
   }
 
    ngOnDestroy(): void {
