@@ -72,9 +72,9 @@ import { ContactFormModel } from '../../models/contact-form';
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-control [nzOffset]="7" [nzSpan]="12">
-          <button nz-button nzType="primary" [disabled]="!validateForm.valid || loading">Enviar Consulta</button>
-          <button nz-button (click)="resetForm($event)">Limpiar campos</button>
+        <nz-form-control [nzOffset]="offset" [nzSpan]="12">
+          <button nz-button nzType="primary" [disabled]="!validateForm.valid || loading">Enviar</button>
+          <button nz-button (click)="resetForm($event)">Limpiar</button>
         </nz-form-control>
       </nz-form-item>
   `,
@@ -83,12 +83,14 @@ import { ContactFormModel } from '../../models/contact-form';
       [nz-form] {
         max-width: 600px;
       }
-    
-      nz-form-control{
-        
-      }
         nz-alert {
         margin-bottom: 16px;
+      }
+      
+       button {
+        margin-left: 8px;
+        border-radius: var(--border-radius);
+        background-color: rgb(246, 115, 246);
       }
     `
   ]
@@ -107,6 +109,7 @@ export class FormComponent implements OnDestroy {
   loading = false;
   successMessage = '';
   errorMessage = '';
+  offset = window.innerWidth <= 768 ? 0 : 6;
 
   submitForm(): void {
     if (this.validateForm.invalid) return;
