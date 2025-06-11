@@ -10,7 +10,7 @@ import { FooterComponent } from "./components/footer/footer.component";
   imports: [NzLayoutModule, RouterOutlet, HeaderComponent, NavbarComponent, FooterComponent],
   template: `
     <nz-layout>
-      <!-- navbar -->
+      <!-- header -->
       <nz-header>
         <app-header></app-header>
         <app-navbar></app-navbar>
@@ -42,7 +42,7 @@ import { FooterComponent } from "./components/footer/footer.component";
     }
 
     nz-header {
-      height: 200px; 
+      height: 190px; 
       display: flex; 
       justify-content: start;
       align-items: center;  
@@ -61,15 +61,8 @@ import { FooterComponent } from "./components/footer/footer.component";
 
     nz-footer {
       background-color:rgb(182, 172, 245);
-      color: black;
-      text-align: center;
       padding: 24px 50px;
       height: 180px;
-      line-height: 1.5;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 8px;
     }
     
 

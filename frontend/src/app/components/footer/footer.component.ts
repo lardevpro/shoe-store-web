@@ -5,10 +5,9 @@ import { Component } from '@angular/core';
   standalone: true,
   template: ` 
     <div class="container">  
-        © 2025 Zapatería. Todos los derechos reservados.
       <div style="margin-bottom: 8px;">
         <a href="#" style="color: white; margin: 0 12px;">Política de privacidad</a> |
-        <a href="#" style="color: white; margin: 0 12px;">Términos de uso</a> |
+        <a href="#" style="color: white; margin: 0 12px;">Términos</a> |
         <a href="/contact" style="color: white; margin: 0 12px;">Contacto</a>
       </div>
       <div class="social-icons">
@@ -25,12 +24,14 @@ import { Component } from '@angular/core';
           <img src="icons/facebook_icon.svg" alt="Ubicación" class="icon">
         </a>
       </div>
+      © 2025 Zapatería.
     </div>
   `,
   styles: [
     ` 
     .container {
-      line-height: 2.5rem;
+      line-height: 1.5rem;
+      
     }
     .social-icons {
       padding: 20px;
@@ -43,8 +44,8 @@ import { Component } from '@angular/core';
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background-color: var(--tertiary-color);
       color: white;
@@ -58,8 +59,20 @@ import { Component } from '@angular/core';
     }
 
     .icon {
-      width: 19px;
-      height: 19px;
+      width: 30px;
+      height: 30px;
+    }
+
+    @media (max-width: 768px) {
+        .icon {
+        width: 19px;
+        height: 19px;
+      }
+      .social-icon {
+      width: 20px;
+      height: 20px; 
+    }
+
     }
     `
   ]
