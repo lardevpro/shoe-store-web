@@ -1,3 +1,5 @@
+// FILEPATH: d:/shoe-store-web/frontend/src/app/components/navbar/navbar.component.ts
+
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -13,7 +15,7 @@ import { RouterLink } from '@angular/router';
   template: ` 
     <div class="navbar-container">
       <ul nz-menu nzMode="horizontal" class="navbar-menu">
-        <li nz-menu-item [routerLink]="['/']">
+       <li nz-menu-item [routerLink]="['/']">
           <span nz-icon nzType="home"></span>
           <span class="nav-text">Página Principal</span>
         </li>
@@ -31,73 +33,83 @@ import { RouterLink } from '@angular/router';
         </li>       
         <li nz-menu-item [routerLink]="['/about']">
           <span class="nav-text">Sobre Nosotros</span>
-        </li>       
+        </li>  
       </ul>
-      <div class="dropdow">
+      <div class="dropdown-container">
         <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
-          <nz-icon nzType="unordered-list" nzTheme="outline" />
+          <nz-icon nzType="menu" nzTheme="outline"></nz-icon>
         </a>
-          <nz-dropdown-menu #menu="nzDropdownMenu">
-            <ul nz-menu>
-              <li nz-menu-item [routerLink]="['/']">Inicio</li>
-              <li nz-submenu nzTitle="Zapatos">
-                <ul>
-                  <li nz-menu-item [routerLink]="['/catalog']" [queryParams]="{ genre: 'hombre',category: 'zapatos' }">Hombre</li> 
-                  <li nz-menu-item [routerLink]="['/catalog']" [queryParams]="{ genre: 'mujer',category: 'zapatos' }">Mujer</li>  
-                  <li nz-menu-item [routerLink]="['/catalog']" [queryParams]="{ category: 'bolsos' }">Bolsos</li>
-                  <li nz-menu-item [routerLink]="['/catalog']" [queryParams]="{ category: 'complementos' }">Accesorios</li>        
-                </ul>
-              </li>  
-            </ul>
-          </nz-dropdown-menu>
-        </div>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item [routerLink]="['/']">Inicio</li>
+            <li nz-submenu nzTitle="Zapatos">
+              <ul>
+                <li nz-menu-item [routerLink]="['/catalog']" [queryParams]="{ genre: 'hombre', category: 'zapatos' }">Hombre</li> 
+                <li nz-menu-item [routerLink]="['/catalog']" [queryParams]="{ genre: 'mujer', category: 'zapatos' }">Mujer</li>  
+                <li nz-menu-item [routerLink]="['/catalog']" [queryParams]="{ category: 'bolsos' }">Bolsos</li>
+                <li nz-menu-item [routerLink]="['/catalog']" [queryParams]="{ category: 'complementos' }">Accesorios</li>        
+              </ul>
+            </li>
+            <li nz-menu-item [routerLink]="['/about']">Sobre Nosotros</li>
+          </ul>
+        </nz-dropdown-menu>
       </div>
+    </div>
   `,
-  styles: [
-    `  
-
-    .dropdow {
-      display: none; 
+  styles: [`
+    .navbar-container {
+      background-color: var(--primary-color);
+      border-radius: var(--border-radius);
+      margin-top: 30px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
     }
 
-    .navbar-container {
-      background-color: var(--primary-color);  
-      border-radius: var(--border-radius); 
-      margin-top:30px;
-      position: relative; 
+    .navbar-menu {
+      background: transparent;
+      display: flex;
+    }
+
+    .dropdown-container {
+      display: none;
     }
 
     ul {
-      background: transparent;  
+      background: transparent;
     }
 
     .dropdown-menu {
-      background:  var(--primary-color); 
+      background: var(--primary-color);
     }
-
-    
 
     @media (max-width: 768px) {
-     
-      
-      .navbar-menu {     
-        display: none;  
+      .navbar-menu {
+        display: none;
       }
 
-      .dropdow {
+      .dropdown-container {
         display: block;
-        margin-bottom: 30px;
-        border-radius: var(--border-radius);
-        font-size: 40px; 
-      }    
-    }
+      }
 
-    `
-  ]
+      .dropdown-container a {
+        font-size: 24px;
+        color: #fff;
+      }
+
+      :host ::ng-deep .ant-dropdown-menu {
+        background-color: var(--primary-color);
+      }
+
+      :host ::ng-deep .ant-dropdown-menu-item,
+      :host ::ng-deep .ant-dropdown-menu-submenu-title {
+        color: #fff;
+      }
+    }
+  `]
 })
 export class NavbarComponent {
-
   constructor() {}
-
-  
 }

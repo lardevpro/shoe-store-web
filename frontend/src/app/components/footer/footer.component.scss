@@ -2,28 +2,21 @@
     line-height: 1.5rem;  
 }
 
-.social-icons {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-}
-
-.social-icon {
+button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-right: 20px;
+    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: var(--tertiary-color);
-    color: white;
-    text-decoration: none;
+    color: var(--fourth-color);
     transition: background-color 0.3s, transform 0.3s;
 }
-
-.social-icon:hover {
-    background-color: var(--fourth-color);
+button:hover {
+    background-color:var(--white-color) ;
     transform: scale(1.1);
 }
 
@@ -31,15 +24,19 @@
     width: 30px;
     height: 30px;
 }
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
 
+nz-qrcode {
+    width: 10px;
+    height: 50px;
+}
 @media (max-width: 768px) {
     
     .icon {
         width: 19px;
         height: 19px;
-    }
-      .social-icon {
-      width: 20px;
-      height: 20px; 
     }
 }

@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { FooterService } from './services/footer.service';
+import { FooterModel } from './models/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [NzLayoutModule, RouterOutlet, HeaderComponent, NavbarComponent, FooterComponent],
+  imports: [NzLayoutModule, 
+            RouterOutlet, 
+            HeaderComponent, 
+            NavbarComponent, 
+            FooterComponent],
   template: `
     <nz-layout>
       <!-- header -->
@@ -23,7 +29,7 @@ import { FooterComponent } from "./components/footer/footer.component";
       
       <!-- footer -->
       <nz-footer>
-        <app-footer></app-footer>
+        <app-footer [footerModel]="footerModel"></app-footer>
       </nz-footer>
       
     </nz-layout>
@@ -62,7 +68,7 @@ import { FooterComponent } from "./components/footer/footer.component";
     nz-footer {
       background-color:rgb(182, 172, 245);
       padding: 24px 50px;
-      height: 180px;
+      height: 230px;
     }
     
 
@@ -82,4 +88,13 @@ import { FooterComponent } from "./components/footer/footer.component";
     `
   ]
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  footerModel!: FooterModel;
+  constructor(private footerService: FooterService) {}
+
+  ngOnInit(){
+     this.footerService.getInfoFooter$().subscribe((footer: FooterModel) => {
+      this.footerModel = footer;
+    });
+  }
+}

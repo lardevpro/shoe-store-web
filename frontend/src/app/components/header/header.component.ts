@@ -15,7 +15,6 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
           max-width: 200px;
           padding: 5px;
           position: relative;
-          cursor: pointer;
           border-radius:var(--border-radius);
           border: 1.5px solid rgb(154, 207, 245);
           margin: 0 auto;
