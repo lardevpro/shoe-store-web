@@ -25,43 +25,43 @@ Browse the product catalog, enjoy a responsive UI, and explore RESTful API integ
 
 ## ✨ Technologies Used:
 
-
-**Back-end:**
-
-Node.js
-
-Express.js
-
-MySQL
-
-CORS
-
-Dotenv for environment management
-
-**Front-end:**
-
-Angular 19
-
-NG-Zorro (UI components)
-
-RxJS (reactive programming)
-
-Angular Forms (template-driven and reactive)
-
-Angular Router (SPA navigation)
-
-HttpClient (REST API integration)
-
-API:
-
-RESTful endpoints with full CRUD support
-
+    
+    **Back-end:**
+    
+    Node.js
+    
+    Express.js
+    
+    MySQL
+    
+    CORS
+    
+    Dotenv for environment management
+    
+    **Front-end:**
+    
+    Angular 19
+    
+    NG-Zorro (UI components)
+    
+    RxJS (reactive programming)
+    
+    Angular Forms (template-driven and reactive)
+    
+    Angular Router (SPA navigation)
+    
+    HttpClient (REST API integration)
+    
+    API:
+    
+    RESTful endpoints with full CRUD support
+    
 
 ## 📂 Project Structure
 
-Zapateria-Proyecto/
-├── backend/ # Node.js + Express + PostgreSQL API
-└── frontend/ # Angular app (zapateria-frontend)
+    Zapateria-Proyecto/
+    ├── backend/ # Node.js + Express + PostgreSQL API
+    └── frontend/ # Angular app (zapateria-frontend)
 
 ---
 
