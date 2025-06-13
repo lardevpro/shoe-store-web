@@ -10,22 +10,14 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
   `,
   styles: `
         img {
-
           width: 100%;
           max-width: 200px;
           padding: 5px;
           position: relative;
           border-radius:var(--border-radius);
-          border: 1.5px solid rgb(154, 207, 245);
+          border: var(--border-solid-weidth) solid var(--borde-solid);
           margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-          .content {
-            margin-right: 200px;
-            margin-bottom: 40px;
-          }
-        }
+        } 
           `
 })
 export class HeaderComponent {

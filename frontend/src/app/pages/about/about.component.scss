@@ -39,7 +39,7 @@ img {
   height: 320px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: var(--max-width-tablets)) {
   .about {
     padding: 1.2rem 0.3rem;
     border-radius: var(--border-radius);
