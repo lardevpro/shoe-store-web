@@ -1,1 +1,12 @@
+<nz-carousel [nzAutoPlay]="true" 
+    [nzAutoPlaySpeed]="7000"  
+    [nzEffect]="'fade'">
+    @for (img of images; track img) {
+        <div nz-carousel-content>
+        <div class="image-wrapper">
+            <img class="image" [src]="img" />
+        </div>
+    </div>
+  }
+</nz-carousel>
 

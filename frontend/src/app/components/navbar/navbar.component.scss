@@ -1,51 +1,75 @@
 .navbar-container {
-      background-color: var(--primary-color);
-      border-radius: var(--border-radius);
-      margin-top: 30px;
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
 
-    .navbar-menu {
-      background: transparent;
-      display: flex;
-    }
+.navbar-menu {
+  background: transparent;
+  display: flex;
+}
 
-    .dropdown-container {
-      display: none;
-    }
+app-dropdow {
+  margin-bottom: 30px;
+  border-radius: var(--border-radius);
+}
 
-    ul {
-      background: transparent;
-    }
+ul {
+  background: transparent;
+}
 
-    .dropdown-menu {
-      background: var(--primary-color);
-    }
+.dropdown-menu {
+  background: var(--primary-color);
+}
 
-    @media (max-width: var(--max-width-tablets)) {
-      .navbar-menu {
-        display: none;
-      }
+@media (max-width: var(--max-width--laptops-big)) {
+  .navbar-container {
+    padding: 0 15px;
+  }
+}
 
-      .dropdown-container {
-        display: block;
-      }
+@media (max-width: var(--max-width--laptops-small)) {
+  .navbar-menu {
+    font-size: 14px;
+  }
+}
 
-      .dropdown-container a {
-        font-size: 24px;
-        color: #fff;
-      }
+@media (max-width: var(--max-width-tablets)) {
+  .navbar-menu {
+    font-size: 12px;
+  }
+}
 
-      :host ::ng-deep .ant-dropdown-menu {
-        background-color: var(--primary-color);
-      }
+@media (max-width: var(--max-width-smartphones)) {
+  .navbar-menu {
+    display: none;
+  }
 
-      :host ::ng-deep .ant-dropdown-menu-item,
-      :host ::ng-deep .ant-dropdown-menu-submenu-title {
-        color: #fff;
-      }
-    }
+  .dropdown-container {
+    display: block;
+  }
+
+  .dropdown-container a {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  :host ::ng-deep .ant-dropdown-menu {
+    background-color: var(--primary-color);
+  }
+
+  :host ::ng-deep .ant-dropdown-menu-item,
+  :host ::ng-deep .ant-dropdown-menu-submenu-title {
+    color: #fff;
+  }
+}
+
+
+:host ::ng-deep .ant-dropdown {
+  z-index: 1000;
+}

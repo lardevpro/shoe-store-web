@@ -19,37 +19,41 @@
 
 .image-wrapper img {
   max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
   border-radius: var(--border-radius);
 }
 
+@media (max-width: var(--max-width--laptops-big)) {
+  [nz-carousel-content] {
+    height: 380px;
+  }
+}
+
+@media (max-width: var(--max-width--laptops-small)) {
+  [nz-carousel-content] {
+    height: 340px;
+  }
+}
 
 @media (max-width: var(--max-width-tablets)) {
   [nz-carousel-content] {
-    height: 180px;
+    height: 300px;
     line-height: 140px;
   }
 
   .image-wrapper {
-    padding: 10px;
-  }
-
-  .image-wrapper img {
-    max-height: 90%;
+    padding: 15px;
   }
 }
 
 @media (max-width: var(--max-width-smartphones)) {
   [nz-carousel-content] {
-    height: 160px;
-    width: auto;
+    height: 200px;
     line-height: 120px;
   }
 
   .image-wrapper {
-    padding: 5px;
-  }
-
-  .image-wrapper img {
-    max-height: 80%;
+    padding: 10px;
   }
 }

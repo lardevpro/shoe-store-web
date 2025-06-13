@@ -12,14 +12,12 @@ import { FooterModel } from './models/footer';
   imports: [NzLayoutModule, 
             RouterOutlet, 
             HeaderComponent, 
-            NavbarComponent, 
             FooterComponent],
   template: `
     <nz-layout>
       <!-- header -->
       <nz-header>
         <app-header></app-header>
-        <app-navbar></app-navbar>
       </nz-header>
 
        <!-- carousel -->
