@@ -42,11 +42,12 @@ import { FooterModel } from './models/footer';
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: rgb(237, 194, 243);
+      background: var(--body-color);
     }
 
     nz-header {
-      height: 190px; 
+      height: 180px;
+      width: auto; 
       display: flex; 
       justify-content: start;
       align-items: center;  
@@ -64,7 +65,7 @@ import { FooterModel } from './models/footer';
     }
 
     nz-footer {
-      background-color:rgb(182, 172, 245);
+      background-color:var(--footer-color);
       padding: 24px 50px;
       height: 230px;
     }

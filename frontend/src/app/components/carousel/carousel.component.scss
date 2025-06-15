@@ -3,11 +3,10 @@
   height: 420px;
   line-height: 160px;
   background: var(--tertiary-color);
-  color: #fff;
   overflow: hidden;
   border-radius: var(--border-radius);
+  border: var(--border-solid-weidth) solid var(--footer-color);
 }
-
 .image-wrapper {
   display: flex;
   justify-content: center;

@@ -1,12 +1,6 @@
 .navbar-container {
-  background-color: var(--primary-color);
-  border-radius: var(--border-radius);
-  margin-top: 30px;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+ margin-left: 30px;
+  
 }
 
 .navbar-menu {
@@ -24,7 +18,7 @@ ul {
 }
 
 .dropdown-menu {
-  background: var(--primary-color);
+  background: var(--header-color);
 }
 
 @media (max-width: var(--max-width--laptops-big)) {
@@ -60,7 +54,7 @@ ul {
   }
 
   :host ::ng-deep .ant-dropdown-menu {
-    background-color: var(--primary-color);
+    background-color: var(--header-color);
   }
 
   :host ::ng-deep .ant-dropdown-menu-item,

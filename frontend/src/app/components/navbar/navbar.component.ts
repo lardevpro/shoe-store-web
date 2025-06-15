@@ -34,6 +34,6 @@ export class NavbarComponent {
   private checkWidth() {
     const width = window.innerWidth;
     
-    this.showDropdown = width < 700; 
+    this.showDropdown = width < 768; 
   }
 }
