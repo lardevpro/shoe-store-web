@@ -7,23 +7,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-carousel',
   standalone: true,
   imports: [CommonModule, NzCarouselModule],
-  
-  template: `
-    @if (images.length > 0) {
-      <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="8000" [nzTransitionSpeed]="2000">
-        @for (img of images; track img) {
-          <div nz-carousel-content>
-            <div class="image-wrapper">
-              <img class="image" [src]="img" />
-            </div>
-          </div>
-        }
-      </nz-carousel>
-    } @else {
-      <div>Cargando imágenes...</div>
-    }
-  `,
-  
+  templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss'
 })
 export class CarouselComponent implements AfterViewInit {

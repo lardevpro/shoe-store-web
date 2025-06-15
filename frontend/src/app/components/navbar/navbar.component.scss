@@ -1,0 +1,75 @@
+.navbar-container {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar-menu {
+  background: transparent;
+  display: flex;
+}
+
+app-dropdow {
+  margin-bottom: 30px;
+  border-radius: var(--border-radius);
+}
+
+ul {
+  background: transparent;
+}
+
+.dropdown-menu {
+  background: var(--primary-color);
+}
+
+@media (max-width: var(--max-width--laptops-big)) {
+  .navbar-container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: var(--max-width--laptops-small)) {
+  .navbar-menu {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: var(--max-width-tablets)) {
+  .navbar-menu {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: var(--max-width-smartphones)) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .dropdown-container {
+    display: block;
+  }
+
+  .dropdown-container a {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  :host ::ng-deep .ant-dropdown-menu {
+    background-color: var(--primary-color);
+  }
+
+  :host ::ng-deep .ant-dropdown-menu-item,
+  :host ::ng-deep .ant-dropdown-menu-submenu-title {
+    color: #fff;
+  }
+}
+
+
+:host ::ng-deep .ant-dropdown {
+  z-index: 1000;
+}

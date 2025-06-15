@@ -18,7 +18,19 @@ import { ProductModel  } from '../../models/product';
     </ng-template>
   `,
   styles: `
-  
+    nz-card {
+      border-radius: var(--border-radius);
+    }
+    img {
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+    @media(max-width: var(--max-width-tablets)) {
+      nz-card {
+        width: 100%;
+      }
+    }
+
   `
 })
 export class ProductCardComponent {

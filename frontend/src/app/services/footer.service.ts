@@ -13,7 +13,7 @@ constructor() {
   this.footerModel = { 
     
     linksPagesAppModel: [
-        { text: 'Política de privacidad', href: '#' },
+        { text: 'Políticas', href: '#' },
         { text: 'Términos', href: '#' },
         { text: 'Contacto', href: '/contact' }
       ],

@@ -12,14 +12,12 @@ import { FooterModel } from './models/footer';
   imports: [NzLayoutModule, 
             RouterOutlet, 
             HeaderComponent, 
-            NavbarComponent, 
             FooterComponent],
   template: `
     <nz-layout>
       <!-- header -->
       <nz-header>
         <app-header></app-header>
-        <app-navbar></app-navbar>
       </nz-header>
 
        <!-- carousel -->
@@ -72,14 +70,14 @@ import { FooterModel } from './models/footer';
     }
     
 
-    @media (max-width: 768px) {
+    @media (max-width: var(--max-width-tablets)) {
       nz-header {
         height: 130px;
         gap: 60px;
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: var(--max-width-smartphones)) {
       nz-header {
         height: 120px;
         gap: 70px;

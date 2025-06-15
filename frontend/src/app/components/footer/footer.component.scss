@@ -33,7 +33,7 @@ nz-qrcode {
     width: 10px;
     height: 50px;
 }
-@media (max-width: 768px) {
+@media (max-width: var(--max-width-tablets)) {
     
     .icon {
         width: 19px;
