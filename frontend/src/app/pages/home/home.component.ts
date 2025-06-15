@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from "../../components/carousel/carousel.component"; 
 import { CarouselService } from '../../services/carousel.service';
+import { BrandComponent } from "../../components/brand/brand.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CarouselComponent],
+  imports: [CommonModule, CarouselComponent, BrandComponent],
   template: `           
-              <app-carousel [images]="images" class="centered-carousel"></app-carousel>           
+              <app-carousel [images]="images" class="centered-carousel"></app-carousel>
+              <app-brand></app-brand>           
             `,
   styles: `
   .centered-carousel {
